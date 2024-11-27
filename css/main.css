@@ -118,7 +118,7 @@ body {
   color: #7e5dba;
   font-size: 1.7vw;
   position: absolute;
-  bottom: 16.5%;
+  bottom: 19%;
   left: 42.5vw;
   transform: translate(-50%, -50%);
 }
@@ -129,8 +129,8 @@ body {
   color: #ba5da3;
   font-size: 1.7vw;
   position: absolute;
-  bottom: 16.5%;
-  right: 34.3vw;
+  bottom: 19%;
+  right: 35vw;
   transform: translate(-50%, -50%);
 }
 
