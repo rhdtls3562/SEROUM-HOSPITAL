@@ -1,5 +1,7 @@
 body {
   font-family: "Noto Sans KR", sans-serif;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /*header*/
@@ -28,7 +30,7 @@ body {
 }
 
 #header ul li {
-  font-size: 15px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -113,24 +115,26 @@ body {
 }
 
 .event {
+  cursor: pointer;
   font-weight: 500;
   letter-spacing: -1px;
   color: #7e5dba;
   font-size: 1.7vw;
   position: absolute;
-  bottom: 19%;
+  bottom: 9.4vw;
   left: 42.5vw;
   transform: translate(-50%, -50%);
 }
 
 .seemore {
+  cursor: pointer;
   font-weight: 500;
   letter-spacing: -1px;
   color: #ba5da3;
   font-size: 1.7vw;
   position: absolute;
-  bottom: 19%;
-  right: 35vw;
+  bottom: 9.4vw;
+  right: 33.5vw;
   transform: translate(-50%, -50%);
 }
 
@@ -265,6 +269,7 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
+
   align-items: center;
 }
 
@@ -274,4 +279,380 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.swiper-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  pointer-events: none; /* 클릭 막지 않음 */
+  border-radius: 30px;
+}
+
+.swiper-slide i {
+  position: absolute;
+  left: 1.3vw;
+  top: 1vw;
+  font-size: 2vw;
+  color: #ff2076;
+}
+
+.num {
+  position: absolute;
+  left: 1vw;
+  top: 4vw;
+  font-size: 1vw;
+  color: #fff;
+}
+
+.look {
+  font-size: 1.5vw;
+  color: #fff;
+  position: absolute;
+  bottom: 3vw;
+  left: 1vw;
+}
+
+.look span {
+  color: #ffd1e9;
+  font-weight: 900;
+}
+
+.rom {
+  position: absolute;
+  bottom: 1vw;
+  left: 1vw;
+  color: #f0f0f0;
+}
+
+/*con3*/
+
+.con3 {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.con3 div:first-child {
+  font-family: "Black Han Sans", sans-serif;
+  padding-top: 5vw;
+  padding-bottom: 1vw;
+  font-size: 20px;
+  font-weight: 100;
+  box-sizing: border-box;
+}
+
+.con3 h5 {
+  font-weight: 300;
+  font-size: 20px;
+  padding-bottom: 2vw;
+}
+
+.con3 img {
+  width: 200%;
+}
+
+.reservation {
+  margin-top: 3vw;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.8vw 2vw;
+  border-radius: 2vw;
+  display: inline-block;
+  background-color: #222;
+}
+
+/*con4*/
+
+.con4 {
+  background-image: linear-gradient(
+      to top,
+      rgba(160, 208, 224, 0.7),
+      rgba(255, 255, 255, 0)
+    ),
+    url(../img/report_back.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 50vh;
+}
+
+.con4 h2 {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.con4 p {
+  cursor: pointer;
+  font-size: 20px;
+  box-sizing: border-box;
+  padding-top: 2vw;
+}
+
+/*con5*/
+
+.con5 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.con5 h2 {
+  font-size: 20vw;
+  font-weight: 700;
+  line-height: 18vw;
+  text-transform: uppercase; /* 대문자 변환 */
+  background: linear-gradient(
+    to right,
+    #ffd1e9,
+    lightblue
+  ); /* 그라데이션 색상 */
+  -webkit-background-clip: text; /* 배경을 글자로 클리핑 */
+  -webkit-text-fill-color: transparent; /* 글자 내부 투명 처리 */
+}
+
+/*con6*/
+
+.con6 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffffff 50%,
+    #ffd1e9 100%
+  ); /* 그라데이션 배경 추가 */
+}
+
+.con6_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.con6_wrap h2 {
+  font-size: 2vw;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 2vw;
+}
+
+.con6_wrap2 {
+  display: flex;
+  justify-content: center;
+}
+
+/* 전체 폼 스타일 */
+.form-list {
+  position: relative;
+  display: flex; /* 수평으로 나열 */
+  justify-content: space-between; /* 항목을 양옆으로 배치 */
+  margin-bottom: 20px; /* 각 줄 간 간격 */
+  padding: 0;
+  list-style-type: none;
+  flex-wrap: wrap; /* 화면 크기에 맞게 줄 바꿈 */
+}
+
+/* 각 항목 크기 설정 */
+.form-item {
+  width: 48%; /* 각 항목이 한 줄에 2개씩 배치되도록 설정 (더 넓게 조정) */
+  margin-bottom: 2vw; /* 항목 간 간격 */
+}
+
+/* 문의사항을 포함한 항목 크기 설정 (100%로 설정하여 폼 전체 크기 맞추기) */
+.form-item.full-width {
+  width: 100%; /* 문의사항 필드는 전체 너비로 확장 */
+}
+
+/* 입력 필드 크기 조정 */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 20vw; /* 입력창을 부모 요소 크기에 맞게 설정 */
+  padding: 15px; /* 입력 필드 안쪽 여백을 넓힘 */
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  box-sizing: border-box; /* padding 포함해서 크기 계산 */
+  font-size: 0.8vw; /* 글자 크기 확장 */
+}
+
+/* 문의사항 textarea에 대한 스타일 */
+textarea {
+  resize: vertical; /* 세로로 크기 조정 가능 */
+  font-size: 1vw; /* 글씨 크기 조정 */
+  height: 10vw; /* 기본 높이를 더 크게 설정 */
+  width: 102%; /* 문의사항 폭을 부모의 크기에 맞게 100%로 설정 */
+}
+
+/* 입력 필드와 라벨 스타일 */
+label {
+  font-size: 0.8vw; /* 라벨 글씨 크기 확장 */
+}
+
+.how_to_come {
+  margin-bottom: 9vw;
+}
+
+.how_to_come h2 {
+  font-size: 2vw;
+  letter-spacing: -5px;
+}
+
+.how_to_come p {
+  font-size: 1vw;
+  font-weight: 600;
+  color: #555;
+  width: 13vw;
+}
+
+.how_to_come h5 {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.8vw;
+  font-weight: 400;
+}
+
+.con6 h3 {
+  display: flex; /* h3를 flex 컨테이너로 변경 */
+  align-items: center; /* 자식 요소들을 수직으로 가운데 정렬 */
+}
+
+.how_to_come .come {
+  margin-top: 0.5vw;
+  font-size: 0.7vw;
+}
+
+.day {
+  color: #555;
+  display: flex;
+  justify-content: center;
+  gap: 4vw;
+}
+
+.day_day h3 {
+  font-weight: 600;
+}
+
+.time h3 {
+  font-weight: 400;
+}
+
+.gradient-button {
+  position: absolute;
+  display: inline-block;
+  padding: 1vw 3vw;
+  font-size: 1vw;
+  text-wrap: nowrap;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #a1c4fd, #c2e9fb, #d4bfff);
+  left: 77%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.gradient-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*footer*/
+
+#footer {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ffd1e9, #80a5e0);
+}
+
+#footer h2 {
+  text-align: center;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  font-size: 13.5vw;
+  color: #fff;
+  opacity: 0.3;
+}
+
+.fot_logo {
+  width: 10%;
+  filter: grayscale(100%) brightness(1000%);
+}
+
+#footer ul li:nth-child(1),
+#footer ul li:nth-child(2),
+#footer ul li:nth-child(3),
+#footer ul li:nth-child(4),
+#footer ul li:nth-child(5),
+#footer ul li:nth-child(6) {
+  text-decoration: underline;
+}
+
+#footer ul {
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  font-size: 15px;
+
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+}
+
+#footer ul li {
+  cursor: pointer;
+}
+
+#footer span {
+  font-weight: 800;
+}
+
+.fot_bottom {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.reserved {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+
+/* 작은 화면에서는 각 항목을 한 줄에 배치 */
+@media (max-width: 768px) {
+  .form-item {
+    width: 100%; /* 작은 화면에서는 모든 항목이 세로로 배치되도록 설정 */
+  }
 }
