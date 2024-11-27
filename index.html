@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>새로움성형외과</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <div id="header">
+      <ul>
+        <li>
+          <h1>
+            <a href="index.html"
+              ><img class="header_logo" src="img/logo.png"
+            /></a>
+          </h1>
+        </li>
+        <li>병원소개</li>
+        <li>의료진 소개</li>
+        <li>이벤트</li>
+        <li>고객후기</li>
+        <li>예약상담</li>
+        <li><i class="fa-solid fa-bars"></i></li>
+      </ul>
+    </div>
+    <div id="visual">
+      <h2>새롭게 예뻐지고 싶다면?</h2>
+      <div class="main">
+        <img src="img/home_main.bubble3.png" />
+        <img src="img/home_bubble.png" />
+        <img src="img/home_main.bubble2.png" />
+        <img src="img/home_main.bubble1.png" />
+        <h3 class="event">이벤트 특가</h3>
+        <h3 class="seemore">자세히 보기</h3>
+      </div>
+    </div>
+    <div id="container">
+      <section class="con1">
+        <ul>
+          <li>
+            <img src="img/tab_rom.png" />
+            <div>전체</div>
+            <img class="point point1" src="img/point.png" />
+          </li>
+          <li>
+            <img src="img/eye.png" />
+            <div>눈</div>
+            <img class="point point2" src="img/point.png" />
+          </li>
+          <li>
+            <img src="img/nose.png" />
+            <div>코</div>
+            <img class="point point3" src="img/point.png" />
+          </li>
+          <li>
+            <img src="img/face.png" />
+            <div>윤곽</div>
+            <img class="point point4" src="img/point.png" />
+          </li>
+          <li>
+            <img src="img/boob.png" />
+            <div>가슴</div>
+            <img class="point point5" src="img/point.png" />
+          </li>
+          <li>
+            <img src="img/man.png" />
+            <div>남자</div>
+            <img class="point point6" src="img/point.png" />
+          </li>
+          <li>
+            <img src="img/bady.png" />
+            <div>체형</div>
+            <img class="point point7" src="img/point.png" />
+          </li>
+        </ul>
+      </section>
+      <section class="con2">
+        <ul class="selfie">
+          <li>
+            <h2>ROM SELFIES.</h2>
+            <div>새로움 셀피.</div>
+          </li>
+          <li>
+            <ul class="view">
+              <li>view more +</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/selfi_1.jpg" /></div>
+            <div class="swiper-slide"><img src="img/selfi_2.jpg" /></div>
+            <div class="swiper-slide"><img src="img/selfi_3.jpg" /></div>
+            <div class="swiper-slide"><img src="img/selfi_4.jpg" /></div>
+            <div class="swiper-slide"><img src="img/selfi_5.jpg" /></div>
+            <div class="swiper-slide"><img src="img/selfi_6.jpg" /></div>
+            <div class="swiper-slide"><img src="img/selfi_7.jpg" /></div>
+            <div class="swiper-slide"><img src="img/selfi_8.jpg" /></div>
+            <div class="swiper-slide"><img src="img/selfi_9.jpg" /></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+    </div>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        centeredSlides: true,
+        spaceBetween: 30,
+        grabCursor: true,
+
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>

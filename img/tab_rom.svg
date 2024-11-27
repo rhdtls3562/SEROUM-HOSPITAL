@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 80">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        mask: url(#mask);
+      }
+
+      .cls-2 {
+        font-family: Bauhaus93, 'Bauhaus 93';
+        font-size: 19.01px;
+        letter-spacing: -.03em;
+      }
+
+      .cls-4 {
+        fill: #686868;
+      }
+
+      .cls-5 {
+        fill: #ffd8ec;
+      }
+    </style>
+    <mask id="mask" x="0" y="0" width="80" height="80" maskUnits="userSpaceOnUse">
+      <g id="mask0_287_18496">
+        <path id="Rectangle_18" class="cls-4" d="M40,0h0c22.09,0,40,17.91,40,40h0c0,22.09-17.91,40-40,40h0C17.91,80,0,62.09,0,40h0C0,17.91,17.91,0,40,0Z"/>
+      </g>
+    </mask>
+  </defs>
+  <g id="Mask_group">
+    <g class="cls-3">
+      <g>
+        <rect id="Rectangle_19" class="cls-5" width="80" height="80"/>
+        <g id="Group">
+          <path id="Vector" class="cls-1" d="M40,11c-15.99,0-29,13.01-29,29s13.01,29,29,29,29-13.01,29-29-13.01-29-29-29ZM40,66.59c-14.67,0-26.6-11.93-26.6-26.6s11.93-26.59,26.6-26.59,26.6,11.93,26.6,26.6-11.93,26.6-26.6,26.6h0Z"/>
+          <text class="cls-2" transform="translate(23.24 44.37) scale(1.14 1)"><tspan x="0" y="0">rom</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
