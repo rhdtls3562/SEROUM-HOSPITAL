@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>새로움성형외과</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link
@@ -55,8 +57,6 @@
         <img src="img/home_bubble.png" />
         <img src="img/home_main.bubble2.png" />
         <img src="img/home_main.bubble1.png" />
-        <h3 class="event">이벤트 특가</h3>
-        <h3 class="seemore">자세히 보기</h3>
       </div>
     </div>
     <div id="container">
@@ -107,7 +107,7 @@
           </li>
           <li>
             <ul class="view">
-              <li>view more +</li>
+              <li><span>view more +</span></li>
             </ul>
           </li>
         </ul>
@@ -187,14 +187,17 @@
       <section class="con3">
         <div>REAL REVIEW</div>
         <h5>고객의 이야기에 온전히 귀 기울이겠습니다.</h5>
-        <img src="img/riview.jpg" />
-        <img src="img/riview.jpg" />
+        <div class="slide_img">
+          <div class="top"></div>
+          <div class="bottom"></div>
+        </div>
+
         <div class="reservation">예약 및 상담문의</div>
       </section>
       <section class="con4">
         <h2>성형 후기</h2>
         <p>새로움성형외과와 함께한 분들의 솔직한 이야기를 확인해 보세요.</p>
-        <div class="reservation">성형 후기 자세히 보기</div>
+        <div class="reservation_2">성형 후기 자세히 보기</div>
       </section>
       <section class="con5">
         <h2>ROUM<br />BEAUTY</h2>
@@ -307,7 +310,7 @@
           <li><img src="img/ft_btn_sma.webp" /></li>
         </ul>
         <p class="reserved">
-          ⓒ 2022 Gangnam seoul bright eye clinic. all right reserved.
+          ⓒ 2022 Gangnam seoul rom hospital clinic. all right reserved.
         </p>
       </div>
     </div>
@@ -319,7 +322,7 @@
         slidesPerView: 4,
         centeredSlides: true,
         spaceBetween: 30,
-        grabCursor: true,
+        grabCursor: false,
 
         navigation: {
           nextEl: ".swiper-button-next",

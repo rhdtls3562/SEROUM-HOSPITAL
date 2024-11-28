@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth; /* 부드러운 스크롤 적용 */
+}
+
 body {
   font-family: "Noto Sans KR", sans-serif;
   margin: 0 !important;
@@ -19,7 +23,7 @@ body {
 }
 
 #header i {
-  font-size: 20px;
+  font-size: 30px;
   color: #402c64;
 }
 
@@ -36,7 +40,7 @@ body {
 
 .header_logo {
   width: 200px;
-  padding-bottom: 1vw;
+  padding-bottom: 0.5vw;
   box-sizing: border-box;
 }
 
@@ -77,11 +81,28 @@ body {
   top: 20%;
   color: #fff;
   text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 70%); /* 화면 아래로 이동 */
+  opacity: 0; /* 숨김 */
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+#visual h2.show {
+  transform: translate(-50%, -50%); /* 원래 위치로 복원 */
+  opacity: 1; /* 보이게 설정 */
+}
+
+.main img {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9); /* 시작 상태 */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.main img.appear {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1); /* 애니메이션 끝 상태 */
 }
 
 .main img:nth-child(1) {
-  transform: translate(-50%, -50%);
   position: absolute;
   top: 35%;
   left: 30vw;
@@ -90,7 +111,6 @@ body {
 }
 
 .main img:nth-child(2) {
-  transform: translate(-50%, -50%);
   position: absolute;
   top: 53%;
   left: 27%;
@@ -99,7 +119,6 @@ body {
 }
 
 .main img:nth-child(3) {
-  transform: translate(-50%, -50%);
   position: absolute;
   top: 48%;
   right: 18%;
@@ -108,36 +127,11 @@ body {
 }
 
 .main img:nth-child(4) {
-  transform: translate(-50%, -50%);
   position: absolute;
   bottom: 25%;
   right: 12%;
   width: 17vw;
   min-width: 200px;
-}
-
-.event {
-  cursor: pointer;
-  font-weight: 500;
-  letter-spacing: -1px;
-  color: #7e5dba;
-  font-size: 1.7vw;
-  position: absolute;
-  bottom: 5.8vw;
-  left: 40vw;
-  transform: translate(-50%, -50%);
-}
-
-.seemore {
-  cursor: pointer;
-  font-weight: 500;
-  letter-spacing: -1px;
-  color: #ba5da3;
-  font-size: 1.7vw;
-  position: absolute;
-  bottom: 5.8vw;
-  right: 31.5vw;
-  transform: translate(-50%, -50%);
 }
 
 /*con1*/
@@ -167,20 +161,25 @@ body {
   text-align: center;
 }
 
+.con1 ul li:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
 .con1 ul li div {
   font-size: 1vw;
   text-align: center;
 }
 
 .point {
-  display: none;
-  margin-top: 0.5vw;
+  display: none; /* 기본적으로 모든 .point는 숨겨짐 */
+  margin-top: 0.4vw;
   left: 10%;
   position: absolute;
 }
 
 .point1 {
-  display: block;
+  display: block; /* 기본적으로 point1만 보이게 설정 */
 }
 
 /*con2*/
@@ -218,7 +217,8 @@ body {
   justify-content: center;
 }
 
-.view li:nth-child(1) {
+.view li {
+  position: relative; /* 부모 요소로서 상대 위치 */
   border: 1.5px solid #222;
   padding: 0.5vw 2vw;
   line-height: 1.5vw;
@@ -226,6 +226,35 @@ body {
   font-size: 1vw;
   font-weight: 800;
   cursor: pointer;
+  overflow: hidden; /* 가상 요소가 벗어나지 않도록 */
+  color: #222; /* 기본 글자 색상 */
+  background: none;
+  transition: color 0.5s ease-in-out; /* 글자 색상 변경 효과 */
+}
+
+.view li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* 초기 위치 */
+  width: 100%;
+  height: 100%;
+  background: #222; /* 배경색 */
+  z-index: 1; /* 글자 아래 배경 위 */
+  transition: left 0.5s ease-in-out; /* 부드러운 이동 */
+}
+
+.view li span {
+  position: relative; /* 텍스트를 위로 */
+  z-index: 2; /* 글자를 항상 가상 요소 위로 */
+}
+
+.view li:hover {
+  color: #fff; /* 호버 시 글자 색상 변경 */
+}
+
+.view li:hover::before {
+  left: 0; /* 배경이 오른쪽에서 왼쪽으로 이동 */
 }
 
 .swiper-button-next {
@@ -329,11 +358,13 @@ body {
   bottom: 1vw;
   left: 1vw;
   color: #f0f0f0;
+  animation: type 1.5s steps(90) 1.5s 1 normal both, cursor 1s step-end infinite;
 }
 
 /*con3*/
 
 .con3 {
+  position: relative;
   text-align: center;
   width: 100%;
   height: 100vh;
@@ -341,7 +372,7 @@ body {
 
 .con3 div:first-child {
   font-family: "Black Han Sans", sans-serif;
-  padding-top: 5vw;
+  padding-top: 3vw;
   padding-bottom: 1vw;
   font-size: 20px;
   font-weight: 100;
@@ -351,26 +382,62 @@ body {
 .con3 h5 {
   font-weight: 300;
   font-size: 20px;
-  padding-bottom: 2vw;
+  padding-bottom: 1vw;
 }
 
-.con3 img {
-  width: 200%;
+/* 슬라이드 전체 컨테이너 */
+.slide_img {
+  position: relative;
+  width: 100%;
+  height: 200px; /* 원하는 슬라이더 높이 */
+}
+
+/* top 이미지를 왼쪽으로 슬라이드 */
+.top {
+  align-items: flex-end;
+  justify-content: flex-start;
+  position: absolute;
+  background-image: url(../img/riview.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: repeat-x;
+}
+
+.bottom {
+  align-items: flex-end;
+  justify-content: flex-start;
+  top: 100%;
+  position: absolute;
+  background-image: url(../img/riview.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: repeat-x;
 }
 
 .reservation {
-  margin-top: 3vw;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: 4vw;
   color: #fff;
   cursor: pointer;
   padding: 0.8vw 2vw;
   border-radius: 2vw;
   display: inline-block;
   background-color: #222;
+  transition: all 0.3s ease; /* 애니메이션 효과 추가 */
+}
+
+.reservation:hover {
+  transform: translate(-50%, -50%) scale(1.1); /* 호버 시 크기 확대 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
 }
 
 /*con4*/
 
 .con4 {
+  position: relative;
   background-image: linear-gradient(
       to top,
       rgba(160, 208, 224, 0.7),
@@ -390,15 +457,36 @@ body {
 }
 
 .con4 h2 {
+  padding-bottom: 2vw;
+  box-sizing: border-box;
   font-size: 25px;
   font-weight: 700;
 }
 
 .con4 p {
+  padding-bottom: 5vw;
   cursor: pointer;
   font-size: 20px;
   box-sizing: border-box;
-  padding-top: 2vw;
+}
+
+.reservation_2 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 4vw;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.8vw 2vw;
+  border-radius: 2vw;
+  display: inline-block;
+  background-color: #222;
+  transition: all 0.3s ease; /* 애니메이션 효과 추가 */
+}
+
+.reservation_2:hover {
+  transform: translate(-50%, -50%) scale(1.1); /* 호버 시 크기 확대 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
 }
 
 /*con5*/
@@ -417,15 +505,11 @@ body {
   font-weight: 700;
   line-height: 18vw;
   text-transform: uppercase; /* 대문자 변환 */
-  background: linear-gradient(
-    to right,
-    #ffd1e9,
-    lightblue
-  ); /* 그라데이션 색상 */
-  -webkit-background-clip: text;
-  /* 배경을 글자로 클리핑 */
-  -webkit-text-fill-color: transparent; /* 글자 내부 투명 처리 */
+  background: url("../img/text_back.gif") no-repeat;
   background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: moveBg 90s linear infinite;
 }
 
 /*con6*/
