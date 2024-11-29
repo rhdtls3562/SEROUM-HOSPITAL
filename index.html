@@ -6,6 +6,7 @@
     <title>새로움성형외과</title>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
+
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link
@@ -102,7 +103,7 @@
       <section class="con2">
         <ul class="selfie">
           <li>
-            <h2>ROM SELFIES.</h2>
+            <h2 data-splitting>ROM SELFIES.</h2>
             <div>새로움 셀피.</div>
           </li>
           <li>
@@ -316,6 +317,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.css"></script>
 
     <script>
       var swiper = new Swiper(".mySwiper", {
@@ -328,6 +331,27 @@
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+      });
+      $(document).ready(function () {
+        // Splitting.js 초기화
+        Splitting();
+
+        // .con2 섹션 애니메이션 실행 여부를 추적
+        let isAnimated = false;
+
+        // 스크롤 이벤트 등록
+        $(window).on("scroll", function () {
+          const target = $(".con2");
+          const windowHeight = $(window).height(); // 브라우저 뷰포트 높이
+          const scrollTop = $(window).scrollTop(); // 현재 스크롤 위치
+          const targetTop = target.offset().top; // .con2의 위치
+
+          // .con2가 뷰포트에 들어오고, 애니메이션이 실행되지 않은 경우 실행
+          if (!isAnimated && scrollTop + windowHeight > targetTop) {
+            target.find("h2").addClass("animate"); // 애니메이션 클래스 추가
+            isAnimated = true; // 애니메이션이 실행되었음을 표시
+          }
+        });
       });
     </script>
   </body>

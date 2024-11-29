@@ -203,6 +203,36 @@ body {
   letter-spacing: -1px;
   font-weight: 900;
 }
+/* 기본 상태 */
+.con2 h2 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* 애니메이션 실행 상태 */
+.con2 h2.animate span {
+  animation: bounceIn 0.6s ease-out forwards;
+}
+
+.con2 h2.animate span:nth-child(n) {
+  animation-delay: calc(0.1s * var(--char-index));
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .selfie li div {
   font-size: 1.5vw;
@@ -249,12 +279,12 @@ body {
   z-index: 2; /* 글자를 항상 가상 요소 위로 */
 }
 
-.view li:hover {
-  color: #fff; /* 호버 시 글자 색상 변경 */
+.view li.hovered::before {
+  left: 0; /* 배경이 왼쪽으로 이동 */
 }
 
-.view li:hover::before {
-  left: 0; /* 배경이 오른쪽에서 왼쪽으로 이동 */
+.view li.hovered {
+  color: #fff; /* 텍스트 색상 변경 */
 }
 
 .swiper-button-next {
@@ -385,11 +415,30 @@ body {
   padding-bottom: 1vw;
 }
 
+.con3 div:first-child,
+.con3 h5 {
+  transform: translateY(100px); /* 아래로 이동 */
+  opacity: 0; /* 숨김 상태 */
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out; /* 애니메이션 효과 */
+}
+
+.con3.visible div:first-child {
+  transition-delay: 0.5s; /* 첫 번째 요소는 즉시 나타남 */
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.con3.visible h5 {
+  transition-delay: 1s; /* 두 번째 요소는 0.5초 후 나타남 */
+  transform: translateY(0);
+  opacity: 1;
+}
+
 /* 슬라이드 전체 컨테이너 */
 .slide_img {
   position: relative;
   width: 100%;
-  height: 200px; /* 원하는 슬라이더 높이 */
+  height: 15vw; /* 원하는 슬라이더 높이 */
 }
 
 /* top 이미지를 왼쪽으로 슬라이드 */
@@ -419,18 +468,19 @@ body {
 .reservation {
   position: absolute;
   transform: translate(-50%, -50%);
-  bottom: 4vw;
+  bottom: 2vw;
   color: #fff;
   cursor: pointer;
   padding: 0.8vw 2vw;
   border-radius: 2vw;
   display: inline-block;
   background-color: #222;
-  transition: all 0.3s ease; /* 애니메이션 효과 추가 */
+  transition: all 0.3s ease;
 }
 
+.reservation.hovered, /* hover 상태와 동일한 효과 */
 .reservation:hover {
-  transform: translate(-50%, -50%) scale(1.1); /* 호버 시 크기 확대 */
+  transform: translate(-50%, -50%) scale(1.1); /* 크기 확대 */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
 }
 
@@ -468,6 +518,32 @@ body {
   cursor: pointer;
   font-size: 20px;
   box-sizing: border-box;
+}
+
+/* 기본 상태에서 h2와 p는 투명하고 아래로 내려와 있음 */
+/* .con4 h2와 .con4 p 초기 상태 */
+/* .con4 내의 h2와 p 기본 상태 (애니메이션 전) */
+.con4 h2,
+.con4 p {
+  opacity: 0;
+  transform: translateY(20px); /* 아래에서 위로 올라오는 효과 */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* 부드러운 애니메이션 */
+}
+
+/* .showElement 클래스가 추가되면 글자가 나타나는 상태 */
+.con4 h2.showElement,
+.con4 p.showElement {
+  opacity: 1;
+  transform: translateY(0); /* 원래 위치로 돌아오기 (위로 올라오는 효과) */
+}
+
+/* 순차적으로 나타나도록 텀을 두기 위한 딜레이 설정 */
+.con4 h2.showElement {
+  transition-delay: 0.5s; /* h2는 바로 나타남 */
+}
+
+.con4 p.showElement {
+  transition-delay: 1s; /* p는 0.5초 후에 나타남 */
 }
 
 .reservation_2 {
@@ -645,7 +721,7 @@ label {
 .gradient-button {
   position: absolute;
   display: inline-block;
-  padding: 1vw 3vw;
+  padding: 0.8vw 3vw;
   font-size: 1vw;
   text-wrap: nowrap;
   font-weight: bold;
@@ -661,6 +737,7 @@ label {
 }
 
 .gradient-button:hover {
+  transition: 0.5s;
   transform: translateY(-3px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
@@ -668,6 +745,52 @@ label {
 .gradient-button:active {
   transform: translateY(0);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.con6_wrap h2,
+.con6_wrap2,
+.form-list,
+.form-item,
+input[type="text"],
+input[type="email"],
+select,
+textarea,
+label,
+.how_to_come h2,
+.how_to_come p,
+.how_to_come h5,
+.con6 h3,
+.day,
+.day_day h3,
+.time h3,
+.gradient-button,
+.come {
+  opacity: 0;
+  transform: translateY(20px); /* 아래에서 위로 올라오는 효과 */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* 부드러운 애니메이션 */
+}
+
+/* .fadeInUp 클래스가 추가되면 글자가 나타나는 상태 */
+.con6_wrap h2.fadeInUp,
+.con6_wrap2.fadeInUp,
+.form-list.fadeInUp,
+.form-item.fadeInUp,
+input[type="text"].fadeInUp,
+input[type="email"].fadeInUp,
+select.fadeInUp,
+textarea.fadeInUp,
+label.fadeInUp,
+.how_to_come h2.fadeInUp,
+.how_to_come p.fadeInUp,
+.how_to_come h5.fadeInUp,
+.con6 h3.fadeInUp,
+.day.fadeInUp,
+.day_day h3.fadeInUp,
+.time h3.fadeInUp,
+.gradient-button.fadeInUp,
+.come.fadeInUp {
+  opacity: 1;
+  transform: translateY(0); /* 원래 위치로 돌아오기 */
 }
 
 /*footer*/
