@@ -2499,13 +2499,13 @@
   /* 각 항목 크기 설정 */
   .form-item {
     width: 45%; /* 각 항목이 한 줄에 2개씩 배치되도록 설정 */
-    margin: 1vw 2.5%; /* 항목 간 간격 조정 */
+    box-sizing: border-box;
+    margin-bottom: 10px; /* 항목 간 간격 줄임 */
   }
 
   /* 문의사항을 포함한 항목 크기 설정 (100%로 설정하여 폼 전체 크기 맞추기) */
   .form-item.full-width {
     width: 100%; /* 문의사항 필드는 전체 너비로 확장 */
-    margin: 1vw 0; /* 위아래 간격 추가 */
   }
 
   /* 입력 필드 크기 조정 */
@@ -2514,8 +2514,7 @@
   select,
   textarea {
     width: 100%; /* 입력창을 부모 요소 크기에 맞게 설정 */
-    padding: 15px; /* 입력 필드 안쪽 여백을 넓힘 */
-    margin-top: 5px;
+    padding: 2vw; /* 입력 필드 안쪽 여백을 넓힘 */
     border: 1px solid #ddd;
     box-sizing: border-box; /* padding 포함해서 크기 계산 */
     font-size: 0.8vw; /* 글자 크기 확장 */
@@ -2526,15 +2525,16 @@
   textarea {
     resize: vertical; /* 세로로 크기 조정 가능 */
     font-size: 1vw; /* 글씨 크기 조정 */
-    height: 10vw; /* 기본 높이를 더 크게 설정 */
     width: 100%; /* 문의사항 폭을 부모의 크기에 맞게 100%로 설정 */
+    margin-top: 5px; /* 위쪽 여백을 줄여서 간격을 좁힘 */
   }
 
   /* 입력 필드와 라벨 스타일 */
   label {
     font-size: 2vw; /* 라벨 글씨 크기 확장 */
     display: block; /* 라벨을 입력 필드 위로 배치 */
-    text-align: left; /* 라벨을 중앙 정렬 */
+    text-align: left; /* 라벨을 왼쪽 정렬 */
+    margin-bottom: 5px; /* 라벨과 입력 필드 간 간격 줄임 */
   }
 
   .how_to_come {
@@ -2592,10 +2592,11 @@
   }
 
   .gradient-button {
+    top: 80%;
     position: absolute;
     display: inline-block;
     padding: 1.5vw 3vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
     text-wrap: nowrap;
     font-weight: bold;
     color: white;
@@ -2604,7 +2605,7 @@
     border: none;
     border-radius: 30px;
     background: linear-gradient(45deg, #a1c4fd, #c2e9fb, #d4bfff);
-    left: 77%;
+    left: 43vw;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
   }
