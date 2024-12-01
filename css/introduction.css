@@ -1,4 +1,5 @@
 body {
+  overflow: hidden;
   font-family: "Noto Sans KR", sans-serif;
   margin: 0 !important;
   padding: 0 !important;
@@ -82,14 +83,14 @@ body {
     z-index: 0;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
   }
 
   .model {
     z-index: 1;
     position: absolute;
-    left: 50%;
+    left: 51%;
     top: 65%;
     transform: translate(-50%, -50%);
   }
@@ -101,12 +102,211 @@ body {
   }
 
   #visual h2 {
-    word-spacing: 10vw;
-    font-size: 5vw;
+    color: #fff;
+    font-family: "Black Han Sans", sans-serif;
+    font-size: clamp(70px, 5.3vw, 90px);
+    word-spacing: 20vw;
     height: 100vh;
+    margin-top: -10vw;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
+    text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  .why {
+    padding-left: 15vw;
+    margin-top: -15vw;
+    box-sizing: border-box;
+    color: #795bb0;
+    font-size: 3vw;
+    font-family: "Mr Dafoe", cursive;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    align-items: center;
+  }
+
+  .different {
+    padding-right: 12vw;
+    margin-top: 3vw;
+    box-sizing: border-box;
+    color: #795bb0;
+    font-size: 2.5vw;
+    font-family: "Mr Dafoe", cursive;
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    align-items: center;
+  }
+
+  /*container / con1*/
+
+  #container {
+    width: 100%;
+  }
+
+  .con1 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .con1 h2 {
+    background: linear-gradient(
+      to right,
+      #ffe3cb,
+      #ff6969
+    ); /* 밝은 살구색 -> 진한 살구색 */
+    -webkit-background-clip: text; /* 배경을 글자로 클리핑 */
+    -webkit-text-fill-color: transparent; /* 텍스트를 투명하게 */
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    word-spacing: 10vw;
+    font-weight: 700;
+    font-size: 13vw;
+    z-index: 999;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .con1 p {
+    font-size: 1vw;
+    color: #222;
+    width: 40%;
+    z-index: 999;
+    position: absolute;
+    left: 70%;
+    top: 70%;
+    text-align: justify;
+    transform: translate(-50%, -50%);
+  }
+
+  .con1 video {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+    width: 50%;
+    filter: brightness(0.7); /* 비디오 밝기를 50%로 낮춰 어두운 효과 적용 */
+  }
+
+  /*con2*/
+
+  .con2 {
+    width: 100%;
+  }
+  .con2 ul {
+    padding: 2vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  .con2 ul li {
+    width: 50%;
+  }
+
+  .con2 .con2_ul1 li:nth-child(2) {
+    background-color: #222;
+    color: #fff;
+    width: 10vw;
+    height: 3vw;
+    font: 2vw;
+    text-align: center;
+    line-height: 3vw;
+    border-radius: 2vw;
+    cursor: pointer;
+  }
+
+  .con2 span {
+    font-weight: bold;
+  }
+
+  .con2 h5 {
+    font-size: 1vw;
+  }
+
+  /*con3*/
+
+  .con3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con3 span {
+    font-weight: bold;
+  }
+
+  .con3_ul1 h3 {
+    line-height: 2vw;
+    width: 40%;
+    font-size: 1vw;
+  }
+
+  .con3_ul2 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .con3_ul2 li {
+    font-size: 1vw;
+    width: 25%;
+    padding: 9vw 3vw;
+    text-align: center;
+    border: 2px solid #aaa;
+    background-color: #fff6f6;
+    box-sizing: border-box;
+    border-left: none; /* 왼쪽 경계선 제거 
+    */
+  }
+
+  .con3_ul2 li:nth-child(4) {
+    padding-top: 5vw;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .con3_ul2 li:nth-child(2) {
+    background-color: #544e69;
+    color: #fff;
+  }
+
+  .con3_ul3 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .con3_ul3 li {
+    font-size: 1vw;
+    background-color: #fff6f6;
+    width: 25%;
+    padding: 9vw 3vw;
+    text-align: center;
+    border: 2px solid #aaa;
+    box-sizing: border-box;
+    border-left: none; /* 왼쪽 경계선 제거 
+    */
+    border-top: none; /* 위쪽 경계선 제거 (필요시) */
+  }
+
+  .con3_ul3 li:nth-child(1) {
+    padding-top: 5vw;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .con3_ul3 li:nth-child(3) {
+    padding-top: 5vw;
+    box-sizing: border-box;
+    text-align: left;
   }
 }
