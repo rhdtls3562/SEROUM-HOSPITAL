@@ -1,8 +1,5 @@
-html {
-  scroll-behavior: smooth; /* 부드러운 스크롤 적용 */
-}
-
 body {
+  overflow: hidden;
   font-family: "Noto Sans KR", sans-serif;
   margin: 0 !important;
   padding: 0 !important;
@@ -57,6 +54,35 @@ body {
     background-image: url(../img/main.jpg);
     width: 100%;
     height: 100vh;
+  }
+
+  .go-top {
+    z-index: 1000;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(34, 34, 34, 0.5); /* 투명도를 적용한 배경색 */
+    font-size: 2vw;
+    width: 4vw;
+    height: 4vw;
+    line-height: 4.1vw;
+    text-align: center;
+    border-radius: 50px; /* 버튼을 둥글게 */
+    display: none; /* 초기에는 숨김 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+  }
+
+  .go-top:hover {
+    background-color: #222; /* 호버 시 더 진한 색상 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강조 */
+    transform: translateY(-5px); /* 호버 시 살짝 위로 올라가는 애니메이션 */
   }
 
   .main {
@@ -914,6 +940,35 @@ body {
     background-image: url(../img/main.jpg);
     width: 100%;
     height: 100%;
+  }
+
+  .go-top {
+    z-index: 1000;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(34, 34, 34, 0.5); /* 투명도를 적용한 배경색 */
+    font-size: 2vw;
+    width: 4vw;
+    height: 4vw;
+    line-height: 4.1vw;
+    text-align: center;
+    border-radius: 50px; /* 버튼을 둥글게 */
+    display: none; /* 초기에는 숨김 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+  }
+
+  .go-top:hover {
+    background-color: #222; /* 호버 시 더 진한 색상 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강조 */
+    transform: translateY(-5px); /* 호버 시 살짝 위로 올라가는 애니메이션 */
   }
 
   .main {
@@ -1793,6 +1848,35 @@ body {
     display: block;
     background-image: url(../img/main.jpg);
     width: 100%;
+  }
+
+  .go-top {
+    z-index: 1000;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(34, 34, 34, 0.5); /* 투명도를 적용한 배경색 */
+    font-size: 3vw;
+    width: 7vw;
+    height: 7vw;
+    line-height: 7vw;
+    text-align: center;
+    border-radius: 50px; /* 버튼을 둥글게 */
+    display: none; /* 초기에는 숨김 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+  }
+
+  .go-top:hover {
+    background-color: #222; /* 호버 시 더 진한 색상 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강조 */
+    transform: translateY(-5px); /* 호버 시 살짝 위로 올라가는 애니메이션 */
   }
 
   .main {

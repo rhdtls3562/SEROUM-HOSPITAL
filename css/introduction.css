@@ -1,0 +1,86 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 1200px) {
+  /*header*/
+
+  #header {
+    position: absolute;
+    z-index: 999;
+    padding: 0vw 1.5vw;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  #header i {
+    font-size: 30px;
+    color: #402c64;
+  }
+
+  #header ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #header ul li {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .header_logo {
+    width: 200px;
+    padding-bottom: 0.5vw;
+    box-sizing: border-box;
+  }
+
+  /*visual*/
+
+  #visual {
+    overflow: hidden;
+    z-index: -1;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    background-image: url(../img/main.jpg);
+    width: 100%;
+    height: 100vh;
+  }
+
+  .go-top {
+    z-index: 1000;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(34, 34, 34, 0.5); /* 투명도를 적용한 배경색 */
+    font-size: 2vw;
+    width: 4vw;
+    height: 4vw;
+    line-height: 4.1vw;
+    text-align: center;
+    border-radius: 50px; /* 버튼을 둥글게 */
+    display: none; /* 초기에는 숨김 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+  }
+
+  .go-top:hover {
+    background-color: #222; /* 호버 시 더 진한 색상 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강조 */
+    transform: translateY(-5px); /* 호버 시 살짝 위로 올라가는 애니메이션 */
+  }
+}
