@@ -1754,7 +1754,7 @@ body {
   }
 
   #header i {
-    font-size: 30px;
+    font-size: 4vw;
     color: #402c64;
   }
 
@@ -2333,7 +2333,7 @@ body {
 
   .con5 {
     width: 100%;
-    height: 30rem;
+    height: 25rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2356,10 +2356,12 @@ body {
 
   .con6 {
     width: 100%;
-    height: 100vh;
+    height: 45rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
     background: linear-gradient(
       to bottom,
       #ffffff 0%,
@@ -2369,13 +2371,12 @@ body {
   }
 
   .con6_wrap {
-    width: 100%;
     display: flex;
     justify-content: space-around;
   }
 
   .con6_wrap h2 {
-    font-size: 2vw;
+    font-size: 3vw;
     font-weight: 700;
     color: #222;
     margin-bottom: 2vw;
@@ -2390,22 +2391,23 @@ body {
   .form-list {
     position: relative;
     display: flex; /* 수평으로 나열 */
-    justify-content: center; /* 항목을 양옆으로 배치 */
-    margin-bottom: 20px; /* 각 줄 간 간격 */
-    padding: 0;
-    list-style-type: none;
+    justify-content: center; /* 중앙 정렬 */
     flex-wrap: wrap; /* 화면 크기에 맞게 줄 바꿈 */
+    margin: 0 auto; /* 폼 전체를 가운데 정렬 */
+    padding: 0 10vw; /* 양옆 여백 추가 */
+    list-style-type: none;
   }
 
   /* 각 항목 크기 설정 */
   .form-item {
-    width: 55%; /* 각 항목이 한 줄에 2개씩 배치되도록 설정 (더 넓게 조정) */
-    margin-bottom: 2vw; /* 항목 간 간격 */
+    width: 45%; /* 각 항목이 한 줄에 2개씩 배치되도록 설정 */
+    margin: 1vw 2.5%; /* 항목 간 간격 조정 */
   }
 
   /* 문의사항을 포함한 항목 크기 설정 (100%로 설정하여 폼 전체 크기 맞추기) */
   .form-item.full-width {
     width: 100%; /* 문의사항 필드는 전체 너비로 확장 */
+    margin: 1vw 0; /* 위아래 간격 추가 */
   }
 
   /* 입력 필드 크기 조정 */
@@ -2413,12 +2415,13 @@ body {
   input[type="email"],
   select,
   textarea {
-    width: 20vw; /* 입력창을 부모 요소 크기에 맞게 설정 */
+    width: 100%; /* 입력창을 부모 요소 크기에 맞게 설정 */
     padding: 15px; /* 입력 필드 안쪽 여백을 넓힘 */
     margin-top: 5px;
     border: 1px solid #ddd;
     box-sizing: border-box; /* padding 포함해서 크기 계산 */
     font-size: 0.8vw; /* 글자 크기 확장 */
+    text-align: left; /* 텍스트를 왼쪽 정렬 */
   }
 
   /* 문의사항 textarea에 대한 스타일 */
@@ -2426,15 +2429,18 @@ body {
     resize: vertical; /* 세로로 크기 조정 가능 */
     font-size: 1vw; /* 글씨 크기 조정 */
     height: 10vw; /* 기본 높이를 더 크게 설정 */
-    width: 102%; /* 문의사항 폭을 부모의 크기에 맞게 100%로 설정 */
+    width: 100%; /* 문의사항 폭을 부모의 크기에 맞게 100%로 설정 */
   }
 
   /* 입력 필드와 라벨 스타일 */
   label {
-    font-size: 1.5vw; /* 라벨 글씨 크기 확장 */
+    font-size: 2vw; /* 라벨 글씨 크기 확장 */
+    display: block; /* 라벨을 입력 필드 위로 배치 */
+    text-align: left; /* 라벨을 중앙 정렬 */
   }
 
   .how_to_come {
+    display: none;
     margin-bottom: 9vw;
   }
 
@@ -2468,14 +2474,19 @@ body {
   }
 
   .day {
+    display: none;
     color: #555;
     display: flex;
     justify-content: center;
     gap: 4vw;
   }
 
-  .day_day h3 {
-    font-weight: 600;
+  .day_day {
+    display: none;
+  }
+
+  .time {
+    display: none;
   }
 
   .time h3 {
@@ -2560,11 +2571,11 @@ body {
   /*footer*/
 
   #footer {
+    height: 25rem;
     position: relative;
     text-align: center;
     color: #fff;
     width: 100%;
-    height: 100vh;
     background: linear-gradient(to bottom, #ffd1e9, #80a5e0);
   }
 
@@ -2578,8 +2589,12 @@ body {
     opacity: 0.3;
   }
 
+  #footer p {
+    font-size: 1vw;
+  }
+
   .fot_logo {
-    width: 10%;
+    width: 20%;
     filter: grayscale(100%) brightness(1000%);
   }
 
@@ -2595,11 +2610,11 @@ body {
   #footer ul {
     padding-top: 2vw;
     padding-bottom: 2vw;
-    font-size: 15px;
+    font-size: 1.5vw;
 
     display: flex;
     justify-content: center;
-    gap: 2vw;
+    gap: 3vw;
   }
 
   #footer ul li {
@@ -2617,8 +2632,16 @@ body {
     transform: translate(-50%, -50%);
   }
 
+  .fot_bottom img {
+    width: 4vw;
+  }
+
+  .fot_img img {
+    margin: auto;
+    width: 3vw;
+  }
+
   .reserved {
-    font-size: 1.5vw;
     position: absolute;
     bottom: 8%;
     left: 50%;
