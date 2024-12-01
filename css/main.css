@@ -1801,6 +1801,8 @@
 
 @media (max-width: 760px) {
   body {
+    width: 100%;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
     overflow: hidden;
     font-family: "Noto Sans KR", sans-serif;
     margin: 0 !important;
