@@ -212,53 +212,72 @@
         <h2>CHANGE<br />LIFEWORK</h2>
       </section>
       <section class="con6">
-        <h2>병원 수상이력 보기</h2>
+        <h2>병원 관련 논문 보기</h2>
         <div class="container2">
           <div
             class="slide"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1477764250597-dffe9f601ae8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80');
-            "
-          >
-            <h3>Tiger</h3>
-          </div>
+            style="background-image: url('img/hospital_prise1.jpg')"
+          ></div>
           <div
             class="slide"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1456926631375-92c8ce872def?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
-            "
-          >
-            <h3>Leopard</h3>
-          </div>
+            style="background-image: url('img/hospital_prise2.jpg')"
+          ></div>
           <div
             class="slide"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1470848051974-964b789cb6fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80');
-            "
-          >
-            <h3>Lion</h3>
-          </div>
+            style="background-image: url('img/hospital_prise3.jpg')"
+          ></div>
           <div
             class="slide"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1526289636136-bce3fd37f962?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80');
-            "
-          >
-            <h3>Snowleopard</h3>
-          </div>
+            style="background-image: url('img/hospital_prise4.jpg')"
+          ></div>
           <div
             class="slide"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1515970501993-dafc9f582f3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
-            "
-          >
-            <h3>Puma</h3>
-          </div>
+            style="background-image: url('img/hospital_prise5.jpg')"
+          ></div>
         </div>
+        <div class="seemore">더 보러 가기 +</div>
       </section>
     </div>
-    <div id="footer"></div>
+    <div id="footer">
+      <h2>Start a new life</h2>
+      <img class="fot_logo" src="img/logo.png" />
+      <ul>
+        <li>개인정보취급방침</li>
+        <li>이용약관</li>
+        <li>환자권리장전</li>
+        <li>서류발급</li>
+        <li>온라인서류발급</li>
+        <li>비급여수기표</li>
+      </ul>
+      <p>
+        서울특별시 강남대로 390 미진프라자 18층(역삼동825 미진프라자 18층) |
+        개인정보보호책임자:박형직 | 대표원장:박형직<br />사업자등록번호:<span
+          >213-91-01210</span
+        >
+        | TEL. <span>1588-3882</span> | FAX. <span>02-3456-7890</span>
+      </p>
+      <ul class="fot_img">
+        <li><img src="img/blog.webp" /></li>
+        <li><img src="img/ft_btn_facebook.webp" /></li>
+        <li><img src="img/ft_btn_insta.webp" /></li>
+        <li><img src="img/ft_btn_tiktok.webp" /></li>
+        <li><img src="img/ft_btn_ytube.webp" /></li>
+        <li><img src="img/ft_btn_post.webp" /></li>
+      </ul>
+      <ul class="fot_bottom">
+        <li><img src="img/ft_btn_kma.webp" /></li>
+        <li><img src="img/ft_btn_kos.webp" /></li>
+        <li><img src="img/ft_btn_kpbpa.webp" /></li>
+        <li><img src="img/ft_btn_sma.webp" /></li>
+      </ul>
+      <p class="reserved">
+        ⓒ 2022 Gangnam seoul rom hospital clinic. all right reserved.
+      </p>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {
@@ -278,6 +297,42 @@
           el: ".swiper-pagination",
           clickable: true,
         },
+      });
+      // GSAP과 ScrollTrigger 초기화
+      gsap.registerPlugin(ScrollTrigger);
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const section = document.querySelector(".con1");
+        const video = section.querySelector("video");
+        const h2 = section.querySelector("h2");
+
+        // 비디오 크기와 글자 간격 조정을 위한 ScrollTrigger 설정
+        gsap.to(video, {
+          scrollTrigger: {
+            trigger: section,
+            start: "top top", // 섹션이 상단에 오면 애니메이션 시작
+            end: "bottom top", // 섹션이 끝날 때 애니메이션 종료
+            scrub: 1, // 스크롤과 애니메이션의 동기화 속도 조절 (1초간 동기화)
+            pin: true, // 섹션을 고정시키기
+            markers: false, // 디버깅을 위한 마커 비활성화
+          },
+          scale: 1, // 초기 비디오 크기
+          width: "100%", // 비디오 width
+          height: "100vh", // 비디오 height
+          ease: "power2.inOut", // 부드러운 애니메이션
+        });
+
+        // 글자 간격 변화
+        gsap.to(h2, {
+          scrollTrigger: {
+            trigger: section,
+            start: "top top", // 섹션이 상단에 오면 애니메이션 시작
+            end: "bottom top", // 섹션이 끝날 때 애니메이션 종료
+            scrub: 1, // 스크롤에 맞춰 애니메이션을 진행
+          },
+          "word-spacing": "5vw", // 애니메이션 끝날 때의 간격
+          ease: "power2.inOut", // 부드러운 애니메이션
+        });
       });
     </script>
   </body>

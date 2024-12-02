@@ -1,11 +1,10 @@
-body {
-  overflow: hidden;
-  font-family: "Noto Sans KR", sans-serif !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
 @media (min-width: 1200px) {
+  body {
+    overflow: hidden;
+    font-family: "Noto Sans KR", sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
   /*header*/
 
   #header {
@@ -120,6 +119,45 @@ body {
       rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
 
+  /* 초기 상태: 모두 숨기고, 아래로 내려놓음 */
+  #visual h2,
+  .why,
+  .different {
+    opacity: 0;
+    transform: translateY(50px); /* 아래로 내려놓기 */
+    animation-duration: 1s; /* 애니메이션 시간 설정 */
+    animation-timing-function: ease-out; /* 애니메이션 속도 설정 */
+    animation-fill-mode: forwards; /* 애니메이션이 끝난 후에도 마지막 상태 유지 */
+  }
+
+  /* 각 요소에 애니메이션을 주고, 시간차를 두기 */
+  #visual h2 {
+    animation-name: fadeInUp; /* 애니메이션 이름 설정 */
+    animation-delay: 0s; /* 첫 번째 텍스트는 즉시 애니메이션 시작 */
+  }
+
+  .why {
+    animation-name: fadeInUp; /* 애니메이션 이름 설정 */
+    animation-delay: 0.5s; /* 0.5초 후에 애니메이션 시작 */
+  }
+
+  .different {
+    animation-name: fadeInUp; /* 애니메이션 이름 설정 */
+    animation-delay: 1s; /* 1초 후에 애니메이션 시작 */
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .why {
     padding-left: 15vw;
     margin-top: -15vw;
@@ -170,7 +208,7 @@ body {
     text-align: center;
     margin: auto;
     width: 100%;
-    word-spacing: 10vw;
+    word-spacing: 35vw;
     font-weight: 700;
     font-size: 13vw;
     z-index: 999;
@@ -184,7 +222,7 @@ body {
     font-size: 1vw;
     font-weight: 400;
     letter-spacing: -0.1vw;
-    color: #222;
+    color: #fff;
     width: 35%;
     z-index: 999;
     position: absolute;
@@ -196,13 +234,14 @@ body {
 
   .con1 video {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: auto;
-    width: 50%;
-    filter: brightness(0.7); /* 비디오 밝기를 50%로 낮춰 어두운 효과 적용 */
+    top: 50%;
+    left: 50%;
+    width: 30vw;
+    height: auto;
+    transform: translate(-50%, -50%) scale(1); /* 기본 크기 */
+    filter: brightness(0.7);
+    object-fit: cover; /* 비디오 비율을 유지하면서 화면 꽉 채우기 */
+    transition: transform 0.3s ease; /* 부드러운 확대 효과 */
   }
 
   /*con2*/
@@ -590,6 +629,12 @@ body {
     box-sizing: border-box;
     width: 100%;
     height: 100vh;
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #ffffff 50%,
+      #ffd1e9 100%
+    ); /* 그라데이션 배경 추가 */
   }
 
   .container2 {
@@ -617,6 +662,9 @@ body {
     background-repeat: no-repeat;
     position: relative;
     transition: all 0.7s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
   }
 
   .slide h3 {
@@ -644,44 +692,1682 @@ body {
     flex: 1; /* 닫혔을 때 크기를 줄임 */
   }
 
-  .slide.active h3 {
-    opacity: 1;
-    transition: opacity 0.3s ease-in 0.4s;
+  .seemore {
+    cursor: pointer;
+    margin: 2vw auto;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    width: 10vw;
+    height: 3vw;
+    line-height: 3vw;
+    border-radius: 1.5vw;
   }
 
-  @media screen and (max-width: 50rem) {
-    .container {
-      display: flex;
-      height: 90vh;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-content: center;
-      justify-content: center;
-      align-items: center;
-    }
+  /*footer*/
 
-    .slide {
-      width: 90vw;
-      border-radius: 20px;
-      margin: 10px;
-      cursor: pointer;
-      color: #fff;
-      flex: 1;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      transition: all 0.7s ease-in-out;
-      filter: blur(4px);
-    }
+  #footer {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffd1e9, #80a5e0);
+  }
 
-    .slide.active {
-      flex: 10;
-      filter: blur(0px);
-    }
+  #footer h2 {
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    font-size: 13.5vw;
+    color: #fff;
+    opacity: 0.3;
+  }
 
-    .slide h3 {
-      left: 5px;
+  .fot_logo {
+    width: 10%;
+    filter: grayscale(100%) brightness(1000%);
+  }
+
+  #footer ul li:nth-child(1),
+  #footer ul li:nth-child(2),
+  #footer ul li:nth-child(3),
+  #footer ul li:nth-child(4),
+  #footer ul li:nth-child(5),
+  #footer ul li:nth-child(6) {
+    text-decoration: underline;
+  }
+
+  #footer ul {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    font-size: 15px;
+
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+  }
+
+  #footer ul li {
+    cursor: pointer;
+  }
+
+  #footer span {
+    font-weight: 800;
+  }
+
+  .fot_bottom {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .reserved {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 1200px) {
+  body {
+    overflow: hidden;
+    font-family: "Noto Sans KR", sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /*header*/
+
+  #header {
+    position: absolute;
+    z-index: 999;
+    padding: 0vw 1.5vw;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .con3 h6 {
+    color: #aaa;
+  }
+
+  #header i {
+    font-size: 30px;
+    color: #402c64;
+  }
+
+  #header ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #header ul li {
+    font-size: 2vw;
+    cursor: pointer;
+  }
+
+  .header_logo {
+    width: 200px;
+    padding-bottom: 0.5vw;
+    box-sizing: border-box;
+  }
+
+  /*visual*/
+
+  #visual {
+    overflow: hidden;
+    z-index: -1;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    background-image: url(../img/main.jpg);
+    width: 100%;
+    height: 100vh;
+  }
+
+  .go-top {
+    z-index: 1000;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(34, 34, 34, 0.5); /* 투명도를 적용한 배경색 */
+    font-size: 2vw;
+    width: 4vw;
+    height: 4vw;
+    line-height: 4.1vw;
+    text-align: center;
+    border-radius: 50px; /* 버튼을 둥글게 */
+    display: none; /* 초기에는 숨김 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+  }
+
+  .line {
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  .model {
+    width: 70%;
+    z-index: 1;
+    position: absolute;
+    left: 51%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+  }
+
+  .go-top:hover {
+    background-color: #222; /* 호버 시 더 진한 색상 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강조 */
+    transform: translateY(-5px); /* 호버 시 살짝 위로 올라가는 애니메이션 */
+  }
+
+  #visual h2 {
+    color: #fff;
+    font-family: "Black Han Sans", sans-serif;
+    font-size: 6vw;
+    word-spacing: 30vw;
+    height: 100vh;
+    margin-top: -15vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  /* 초기 상태: 모두 숨기고, 아래로 내려놓음 */
+  #visual h2,
+  .why,
+  .different {
+    opacity: 0;
+    transform: translateY(50px); /* 아래로 내려놓기 */
+    animation-duration: 1s; /* 애니메이션 시간 설정 */
+    animation-timing-function: ease-out; /* 애니메이션 속도 설정 */
+    animation-fill-mode: forwards; /* 애니메이션이 끝난 후에도 마지막 상태 유지 */
+  }
+
+  /* 각 요소에 애니메이션을 주고, 시간차를 두기 */
+  #visual h2 {
+    animation-name: fadeInUp; /* 애니메이션 이름 설정 */
+    animation-delay: 0s; /* 첫 번째 텍스트는 즉시 애니메이션 시작 */
+  }
+
+  .why {
+    animation-name: fadeInUp; /* 애니메이션 이름 설정 */
+    animation-delay: 0.5s; /* 0.5초 후에 애니메이션 시작 */
+  }
+
+  .different {
+    animation-name: fadeInUp; /* 애니메이션 이름 설정 */
+    animation-delay: 1s; /* 1초 후에 애니메이션 시작 */
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
     }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .why {
+    padding-left: 8vw;
+    margin-top: -30vw;
+    box-sizing: border-box;
+    color: #795bb0;
+    font-size: 3vw;
+    font-family: "Mr Dafoe", cursive;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    align-items: center;
+  }
+
+  .different {
+    padding-right: 5vw;
+    margin-top: 5vw;
+    box-sizing: border-box;
+    color: #795bb0;
+    font-size: 2.5vw;
+    font-family: "Mr Dafoe", cursive;
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    align-items: center;
+  }
+
+  /*container / con1*/
+
+  #container {
+    width: 100%;
+  }
+
+  .con1 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .con1 h2 {
+    background: linear-gradient(
+      to right,
+      #ffe3cb,
+      #ff6969
+    ); /* 밝은 살구색 -> 진한 살구색 */
+    -webkit-background-clip: text; /* 배경을 글자로 클리핑 */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* 텍스트를 투명하게 */
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    word-spacing: 35vw;
+    font-weight: 700;
+    font-size: 13vw;
+    z-index: 999;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .con1 p {
+    font-size: 1vw;
+    font-weight: 400;
+    letter-spacing: -0.1vw;
+    color: #fff;
+    width: 35%;
+    z-index: 999;
+    position: absolute;
+    left: 70%;
+    top: 70%;
+    text-align: justify;
+    transform: translate(-50%, -50%);
+  }
+
+  .con1 video {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 30vw;
+    height: auto;
+    transform: translate(-50%, -50%) scale(1); /* 기본 크기 */
+    filter: brightness(0.7);
+    object-fit: cover; /* 비디오 비율을 유지하면서 화면 꽉 채우기 */
+    transition: transform 0.3s ease; /* 부드러운 확대 효과 */
+  }
+
+  /*con2*/
+
+  .con2 {
+    padding: 5vw 2vw 0vw;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .con2 ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  .con2 ul li {
+    width: 50%;
+  }
+
+  .con2 .con2_ul1 li:nth-child(2) {
+    margin-top: 15vw;
+    background-color: #222;
+    color: #fff;
+    width: 15vw;
+    height: 5vw;
+    font-size: 1.5vw;
+    text-align: center;
+    line-height: 5vw;
+    border-radius: 3vw;
+    cursor: pointer;
+  }
+  .con2 .con2_ul1 li:nth-child(2):hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: 0.5s;
+    transform: scale(1.1);
+  }
+
+  .con2 h3 {
+    font-size: 2.5vw;
+  }
+
+  .con2 span {
+    font-weight: bold;
+  }
+
+  .con2 h5 {
+    font-size: 1.5vw;
+  }
+
+  /*con3*/
+
+  .con3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con3 span {
+    font-weight: bold;
+  }
+
+  .con3_ul1 h3 {
+    line-height: 2vw;
+    width: 40%;
+    font-size: 1vw;
+  }
+
+  .con3_ul2 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .con3_ul2 li {
+    overflow: hidden; /* 자식 요소가 li 밖으로 나가지 않도록 */
+    font-size: 1vw;
+    width: 25%;
+    padding: 10vw 3vw;
+    text-align: center;
+    border: 2px solid #aaa;
+    background-color: #eeeeee;
+    box-sizing: border-box;
+    border-left: none; /* 왼쪽 경계선 제거 
+    */
+  }
+
+  .con3 h2 {
+    font-weight: 700;
+  }
+
+  .con3_ul2 li:nth-child(4) {
+    position: relative;
+    padding-top: 5vw;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .con3_ul2 li:nth-child(4) img {
+    width: 25%;
+    position: absolute;
+    bottom: 10%;
+  }
+
+  .con3_ul2 li:nth-child(2) {
+    position: relative;
+    padding-top: 5vw;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .overlay p:nth-child(1) {
+    position: absolute;
+    left: 0%;
+    top: 40%;
+  }
+
+  .overlay p:nth-child(2) {
+    position: absolute;
+    left: 0%;
+    top: 48%;
+  }
+
+  .overlay p:nth-child(3) {
+    position: absolute;
+    left: 0%;
+    top: 56%;
+  }
+
+  .overlay .line {
+    opacity: 0; /* 처음에는 보이지 않음 */
+    transform: translateY(20px); /* 처음에 텍스트가 아래로 내려가 있음 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 애니메이션 효과 */
+    margin: 0;
+    width: 100%; /* 전체 너비를 차지하게 해서 텍스트를 정확히 가운데 정렬 */
+    text-align: center; /* 텍스트를 중앙 정렬 */
+  }
+
+  /* hover 시 각 줄이 천천히 올라오게 */
+  .con3_ul2 li:nth-child(2):hover .overlay .line {
+    opacity: 1; /* 텍스트가 나타남 */
+    transform: translateY(0); /* 텍스트가 위로 올라옴 */
+  }
+
+  .con3_ul2 li:nth-child(4):hover .overlay .line {
+    opacity: 1; /* 텍스트가 나타남 */
+    transform: translateY(0); /* 텍스트가 위로 올라옴 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay .line {
+    opacity: 1; /* 텍스트가 나타남 */
+    transform: translateY(0); /* 텍스트가 위로 올라옴 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay .line {
+    opacity: 1; /* 텍스트가 나타남 */
+    transform: translateY(0); /* 텍스트가 위로 올라옴 */
+  }
+
+  /* 각 줄의 애니메이션 순서 */
+  .con3_ul2 li:nth-child(2):hover .overlay .line:nth-child(1) {
+    transition-delay: 0s; /* 첫 번째 줄은 즉시 */
+  }
+
+  .con3_ul2 li:nth-child(4):hover .overlay .line:nth-child(1) {
+    transition-delay: 0s; /* 첫 번째 줄은 즉시 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay .line:nth-child(1) {
+    transition-delay: 0s; /* 첫 번째 줄은 즉시 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay .line:nth-child(1) {
+    transition-delay: 0s; /* 첫 번째 줄은 즉시 */
+  }
+
+  .con3_ul2 li:nth-child(2):hover .overlay .line:nth-child(2) {
+    transition-delay: 0.3s; /* 두 번째 줄은 0.3초 후 */
+  }
+
+  .con3_ul2 li:nth-child(4):hover .overlay .line:nth-child(2) {
+    transition-delay: 0.3s; /* 두 번째 줄은 0.3초 후 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay .line:nth-child(2) {
+    transition-delay: 0.3s; /* 두 번째 줄은 0.3초 후 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay .line:nth-child(2) {
+    transition-delay: 0.3s; /* 두 번째 줄은 0.3초 후 */
+  }
+
+  .con3_ul2 li:nth-child(2):hover .overlay .line:nth-child(3) {
+    transition-delay: 0.6s; /* 세 번째 줄은 0.6초 후 */
+  }
+
+  .con3_ul2 li:nth-child(4):hover .overlay .line:nth-child(3) {
+    transition-delay: 0.6s; /* 세 번째 줄은 0.6초 후 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay .line:nth-child(3) {
+    transition-delay: 0.6s; /* 세 번째 줄은 0.6초 후 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay .line:nth-child(3) {
+    transition-delay: 0.6s; /* 세 번째 줄은 0.6초 후 */
+  }
+
+  .con3_ul2 li:nth-child(2):hover .overlay {
+    opacity: 1; /* 텍스트 보이기 */
+  }
+
+  .con3_ul2 li:nth-child(4):hover .overlay {
+    opacity: 1; /* 텍스트 보이기 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay {
+    opacity: 1; /* 텍스트 보이기 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay {
+    opacity: 1; /* 텍스트 보이기 */
+  }
+
+  /* overlay 텍스트 */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      #40cfffb3,
+      #ba55d3b3
+    ); /* 파스텔 파란색과 보라색 그라데이션 */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* 기본적으로 숨김 */
+    transition: opacity 0.5s ease; /* 배경이 서서히 나타나는 효과 */
+    text-align: center;
+    padding: 20px;
+  }
+
+  .con3_ul2 li:nth-child(2) img {
+    right: 10%;
+    bottom: 10%;
+    width: 25%;
+    position: absolute;
+  }
+
+  .con3_ul3 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .con3_ul3 li {
+    font-size: 1vw;
+    background-color: #eeeeee;
+    width: 25%;
+    padding: 10vw 3vw;
+    text-align: center;
+    border: 2px solid #aaa;
+    box-sizing: border-box;
+    border-left: none; /* 왼쪽 경계선 제거 
+    */
+    border-top: none; /* 위쪽 경계선 제거 (필요시) */
+  }
+
+  .con3_ul3 li:nth-child(1) {
+    position: relative;
+    padding-top: 5vw;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .con3_ul3 li:nth-child(1) img {
+    position: absolute;
+    width: 50%;
+    right: 0%;
+    bottom: 5%;
+  }
+
+  .con3_ul3 li:nth-child(3) {
+    position: relative;
+    padding-top: 5vw;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .con3_ul3 li:nth-child(3) img {
+    position: absolute;
+    width: 30%;
+    bottom: 10%;
+  }
+
+  /*con4*/
+
+  .con4 {
+    /* 나머지 영역에는 기본 커서 */
+    padding-top: 5vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con4 h3 {
+    letter-spacing: -1px;
+    font-family: "Noto Sans KR", sans-serif !important;
+    border-bottom: 3px solid #40cfffb3;
+    box-sizing: border-box;
+    color: #40cfffb3;
+    font-size: 3vw;
+    font-weight: 700;
+    position: absolute;
+    left: 9%;
+    font-size: 1.3vw;
+  }
+
+  .swiper {
+    pointer-events: none !important; /* 스와이퍼 영역의 포인터 이벤트를 비활성화 */
+    padding-right: 50vw !important;
+    padding-top: 8% !important;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .swiper-slide {
+    pointer-events: all !important; /* 스와이퍼 영역의 포인터 이벤트를 비활성화 */
+    background-position: center;
+    background-size: cover;
+    width: 30vw !important;
+    height: 30vw !important;
+    margin-right: 10px; /* 슬라이드 간격 조정 */
+  }
+
+  .swiper-slide img {
+    margin-bottom: 2vw;
+    display: block;
+    width: 30vw;
+    height: 30vw;
+    object-fit: cover;
+  }
+
+  .swiper-pagination {
+    pointer-events: all !important; /* 스와이퍼 영역의 포인터 이벤트를 비활성화 */
+    cursor: pointer;
+    display: flex;
+    gap: 0 !important; /* 간격을 완전히 제거 */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vw; /* 페이지네이션 아래 마진 */
+  }
+
+  .swiper-pagination-bullet {
+    width: 9vw !important; /* 길이 설정 */
+    height: 0.3vw !important; /* 높이 설정 */
+    background-color: #ddd !important; /* 기본 색상 */
+    border-radius: 0 !important; /* 직사각형으로 유지 */
+    opacity: 1 !important; /* 항상 보이게 설정 */
+    margin: 0 !important; /* 추가 간격 제거 */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* 애니메이션 */
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #40cfffb3 !important; /* 활성화된 상태의 색상 */
+  }
+
+  /*con5*/
+
+  .con5 {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con5 h2 {
+    word-spacing: -2px;
+    text-align: center;
+    font-size: 20vw;
+    font-weight: 700;
+    line-height: 18vw;
+    text-transform: uppercase; /* 대문자 변환 */
+    background: url("../img/text_back.gif") no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: moveBg 90s linear infinite;
+  }
+
+  /*con6*/
+
+  .con6 {
+    padding: 3vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #ffffff 50%,
+      #ffd1e9 100%
+    ); /* 그라데이션 배경 추가 */
+  }
+
+  .container2 {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .con6 h2 {
+    font-size: 2vw;
+    color: #222;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+
+  .slide {
+    height: 70vh;
+    margin: 10px;
+    cursor: pointer;
+    color: #fff;
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 0.7s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+
+  .slide h3 {
+    position: absolute;
+    font-size: clamp(1rem, 5vw, 5rem);
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    background-color: #e3fdf5;
+    background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .slide.active {
+    opacity: 1; /* 슬라이드가 보이게 설정 */
+    filter: blur(0px); /* 흐림 효과 제거 */
+    flex: 10;
+  }
+
+  /* 'active2' 클래스가 있을 때 슬라이드 닫히기 */
+  .slide.active2 {
+    flex: 1; /* 닫혔을 때 크기를 줄임 */
+  }
+
+  .seemore {
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin: 2vw auto;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    width: 15vw;
+    height: 5vw;
+    line-height: 5vw;
+    border-radius: 3vw;
+  }
+
+  .seemore:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: 0.5s;
+    transform: scale(1.1);
+  }
+
+  /*footer*/
+
+  #footer {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffd1e9, #80a5e0);
+  }
+
+  #footer h2 {
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    font-size: 13.5vw;
+    color: #fff;
+    opacity: 0.3;
+  }
+
+  .fot_logo {
+    width: 10%;
+    filter: grayscale(100%) brightness(1000%);
+  }
+
+  #footer ul li:nth-child(1),
+  #footer ul li:nth-child(2),
+  #footer ul li:nth-child(3),
+  #footer ul li:nth-child(4),
+  #footer ul li:nth-child(5),
+  #footer ul li:nth-child(6) {
+    text-decoration: underline;
+  }
+
+  #footer ul {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    font-size: 15px;
+
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+  }
+
+  #footer ul li {
+    cursor: pointer;
+  }
+
+  #footer span {
+    font-weight: 800;
+  }
+
+  .fot_bottom {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .reserved {
+    position: absolute;
+    bottom: 5%;
+    font-size: 1vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    overflow: hidden;
+    font-family: "Noto Sans KR", sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /*header*/
+
+  #header {
+    position: absolute;
+    z-index: 999;
+    padding: 0vw 1.5vw;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .con3 h6 {
+    color: #aaa;
+  }
+
+  #header i {
+    font-size: 30px;
+    color: #402c64;
+  }
+
+  #header ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #header ul li {
+    font-size: 2vw;
+    cursor: pointer;
+  }
+
+  .header_logo {
+    width: 200px;
+    padding-bottom: 0.5vw;
+    box-sizing: border-box;
+  }
+
+  /*visual*/
+
+  #visual {
+    padding: 5vw 0vw 0rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: -1;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    background-image: url(../img/main.jpg);
+    width: 100%;
+  }
+
+  .go-top {
+    z-index: 1000;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(34, 34, 34, 0.5); /* 투명도를 적용한 배경색 */
+    font-size: 2vw;
+    width: 4vw;
+    height: 4vw;
+    line-height: 4.1vw;
+    text-align: center;
+    border-radius: 50px; /* 버튼을 둥글게 */
+    display: none; /* 초기에는 숨김 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+  }
+
+  .line {
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+  }
+
+  .model {
+    width: 80%;
+    z-index: 1;
+    position: absolute;
+    left: 51%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+  }
+
+  .go-top:hover {
+    background-color: #222; /* 호버 시 더 진한 색상 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강조 */
+    transform: translateY(-5px); /* 호버 시 살짝 위로 올라가는 애니메이션 */
+  }
+
+  #visual h2 {
+    color: #fff;
+    font-family: "Black Han Sans", sans-serif;
+    font-size: 5vw;
+    word-spacing: 40vw;
+    height: 100vh;
+    margin-top: -15vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  /* 초기 상태: 모두 숨기고, 아래로 내려놓음 */
+  #visual h2,
+  .why,
+  .different {
+    opacity: 0;
+    transform: translateY(50px); /* 아래로 내려놓기 */
+    animation-duration: 1s; /* 애니메이션 시간 설정 */
+    animation-timing-function: ease-out; /* 애니메이션 속도 설정 */
+    animation-fill-mode: forwards; /* 애니메이션이 끝난 후에도 마지막 상태 유지 */
+  }
+
+  /* 각 요소에 애니메이션을 주고, 시간차를 두기 */
+  #visual h2 {
+    animation-name: fadeInUp; /* 애니메이션 이름 설정 */
+    animation-delay: 0s; /* 첫 번째 텍스트는 즉시 애니메이션 시작 */
+  }
+
+  .why {
+    animation-name: fadeInUp; /* 애니메이션 이름 설정 */
+    animation-delay: 0.5s; /* 0.5초 후에 애니메이션 시작 */
+  }
+
+  .different {
+    animation-name: fadeInUp; /* 애니메이션 이름 설정 */
+    animation-delay: 1s; /* 1초 후에 애니메이션 시작 */
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .why {
+    padding-left: 8vw;
+    margin-top: -30vw;
+    box-sizing: border-box;
+    color: #795bb0;
+    font-size: 3vw;
+    font-family: "Mr Dafoe", cursive;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    align-items: center;
+  }
+
+  .different {
+    padding-right: 5vw;
+    margin-top: 5vw;
+    box-sizing: border-box;
+    color: #795bb0;
+    font-size: 2.5vw;
+    font-family: "Mr Dafoe", cursive;
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    align-items: center;
+  }
+
+  /*container / con1*/
+
+  #container {
+    width: 100%;
+  }
+
+  .con1 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .con1 h2 {
+    background: linear-gradient(
+      to right,
+      #ffe3cb,
+      #ff6969
+    ); /* 밝은 살구색 -> 진한 살구색 */
+    -webkit-background-clip: text; /* 배경을 글자로 클리핑 */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* 텍스트를 투명하게 */
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    word-spacing: 35vw;
+    font-weight: 700;
+    font-size: 13vw;
+    z-index: 999;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .con1 p {
+    font-size: 1vw;
+    font-weight: 400;
+    letter-spacing: -0.1vw;
+    color: #fff;
+    width: 35%;
+    z-index: 999;
+    position: absolute;
+    left: 70%;
+    top: 70%;
+    text-align: justify;
+    transform: translate(-50%, -50%);
+  }
+
+  .con1 video {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 30vw;
+    height: auto;
+    transform: translate(-50%, -50%) scale(1); /* 기본 크기 */
+    filter: brightness(0.7);
+    object-fit: cover; /* 비디오 비율을 유지하면서 화면 꽉 채우기 */
+    transition: transform 0.3s ease; /* 부드러운 확대 효과 */
+  }
+
+  /*con2*/
+
+  .con2 {
+    padding: 5vw 2vw 0vw;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .con2 ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  .con2 ul li {
+    width: 50%;
+  }
+
+  .con2 .con2_ul1 li:nth-child(2) {
+    margin-top: 15vw;
+    background-color: #222;
+    color: #fff;
+    width: 15vw;
+    height: 5vw;
+    font-size: 1.5vw;
+    text-align: center;
+    line-height: 5vw;
+    border-radius: 3vw;
+    cursor: pointer;
+  }
+  .con2 .con2_ul1 li:nth-child(2):hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: 0.5s;
+    transform: scale(1.1);
+  }
+
+  .con2 h3 {
+    font-size: 2.5vw;
+  }
+
+  .con2 span {
+    font-weight: bold;
+  }
+
+  .con2 h5 {
+    font-size: 1.5vw;
+  }
+
+  /*con3*/
+
+  .con3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con3 span {
+    font-weight: bold;
+  }
+
+  .con3_ul1 h3 {
+    line-height: 2vw;
+    width: 40%;
+    font-size: 1vw;
+  }
+
+  .con3_ul2 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .con3_ul2 li {
+    overflow: hidden; /* 자식 요소가 li 밖으로 나가지 않도록 */
+    font-size: 1vw;
+    width: 25%;
+    padding: 10vw 3vw;
+    text-align: center;
+    border: 2px solid #aaa;
+    background-color: #eeeeee;
+    box-sizing: border-box;
+    border-left: none; /* 왼쪽 경계선 제거 
+    */
+  }
+
+  .con3 h2 {
+    font-weight: 700;
+  }
+
+  .con3_ul2 li:nth-child(4) {
+    position: relative;
+    padding-top: 5vw;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .con3_ul2 li:nth-child(4) img {
+    width: 25%;
+    position: absolute;
+    bottom: 10%;
+  }
+
+  .con3_ul2 li:nth-child(2) {
+    position: relative;
+    padding-top: 5vw;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .overlay p:nth-child(1) {
+    position: absolute;
+    left: 0%;
+    top: 40%;
+  }
+
+  .overlay p:nth-child(2) {
+    position: absolute;
+    left: 0%;
+    top: 48%;
+  }
+
+  .overlay p:nth-child(3) {
+    position: absolute;
+    left: 0%;
+    top: 56%;
+  }
+
+  .overlay .line {
+    opacity: 0; /* 처음에는 보이지 않음 */
+    transform: translateY(20px); /* 처음에 텍스트가 아래로 내려가 있음 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 애니메이션 효과 */
+    margin: 0;
+    width: 100%; /* 전체 너비를 차지하게 해서 텍스트를 정확히 가운데 정렬 */
+    text-align: center; /* 텍스트를 중앙 정렬 */
+  }
+
+  /* hover 시 각 줄이 천천히 올라오게 */
+  .con3_ul2 li:nth-child(2):hover .overlay .line {
+    opacity: 1; /* 텍스트가 나타남 */
+    transform: translateY(0); /* 텍스트가 위로 올라옴 */
+  }
+
+  .con3_ul2 li:nth-child(4):hover .overlay .line {
+    opacity: 1; /* 텍스트가 나타남 */
+    transform: translateY(0); /* 텍스트가 위로 올라옴 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay .line {
+    opacity: 1; /* 텍스트가 나타남 */
+    transform: translateY(0); /* 텍스트가 위로 올라옴 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay .line {
+    opacity: 1; /* 텍스트가 나타남 */
+    transform: translateY(0); /* 텍스트가 위로 올라옴 */
+  }
+
+  /* 각 줄의 애니메이션 순서 */
+  .con3_ul2 li:nth-child(2):hover .overlay .line:nth-child(1) {
+    transition-delay: 0s; /* 첫 번째 줄은 즉시 */
+  }
+
+  .con3_ul2 li:nth-child(4):hover .overlay .line:nth-child(1) {
+    transition-delay: 0s; /* 첫 번째 줄은 즉시 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay .line:nth-child(1) {
+    transition-delay: 0s; /* 첫 번째 줄은 즉시 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay .line:nth-child(1) {
+    transition-delay: 0s; /* 첫 번째 줄은 즉시 */
+  }
+
+  .con3_ul2 li:nth-child(2):hover .overlay .line:nth-child(2) {
+    transition-delay: 0.3s; /* 두 번째 줄은 0.3초 후 */
+  }
+
+  .con3_ul2 li:nth-child(4):hover .overlay .line:nth-child(2) {
+    transition-delay: 0.3s; /* 두 번째 줄은 0.3초 후 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay .line:nth-child(2) {
+    transition-delay: 0.3s; /* 두 번째 줄은 0.3초 후 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay .line:nth-child(2) {
+    transition-delay: 0.3s; /* 두 번째 줄은 0.3초 후 */
+  }
+
+  .con3_ul2 li:nth-child(2):hover .overlay .line:nth-child(3) {
+    transition-delay: 0.6s; /* 세 번째 줄은 0.6초 후 */
+  }
+
+  .con3_ul2 li:nth-child(4):hover .overlay .line:nth-child(3) {
+    transition-delay: 0.6s; /* 세 번째 줄은 0.6초 후 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay .line:nth-child(3) {
+    transition-delay: 0.6s; /* 세 번째 줄은 0.6초 후 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay .line:nth-child(3) {
+    transition-delay: 0.6s; /* 세 번째 줄은 0.6초 후 */
+  }
+
+  .con3_ul2 li:nth-child(2):hover .overlay {
+    opacity: 1; /* 텍스트 보이기 */
+  }
+
+  .con3_ul2 li:nth-child(4):hover .overlay {
+    opacity: 1; /* 텍스트 보이기 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay {
+    opacity: 1; /* 텍스트 보이기 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay {
+    opacity: 1; /* 텍스트 보이기 */
+  }
+
+  /* overlay 텍스트 */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      #40cfffb3,
+      #ba55d3b3
+    ); /* 파스텔 파란색과 보라색 그라데이션 */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* 기본적으로 숨김 */
+    transition: opacity 0.5s ease; /* 배경이 서서히 나타나는 효과 */
+    text-align: center;
+    padding: 20px;
+  }
+
+  .con3_ul2 li:nth-child(2) img {
+    right: 10%;
+    bottom: 10%;
+    width: 25%;
+    position: absolute;
+  }
+
+  .con3_ul3 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .con3_ul3 li {
+    font-size: 1vw;
+    background-color: #eeeeee;
+    width: 25%;
+    padding: 10vw 3vw;
+    text-align: center;
+    border: 2px solid #aaa;
+    box-sizing: border-box;
+    border-left: none; /* 왼쪽 경계선 제거 
+    */
+    border-top: none; /* 위쪽 경계선 제거 (필요시) */
+  }
+
+  .con3_ul3 li:nth-child(1) {
+    position: relative;
+    padding-top: 5vw;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .con3_ul3 li:nth-child(1) img {
+    position: absolute;
+    width: 50%;
+    right: 0%;
+    bottom: 5%;
+  }
+
+  .con3_ul3 li:nth-child(3) {
+    position: relative;
+    padding-top: 5vw;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .con3_ul3 li:nth-child(3) img {
+    position: absolute;
+    width: 30%;
+    bottom: 10%;
+  }
+
+  /*con4*/
+
+  .con4 {
+    /* 나머지 영역에는 기본 커서 */
+    padding-top: 5vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con4 h3 {
+    letter-spacing: -1px;
+    font-family: "Noto Sans KR", sans-serif !important;
+    border-bottom: 3px solid #40cfffb3;
+    box-sizing: border-box;
+    color: #40cfffb3;
+    font-size: 3vw;
+    font-weight: 700;
+    position: absolute;
+    left: 9%;
+    font-size: 1.3vw;
+  }
+
+  .swiper {
+    pointer-events: none !important; /* 스와이퍼 영역의 포인터 이벤트를 비활성화 */
+    padding-right: 50vw !important;
+    padding-top: 8% !important;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .swiper-slide {
+    pointer-events: all !important; /* 스와이퍼 영역의 포인터 이벤트를 비활성화 */
+    background-position: center;
+    background-size: cover;
+    width: 30vw !important;
+    height: 30vw !important;
+    margin-right: 10px; /* 슬라이드 간격 조정 */
+  }
+
+  .swiper-slide img {
+    margin-bottom: 2vw;
+    display: block;
+    width: 30vw;
+    height: 30vw;
+    object-fit: cover;
+  }
+
+  .swiper-pagination {
+    pointer-events: all !important; /* 스와이퍼 영역의 포인터 이벤트를 비활성화 */
+    cursor: pointer;
+    display: flex;
+    gap: 0 !important; /* 간격을 완전히 제거 */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vw; /* 페이지네이션 아래 마진 */
+  }
+
+  .swiper-pagination-bullet {
+    width: 9vw !important; /* 길이 설정 */
+    height: 0.3vw !important; /* 높이 설정 */
+    background-color: #ddd !important; /* 기본 색상 */
+    border-radius: 0 !important; /* 직사각형으로 유지 */
+    opacity: 1 !important; /* 항상 보이게 설정 */
+    margin: 0 !important; /* 추가 간격 제거 */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* 애니메이션 */
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #40cfffb3 !important; /* 활성화된 상태의 색상 */
+  }
+
+  /*con5*/
+
+  .con5 {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con5 h2 {
+    word-spacing: -2px;
+    text-align: center;
+    font-size: 20vw;
+    font-weight: 700;
+    line-height: 18vw;
+    text-transform: uppercase; /* 대문자 변환 */
+    background: url("../img/text_back.gif") no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: moveBg 90s linear infinite;
+  }
+
+  /*con6*/
+
+  .con6 {
+    padding: 3vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #ffffff 50%,
+      #ffd1e9 100%
+    ); /* 그라데이션 배경 추가 */
+  }
+
+  .container2 {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .con6 h2 {
+    font-size: 2vw;
+    color: #222;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+
+  .slide {
+    height: 70vh;
+    margin: 10px;
+    cursor: pointer;
+    color: #fff;
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 0.7s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+
+  .slide h3 {
+    position: absolute;
+    font-size: clamp(1rem, 5vw, 5rem);
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    background-color: #e3fdf5;
+    background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .slide.active {
+    opacity: 1; /* 슬라이드가 보이게 설정 */
+    filter: blur(0px); /* 흐림 효과 제거 */
+    flex: 10;
+  }
+
+  /* 'active2' 클래스가 있을 때 슬라이드 닫히기 */
+  .slide.active2 {
+    flex: 1; /* 닫혔을 때 크기를 줄임 */
+  }
+
+  .seemore {
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin: 2vw auto;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    width: 15vw;
+    height: 5vw;
+    line-height: 5vw;
+    border-radius: 3vw;
+  }
+
+  .seemore:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: 0.5s;
+    transform: scale(1.1);
+  }
+
+  /*footer*/
+
+  #footer {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffd1e9, #80a5e0);
+  }
+
+  #footer h2 {
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    font-size: 13.5vw;
+    color: #fff;
+    opacity: 0.3;
+  }
+
+  .fot_logo {
+    width: 10%;
+    filter: grayscale(100%) brightness(1000%);
+  }
+
+  #footer ul li:nth-child(1),
+  #footer ul li:nth-child(2),
+  #footer ul li:nth-child(3),
+  #footer ul li:nth-child(4),
+  #footer ul li:nth-child(5),
+  #footer ul li:nth-child(6) {
+    text-decoration: underline;
+  }
+
+  #footer ul {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    font-size: 15px;
+
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+  }
+
+  #footer ul li {
+    cursor: pointer;
+  }
+
+  #footer span {
+    font-weight: 800;
+  }
+
+  .fot_bottom {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .reserved {
+    position: absolute;
+    bottom: 5%;
+    font-size: 1vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
   }
 }
