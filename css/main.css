@@ -1804,7 +1804,6 @@
   html {
     width: 100%;
     overflow-x: hidden !important; /* 가로 스크롤 방지 */
-    overflow: hidden !important;
     font-family: "Noto Sans KR", sans-serif;
     margin: 0 !important;
     padding: 0 !important;
