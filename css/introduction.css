@@ -304,19 +304,19 @@ body {
 
   .overlay p:nth-child(1) {
     position: absolute;
-    left: 3%;
+    left: 0%;
     top: 40%;
   }
 
   .overlay p:nth-child(2) {
     position: absolute;
-    left: 3%;
+    left: 0%;
     top: 48%;
   }
 
   .overlay p:nth-child(3) {
     position: absolute;
-    left: 3%;
+    left: 0%;
     top: 56%;
   }
 
@@ -335,8 +335,35 @@ body {
     transform: translateY(0); /* 텍스트가 위로 올라옴 */
   }
 
+  .con3_ul2 li:nth-child(4):hover .overlay .line {
+    opacity: 1; /* 텍스트가 나타남 */
+    transform: translateY(0); /* 텍스트가 위로 올라옴 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay .line {
+    opacity: 1; /* 텍스트가 나타남 */
+    transform: translateY(0); /* 텍스트가 위로 올라옴 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay .line {
+    opacity: 1; /* 텍스트가 나타남 */
+    transform: translateY(0); /* 텍스트가 위로 올라옴 */
+  }
+
   /* 각 줄의 애니메이션 순서 */
   .con3_ul2 li:nth-child(2):hover .overlay .line:nth-child(1) {
+    transition-delay: 0s; /* 첫 번째 줄은 즉시 */
+  }
+
+  .con3_ul2 li:nth-child(4):hover .overlay .line:nth-child(1) {
+    transition-delay: 0s; /* 첫 번째 줄은 즉시 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay .line:nth-child(1) {
+    transition-delay: 0s; /* 첫 번째 줄은 즉시 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay .line:nth-child(1) {
     transition-delay: 0s; /* 첫 번째 줄은 즉시 */
   }
 
@@ -344,11 +371,47 @@ body {
     transition-delay: 0.3s; /* 두 번째 줄은 0.3초 후 */
   }
 
+  .con3_ul2 li:nth-child(4):hover .overlay .line:nth-child(2) {
+    transition-delay: 0.3s; /* 두 번째 줄은 0.3초 후 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay .line:nth-child(2) {
+    transition-delay: 0.3s; /* 두 번째 줄은 0.3초 후 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay .line:nth-child(2) {
+    transition-delay: 0.3s; /* 두 번째 줄은 0.3초 후 */
+  }
+
   .con3_ul2 li:nth-child(2):hover .overlay .line:nth-child(3) {
     transition-delay: 0.6s; /* 세 번째 줄은 0.6초 후 */
   }
 
+  .con3_ul2 li:nth-child(4):hover .overlay .line:nth-child(3) {
+    transition-delay: 0.6s; /* 세 번째 줄은 0.6초 후 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay .line:nth-child(3) {
+    transition-delay: 0.6s; /* 세 번째 줄은 0.6초 후 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay .line:nth-child(3) {
+    transition-delay: 0.6s; /* 세 번째 줄은 0.6초 후 */
+  }
+
   .con3_ul2 li:nth-child(2):hover .overlay {
+    opacity: 1; /* 텍스트 보이기 */
+  }
+
+  .con3_ul2 li:nth-child(4):hover .overlay {
+    opacity: 1; /* 텍스트 보이기 */
+  }
+
+  .con3_ul3 li:nth-child(1):hover .overlay {
+    opacity: 1; /* 텍스트 보이기 */
+  }
+
+  .con3_ul3 li:nth-child(3):hover .overlay {
     opacity: 1; /* 텍스트 보이기 */
   }
 
@@ -361,8 +424,8 @@ body {
     height: 100%;
     background: linear-gradient(
       135deg,
-      rgba(64, 207, 255, 0.7),
-      rgba(186, 85, 211, 0.7)
+      #40cfffb3,
+      #ba55d3b3
     ); /* 파스텔 파란색과 보라색 그라데이션 */
     color: white;
     display: flex;
@@ -425,5 +488,200 @@ body {
     position: absolute;
     width: 30%;
     bottom: 10%;
+  }
+
+  /*con4*/
+
+  .con4 {
+    /* 나머지 영역에는 기본 커서 */
+    padding-top: 5vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con4 h3 {
+    letter-spacing: -1px;
+    font-family: "Noto Sans KR", sans-serif !important;
+    border-bottom: 3px solid #40cfffb3;
+    color: #40cfffb3;
+    font-size: 1vw;
+    font-weight: 700;
+    position: absolute;
+    left: 15%;
+    font-size: 1.3vw;
+  }
+
+  .swiper {
+    pointer-events: none !important; /* 스와이퍼 영역의 포인터 이벤트를 비활성화 */
+    padding-right: 50vw !important;
+    padding-top: 6% !important;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .swiper-slide {
+    pointer-events: all !important; /* 스와이퍼 영역의 포인터 이벤트를 비활성화 */
+    background-position: center;
+    background-size: cover;
+    width: 20vw !important;
+    height: 20vw !important;
+    margin-right: 10px; /* 슬라이드 간격 조정 */
+  }
+
+  .swiper-slide img {
+    margin-bottom: 2vw;
+    display: block;
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+  }
+
+  .swiper-pagination {
+    pointer-events: all !important; /* 스와이퍼 영역의 포인터 이벤트를 비활성화 */
+    cursor: pointer;
+    display: flex;
+    gap: 0 !important; /* 간격을 완전히 제거 */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vw; /* 페이지네이션 아래 마진 */
+  }
+
+  .swiper-pagination-bullet {
+    width: 9vw !important; /* 길이 설정 */
+    height: 0.3vw !important; /* 높이 설정 */
+    background-color: #ddd !important; /* 기본 색상 */
+    border-radius: 0 !important; /* 직사각형으로 유지 */
+    opacity: 1 !important; /* 항상 보이게 설정 */
+    margin: 0 !important; /* 추가 간격 제거 */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* 애니메이션 */
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #40cfffb3 !important; /* 활성화된 상태의 색상 */
+  }
+
+  /*con5*/
+
+  .con5 {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con5 h2 {
+    word-spacing: -2px;
+    text-align: center;
+    font-size: 20vw;
+    font-weight: 700;
+    line-height: 18vw;
+    text-transform: uppercase; /* 대문자 변환 */
+    background: url("../img/text_back.gif") no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: moveBg 90s linear infinite;
+  }
+
+  /*con6*/
+
+  .con6 {
+    padding: 3vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .container2 {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    padding: 0 20px;
+  }
+
+  .con6 h2 {
+    font-size: 1.5vw;
+    color: #222;
+    font-weight: 700;
+    letter-spacing: -3px;
+  }
+
+  .slide {
+    height: 70vh;
+    margin: 10px;
+    cursor: pointer;
+    color: #fff;
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 0.7s ease-in-out;
+  }
+
+  .slide h3 {
+    position: absolute;
+    font-size: clamp(1rem, 5vw, 5rem);
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    background-color: #e3fdf5;
+    background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .slide.active {
+    opacity: 1; /* 슬라이드가 보이게 설정 */
+    filter: blur(0px); /* 흐림 효과 제거 */
+    flex: 10;
+  }
+
+  /* 'active2' 클래스가 있을 때 슬라이드 닫히기 */
+  .slide.active2 {
+    flex: 1; /* 닫혔을 때 크기를 줄임 */
+  }
+
+  .slide.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+  }
+
+  @media screen and (max-width: 50rem) {
+    .container {
+      display: flex;
+      height: 90vh;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide {
+      width: 90vw;
+      border-radius: 20px;
+      margin: 10px;
+      cursor: pointer;
+      color: #fff;
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      transition: all 0.7s ease-in-out;
+      filter: blur(4px);
+    }
+
+    .slide.active {
+      flex: 10;
+      filter: blur(0px);
+    }
+
+    .slide h3 {
+      left: 5px;
+    }
   }
 }
