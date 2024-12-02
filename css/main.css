@@ -2054,7 +2054,8 @@
   }
 
   .con2 {
-    overflow: hidden;
+    width: 100% !important;
+    overflow: hidden !important;
   }
 
   /* 기본 상태 */
