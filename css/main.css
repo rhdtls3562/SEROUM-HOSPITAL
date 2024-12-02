@@ -2052,6 +2052,11 @@
     letter-spacing: -1px;
     font-weight: 900;
   }
+
+  .con2 {
+    overflow: hidden;
+  }
+
   /* 기본 상태 */
   .con2 h2 span {
     display: inline-block;
