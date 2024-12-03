@@ -2234,12 +2234,12 @@
 
   #nav-icon2.open span:nth-child(5) {
     left: 3px;
-    top: 18px;
+    top: 15px;
   }
 
   #nav-icon2.open span:nth-child(6) {
     left: calc(50% - 5px);
-    top: 18px;
+    top: 15px;
   }
 
   /* 메뉴 버튼 */
