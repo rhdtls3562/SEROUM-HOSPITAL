@@ -83,6 +83,7 @@
   }
 
   .line {
+    width: 70%;
     z-index: 0;
     position: absolute;
     left: 50%;
@@ -269,6 +270,13 @@
     line-height: 3vw;
     border-radius: 2vw;
     cursor: pointer;
+  }
+
+  .con2 .con2_ul1 li:nth-child(2):hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transform: scale(1.1);
+    transition: 0.5s;
   }
 
   .con2 span {
@@ -702,6 +710,12 @@
     height: 3vw;
     line-height: 3vw;
     border-radius: 1.5vw;
+  }
+  .seemore:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transform: scale(1.1);
+    transition: 0.5s;
   }
 
   /*footer*/
@@ -1606,6 +1620,14 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
+  }
+
+  #header ul li:nth-child(2),
+  #header ul li:nth-child(3),
+  #header ul li:nth-child(4),
+  #header ul li:nth-child(5),
+  #header ul li:nth-child(6) {
+    display: none;
   }
 
   #header ul li {
