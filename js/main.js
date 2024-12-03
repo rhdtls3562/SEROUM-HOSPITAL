@@ -290,4 +290,20 @@ $(document).ready(function () {
       $("html, body").animate({ scrollTop: 0 }, 300);
     });
   });
+  $(document).ready(function () {
+    $(".menu-button").click(function () {
+      $(".side-menu").toggleClass("open"); // 사이드 메뉴 열기/닫기
+      $(".overlay").toggleClass("open"); // 오버레이 열기/닫기
+    });
+
+    $(".overlay").click(function () {
+      $(".side-menu").removeClass("open"); // 메뉴 닫기
+      $(".overlay").removeClass("open"); // 오버레이 닫기
+    });
+  });
+  $(document).ready(function () {
+    $("#nav-icon2").click(function () {
+      $(this).toggleClass("open");
+    });
+  });
 });
