@@ -43,6 +43,7 @@
   }
 
   .header_logo {
+    padding-left: 3vw;
     width: 200px;
     padding-bottom: 0.5vw;
     box-sizing: border-box;

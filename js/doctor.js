@@ -57,6 +57,7 @@ $(document).ready(function () {
       behavior: "smooth",
     });
   }
+
   $(document).ready(function () {
     // Show or hide the sticky footer button
     $(window).scroll(function () {
