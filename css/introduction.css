@@ -2394,7 +2394,7 @@
     display: block;
     background-image: url(../img/main.jpg);
     width: 100%;
-    height: 40rem;
+    height: 100vh;
   }
 
   .go-top {
@@ -2427,6 +2427,7 @@
   }
 
   .line {
+    display: none;
     width: 100%;
     z-index: 0;
     position: absolute;
@@ -2447,8 +2448,8 @@
   #visual h2 {
     color: #fff;
     font-family: "Black Han Sans", sans-serif;
-    font-size: 6vw;
-    word-spacing: 30vw;
+    font-size: 7vw;
+
     height: 100vh;
     margin-top: -16rem;
     display: flex;
@@ -2499,11 +2500,11 @@
   }
 
   .why {
-    padding-left: 30px;
-    margin-top: -25rem;
+    padding-left: 5vw;
+    margin-top: -60vw;
     box-sizing: border-box;
     color: #795bb0;
-    font-size: 3vw;
+    font-size: 5vw;
     font-family: "Mr Dafoe", cursive;
     display: flex;
     justify-content: left;
@@ -2512,11 +2513,11 @@
   }
 
   .different {
-    padding-right: 3vw;
-    margin-top: 5rem;
+    padding-right: 4vw;
+    margin-top: 5vw;
     box-sizing: border-box;
     color: #795bb0;
-    font-size: 2.5vw;
+    font-size: 4vw;
     font-family: "Mr Dafoe", cursive;
     display: flex;
     justify-content: right;
