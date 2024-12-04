@@ -91,4 +91,31 @@ $(document).ready(function () {
       $(this).toggleClass("open");
     });
   });
+  // 5. con5 섹션 글자 크기와 배경 크기 스크롤에 맞춰 변화
+  const con4 = $(".con4");
+  const textElement = $(".con4 h2");
+
+  function updateTextSize(scale) {
+    textElement.css({
+      "font-size": 20 + scale * 10 + "vw", // 글자 크기 증가
+      "line-height": 18 + scale * 10 + "vw", // line-height 증가
+    });
+    textElement.css({
+      "background-size": 100 + scale * 100 + "%", // 그라데이션 배경 크기 증가
+    });
+  }
+
+  $(window).scroll(function () {
+    const scrollPosition = $(document).scrollTop();
+    const con4Offset = con4.offset().top;
+
+    if (
+      scrollPosition + $(window).height() > con4Offset &&
+      scrollPosition < con4Offset + con4.height()
+    ) {
+      let scale = (scrollPosition - con4Offset) / con4.height();
+      if (scale > 0.67) scale = 0.67; // 2/3 지점 이후 커지지 않도록 제한
+      updateTextSize(scale);
+    }
+  });
 });

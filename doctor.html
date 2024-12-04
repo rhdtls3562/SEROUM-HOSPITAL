@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>병원소개</title>
+    <title>의료진소개</title>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/doctor.js"></script>
 
@@ -177,7 +177,7 @@
               돌보는 손길.
             </p>
             <p>서초좋은클리닉을 만든 세 가지의 굳건한 진료철학입니다.</p>
-            <div>인사말 자세히보기</div>
+            <div class="greeting">인사말 자세히보기</div>
           </li>
           <li>
             <ul class="no">
@@ -204,10 +204,118 @@
           </li>
         </ul>
       </section>
+      <section class="con3">
+        <h2>Seroumonly<br />Hospitalmember<br />Foreveryone</h2>
+        <p class="middle">
+          고객님을 위해 준비한 <span>재미있고</span><br /><span
+            >유익한 콘텐츠</span
+          >를<br /><span>바로 확인</span>하세요!
+        </p>
+        <ul class="con3_ul1">
+          <li>
+            <ul class="con3_ul2">
+              <li>
+                <img src="img/doctor_con31.jpg" />
+                <p>INSATACRAM</p>
+              </li>
+              <li><img src="img/doctor_con33webp.webp" /></li>
+            </ul>
+          </li>
+          <li>
+            <ul class="con3_ul3">
+              <li><img src="img/doctor_con3.webp" /></li>
+              <li>
+                <img src="img/doctor_con33.jpg" />
+                <p>YOUTUBE</p>
+              </li>
+              <li>
+                <img src="img/doctor_con34.jpg" />
+                <p>YOUTUBE</p>
+              </li>
+              <li>
+                <img src="img/doctor_con35.jpg" />
+                <p>BLOG</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section class="con4">
+        <h2>SEROUM<br />DOCTORS</h2>
+      </section>
+      <section class="con5">
+        <h3>원장님 이력 더 확인하기</h3>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <h5>총 70건</h5>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/doctor_con5_1.png" /></div>
+            <div class="swiper-slide"><img src="img/doctor_con5_2.png" /></div>
+            <div class="swiper-slide"><img src="img/doctor_con5_3.png" /></div>
+            <div class="swiper-slide"><img src="img/doctor_con5_4.png" /></div>
+            <div class="swiper-slide"><img src="img/doctor_con5_5.png" /></div>
+            <div class="swiper-slide"><img src="img/doctor_con5_6.jpg" /></div>
+            <div class="swiper-slide"><img src="img/doctor_con5_7.jpg" /></div>
+            <div class="swiper-slide"><img src="img/doctor_con5_8.jpg" /></div>
+            <div class="swiper-slide"><img src="img/doctor_con5_9.jpg" /></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
     </div>
-    <div id="footer"></div>
+    <div id="footer">
+      <h2>Start a new life</h2>
+      <img class="fot_logo" src="img/logo.png" />
+      <ul>
+        <li>개인정보취급방침</li>
+        <li>이용약관</li>
+        <li>환자권리장전</li>
+        <li>서류발급</li>
+        <li>온라인서류발급</li>
+        <li>비급여수기표</li>
+      </ul>
+      <p>
+        서울특별시 강남대로 390 미진프라자 18층(역삼동825 미진프라자 18층) |
+        개인정보보호책임자:박형직 | 대표원장:박형직<br />사업자등록번호:<span
+          >213-91-01210</span
+        >
+        | TEL. <span>1588-3882</span> | FAX. <span>02-3456-7890</span>
+      </p>
+      <ul class="fot_img">
+        <li><img src="img/blog.webp" /></li>
+        <li><img src="img/ft_btn_facebook.webp" /></li>
+        <li><img src="img/ft_btn_insta.webp" /></li>
+        <li><img src="img/ft_btn_tiktok.webp" /></li>
+        <li><img src="img/ft_btn_ytube.webp" /></li>
+        <li><img src="img/ft_btn_post.webp" /></li>
+      </ul>
+      <ul class="fot_bottom">
+        <li><img src="img/ft_btn_kma.webp" /></li>
+        <li><img src="img/ft_btn_kos.webp" /></li>
+        <li><img src="img/ft_btn_kpbpa.webp" /></li>
+        <li><img src="img/ft_btn_sma.webp" /></li>
+      </ul>
+      <p class="reserved">
+        ⓒ 2022 Gangnam seoul rom hospital clinic. all right reserved.
+      </p>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-    <script src="https://unpkg.com/splitting/dist/splitting.css"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4, // 한 번에 보여지는 슬라이드 개수
+        spaceBetween: 10, // 슬라이드 간 간격
+        loop: true, // 슬라이드 반복
+        autoplay: {
+          delay: 1500, // 자동 슬라이드 간격
+        },
+        centeredSlides: true, // 중앙 정렬
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
   </body>
 </html>
