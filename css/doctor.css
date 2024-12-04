@@ -445,8 +445,8 @@
 
   .con1 ul {
     display: flex;
-    gap: 7vw;
-    justify-content: center;
+
+    justify-content: space-around;
   }
 
   .con1 p {
@@ -475,7 +475,69 @@
   }
 
   .con1 ul li:nth-child(2) {
-    width: 30%;
+    width: 40%;
+  }
+
+  /* 부모 컨테이너 */
+  .container2 {
+    cursor: pointer;
+    padding-bottom: 9vw;
+    box-sizing: border-box;
+    display: flex; /* Flexbox 활성화 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    height: 100vh; /* 화면 전체 높이 */
+
+    margin: 0; /* 여백 제거 */
+  }
+
+  /* Flip card container */
+  /* Flip card container */
+  .flip-card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px; /* 3D 효과를 위한 원근 */
+  }
+
+  /* Flip card 내부 */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  /* 카드 앞면 */
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* 뒤집혔을 때 내용이 보이지 않도록 */
+  }
+
+  /* 카드 앞면 스타일 */
+  .flip-card-front {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 카드 뒷면 스타일 */
+  .flip-card-back {
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg); /* 뒤집히는 상태 */
+  }
+
+  /* hover 상태에서 카드 뒤집기 */
+  .flip-card.hover .flip-card-inner {
+    transform: rotateY(180deg); /* hover 시 카드가 뒤집힘 */
   }
 
   /*con2*/
@@ -524,6 +586,7 @@
   }
 
   .greeting::before {
+    cursor: pointer;
     content: "";
     position: absolute;
     top: 50%;
@@ -533,10 +596,11 @@
     border-radius: 30px;
     background-color: #28b8a2;
     transform: translateY(-50%);
+    transition: transform 0.3s ease; /* 부드러운 회전 애니메이션 */
   }
 
-  /* ::after로 세로 줄 */
   .greeting::after {
+    cursor: pointer;
     border-radius: 30px;
     content: "";
     position: absolute;
@@ -546,6 +610,16 @@
     height: 25px;
     background-color: #80a5e0;
     transform: translateY(-50%);
+    transition: transform 0.3s ease; /* 부드러운 회전 애니메이션 */
+  }
+
+  /* hover 상태에서 180도 회전 */
+  .greeting:hover::before {
+    transform: translateY(-50%) rotate(360deg);
+  }
+
+  .greeting:hover::after {
+    transform: translateY(-50%) rotate(360deg);
   }
 
   .no {
@@ -555,7 +629,12 @@
     justify-content: center;
   }
 
-  .no li:nth-child(1) {
+  .con2 i {
+    font-size: 4vw;
+  }
+
+  .no li {
+    text-transform: uppercase;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -567,21 +646,20 @@
     height: 8vw;
     box-sizing: border-box;
     text-wrap: nowrap;
-    background-color: #80c6e0;
+    background: #ddd;
+    overflow: hidden;
+    position: relative;
   }
 
-  .no li:nth-child(2) {
-    width: 8vw;
-    border-radius: 4vw;
-
-    background-color: #80c6e0;
-    text-align: center;
-    color: #fff;
-  }
-
-  .no li:nth-child(2) i {
-    font-size: 3vw;
-    line-height: 8vw;
+  .no li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #80c6e0; /* 초기 색상 */
+    z-index: -1;
   }
 
   .pain {
@@ -590,7 +668,7 @@
     justify-content: center;
   }
 
-  .pain li:nth-child(2) {
+  .pain li {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -602,21 +680,20 @@
     height: 8vw;
     box-sizing: border-box;
     text-wrap: nowrap;
-    background-color: #28b8a2;
+    background: #ddd;
+    overflow: hidden;
+    position: relative;
   }
 
-  .pain li:nth-child(1) {
-    width: 8vw;
-    border-radius: 4vw;
-
-    background-color: #28b8a2;
-    text-align: center;
-    color: #fff;
-  }
-
-  .pain li:nth-child(1) i {
-    font-size: 3vw;
-    line-height: 8vw;
+  .pain li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #28b8a2; /* 초기 색상 */
+    z-index: -1;
   }
 
   .stress {
@@ -626,7 +703,7 @@
     justify-content: center;
   }
 
-  .stress li:nth-child(1) {
+  .stress li {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -638,27 +715,26 @@
     height: 8vw;
     box-sizing: border-box;
     text-wrap: nowrap;
-    background-color: #b3a6f0;
+    background: #ddd;
+    overflow: hidden;
+    position: relative;
   }
 
-  .stress li:nth-child(2) {
-    width: 8vw;
-    border-radius: 4vw;
-
-    background-color: #b3a6f0;
-    text-align: center;
-    color: #fff;
-  }
-
-  .stress li:nth-child(2) i {
-    font-size: 3vw;
-    line-height: 8vw;
+  .stress li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #b3a6f0; /* 초기 색상 */
+    z-index: -1;
   }
 
   /*con3*/
 
   .con3 {
-    padding: 5vw;
+    padding: 2vw;
     box-sizing: border-box;
     overflow: hidden;
     z-index: 0;
@@ -701,6 +777,8 @@
   }
 
   .con3_ul2 {
+    margin-bottom: 4vw;
+    box-sizing: border-box;
     z-index: 3;
     position: relative;
     display: flex;
@@ -726,6 +804,7 @@
   }
 
   .con3_ul3 {
+    box-sizing: border-box;
     position: relative;
     display: flex;
     justify-content: space-between;

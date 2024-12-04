@@ -52,10 +52,14 @@ $(document).ready(function () {
 
   // 부드럽게 스크롤
   function scrollToSection(section) {
-    window.scrollTo({
-      top: section.offsetTop,
-      behavior: "smooth",
-    });
+    // #visual, .con1, .con2 섹션이 아닐 경우에만 스크롤을 적용
+    if (
+      section.id === "visual" ||
+      section.classList.contains("con1") ||
+      section.classList.contains("con2")
+    ) {
+      return; // #visual, .con1, .con2는 스크롤하지 않음
+    }
   }
 
   $(document).ready(function () {
@@ -117,5 +121,57 @@ $(document).ready(function () {
       if (scale > 0.67) scale = 0.67; // 2/3 지점 이후 커지지 않도록 제한
       updateTextSize(scale);
     }
+  });
+  $(document).ready(function () {
+    const $con1 = $(".con1"); // .con1 섹션
+    const $flipCard = $(".flip-card"); // 뒤집힐 카드
+
+    // 윈도우 스크롤 이벤트
+    $(window).on("scroll", function () {
+      const con1Top = $con1.offset().top; // .con1의 상단 위치
+      const con1Bottom = con1Top + $con1.outerHeight(); // .con1의 하단 위치
+      const scrollTop = $(window).scrollTop(); // 현재 스크롤 위치
+      const windowHeight = $(window).height(); // 윈도우 높이
+
+      // .con1 섹션이 화면에 보일 때마다
+      if (scrollTop + windowHeight > con1Top && scrollTop < con1Bottom) {
+        // hover 상태 강제 추가
+        $flipCard.addClass("hover"); // 강제로 hover 클래스를 추가
+
+        // 1.5초 후 hover 상태 해제
+        setTimeout(function () {
+          $flipCard.removeClass("hover"); // hover 클래스 제거
+        }, 1000);
+      }
+    });
+  });
+  $(document).ready(function () {
+    // 스크롤 트리거 효과 함수
+    function checkScroll() {
+      var scrollTop = $(window).scrollTop(); // 스크롤 위치 가져오기
+      var windowHeight = $(window).height(); // 화면 높이
+
+      // 각 요소에 대해 스크롤 위치를 확인하고 색상을 채움
+      $(".trigger").each(function () {
+        var elementTop = $(this).offset().top; // 각 요소의 위쪽 위치
+        var elementBottom = elementTop + $(this).outerHeight(); // 각 요소의 아래쪽 위치
+
+        // 요소가 화면에 들어오면 색상을 원래 색으로 채우기
+        if (
+          scrollTop + windowHeight > elementTop &&
+          scrollTop < elementBottom
+        ) {
+          $(this).addClass("filled");
+        } else {
+          $(this).removeClass("filled");
+        }
+      });
+    }
+
+    // 스크롤 시 checkScroll 함수 호출
+    $(window).on("scroll", checkScroll);
+
+    // 페이지 로드 시 처음 한 번 실행
+    checkScroll();
   });
 });
