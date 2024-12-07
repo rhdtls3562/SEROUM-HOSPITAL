@@ -1,0 +1,3662 @@
+@media (min-width: 1200px) {
+  body {
+    overflow: hidden;
+    font-family: "Noto Sans KR", sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /*header*/
+
+  #header {
+    position: absolute;
+    z-index: 999;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  #header i {
+    position: absolute;
+    left: 10%;
+    width: 10vw;
+    margin-left: 10vw;
+    font-size: 30px;
+    color: #ee88bd;
+  }
+
+  .menu {
+    width: 100%;
+    margin-left: -5vw;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+  }
+
+  #header ul li {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .header_logo {
+    width: 200px;
+    padding-left: 3vw;
+    padding-bottom: 0.5vw;
+    box-sizing: border-box;
+  }
+
+  #nav-icon2 {
+    margin-top: 0.2vw;
+    width: 2.1vw;
+    height: 1vw;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  #nav-icon2 span {
+    z-index: 999;
+    top: 0;
+    right: 0;
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 50%;
+    background: #402c64;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+
+  #nav-icon2 span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+  }
+
+  #nav-icon2 span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+  }
+
+  #nav-icon2 span:nth-child(1),
+  #nav-icon2 span:nth-child(2) {
+    top: 0px;
+  }
+
+  #nav-icon2 span:nth-child(3),
+  #nav-icon2 span:nth-child(4) {
+    top: 11px;
+  }
+
+  #nav-icon2 span:nth-child(5),
+  #nav-icon2 span:nth-child(6) {
+    top: 22px;
+  }
+
+  #nav-icon2.open span:nth-child(1),
+  #nav-icon2.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  #nav-icon2.open span:nth-child(2),
+  #nav-icon2.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  #nav-icon2.open span:nth-child(1) {
+    left: 5px;
+    top: 7px;
+  }
+
+  #nav-icon2.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 7px;
+  }
+
+  #nav-icon2.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+  }
+
+  #nav-icon2.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+  }
+
+  #nav-icon2.open span:nth-child(5) {
+    left: 5px;
+    top: 18px;
+  }
+
+  #nav-icon2.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 18px;
+  }
+
+  /* 메뉴 버튼 */
+  .menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 1000;
+    color: #fff;
+  }
+
+  .menu-button:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+
+  /* 사이드 메뉴 */
+  .side-menu {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: -300px; /* 숨김 상태 */
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(to bottom, #ffd1e9, #80a5e0);
+    color: #fff;
+    overflow-y: auto;
+    transition: transform 0.4s ease-in-out; /* 부드러운 애니메이션 */
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+    z-index: 999;
+    padding-top: 50px; /* 메뉴와 상단 여백 */
+    border-right: 2px solid #444; /* 오른쪽 경계선 */
+  }
+
+  .slide_logo {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    width: 50%;
+  }
+
+  .side-menu.open {
+    transform: translateX(300px); /* 메뉴가 오른쪽으로 밀려 나오게 */
+  }
+
+  /* 메뉴 리스트 스타일 */
+  .side-menu ul {
+    list-style: none;
+    padding: 1vw;
+    box-sizing: border-box;
+    margin-top: 50px;
+  }
+
+  .side-menu ul li {
+    border-bottom: 2px solid #fff;
+    padding: 1vw;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 배경 색과 트랜지션 효과 */
+  }
+
+  .side-menu ul li:hover {
+    transform: scale(1.1); /* 메뉴 아이템 크기 살짝 확대 */
+  }
+
+  .side-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-weight: 500; /* 글자 두께 */
+  }
+
+  .social {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .social img:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    transform: scale(1.1);
+  }
+
+  .social a img {
+    width: 3vw;
+  }
+
+  /* 어두운 오버레이 */
+  .overlay2 {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 998;
+  }
+
+  .overlay2.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* 사이드 메뉴 애니메이션 */
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-300px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-300px);
+    }
+  }
+  /*visual*/
+
+  #visual {
+    overflow: hidden;
+    z-index: -1;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    background-image: url(../img/main.jpg);
+    width: 100%;
+    height: 100vh;
+  }
+
+  .go-top {
+    z-index: 9999 !important;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(34, 34, 34, 0.5); /* 투명도를 적용한 배경색 */
+    font-size: 2vw;
+    width: 4vw;
+    height: 4vw;
+    line-height: 4.1vw;
+    text-align: center;
+    border-radius: 50px; /* 버튼을 둥글게 */
+    display: none; /* 초기에는 숨김 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+  }
+
+  .go-top:hover {
+    background-color: #222; /* 호버 시 더 진한 색상 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강조 */
+    transform: translateY(-5px); /* 호버 시 살짝 위로 올라가는 애니메이션 */
+  }
+
+  #visual h2 {
+    box-sizing: border-box;
+    font-weight: 100;
+
+    letter-spacing: -1px;
+    font-family: "Black Han Sans", sans-serif;
+    font-size: clamp(70px, 5vw, 90px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 20vw;
+    text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0s;
+  }
+
+  .model,
+  .insta_line,
+  .num,
+  .bubble {
+    position: absolute;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+
+  .model {
+    width: 30%;
+    left: 25%;
+    bottom: 0%;
+    transform: translate(-50%, -50%);
+    animation-delay: 1s; /* 1초 뒤에 애니메이션 시작 */
+  }
+
+  .insta_line {
+    width: 20%;
+    left: 32%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    animation-delay: 2s; /* 2초 뒤에 애니메이션 시작 */
+  }
+
+  .num {
+    width: 25%;
+    right: 20%;
+    bottom: 5%;
+    transform: translate(-50%, -50%);
+    animation-delay: 3s; /* 3초 뒤에 애니메이션 시작 */
+  }
+
+  .bubble {
+    width: 18%;
+    right: 23%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    animation-delay: 4s; /* 4초 뒤에 애니메이션 시작 */
+  }
+
+  /* 페이드 인 애니메이션 */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* 시작 위치를 아래로 설정 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* 최종 위치 */
+    }
+  }
+
+  /*container*/
+
+  #container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /*con1*/
+
+  .con1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con1 h2 {
+    color: #222;
+    font-weight: 700;
+    font-size: 2.5vw;
+    margin-bottom: 2.5vw;
+    letter-spacing: -0.1vw;
+    text-align: center;
+    opacity: 0;
+    animation: slideUp 1s forwards;
+    animation-delay: 0.5s; /* 0.5초 딜레이 */
+  }
+
+  .con1 p {
+    line-height: 2vw;
+    margin-bottom: 5vw;
+    color: #555;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    align-items: center;
+    opacity: 0;
+    animation: slideUp 1s forwards;
+    animation-delay: 1s; /* 1초 딜레이 */
+  }
+
+  /* 아래에서 위로 올라오는 애니메이션 */
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* 시작 시 아래로 살짝 위치 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* 애니메이션 종료 시 원래 위치 */
+    }
+  }
+
+  .con1 span {
+    background-color: transparent; /* 배경은 투명 */
+    font-weight: bolder;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* 글자는 위에 보이게 설정 */
+  }
+
+  .con1 span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%; /* 배경을 처음에 숨기기 */
+    height: 100%;
+    background-color: lightgoldenrodyellow;
+    transition: width 5s ease-in-out; /* width가 0%에서 100%로 확장 */
+    z-index: -1; /* 배경은 글자 뒤에 오게 설정 */
+  }
+
+  .con1 span.show-background::before {
+    width: 100%; /* show-background 클래스를 추가할 때 배경이 확장됨 */
+  }
+
+  .con1 ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* 부모 요소에 relative 위치 설정 */
+  }
+
+  .con1 ul li {
+    position: absolute; /* 절대 위치 설정 */
+    transition: transform 1s ease-in-out; /* 부드러운 애니메이션 효과 */
+  }
+
+  .con1 ul li:nth-child(1) {
+    background-color: rgba(173, 216, 230, 0.5);
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    left: -20vw; /* 처음 왼쪽 끝에 위치 */
+    animation: moveLeftToCenter 3s ease-in-out forwards; /* 첫 번째 li 애니메이션 */
+  }
+
+  .con1_wrap {
+    margin-bottom: 7vw;
+  }
+
+  .con1 ul {
+    margin-bottom: 6vw;
+  }
+
+  .con1 ul li:nth-child(2) {
+    background-color: rgba(173, 230, 206, 0.5);
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    left: 50%; /* 중앙에 고정 */
+    transform: translate(-50%); /* 정확히 가운데 */
+  }
+
+  .con1 ul li:nth-child(3) {
+    background-color: rgba(173, 216, 230, 0.5);
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    right: -20vw; /* 처음 오른쪽 끝에 위치 */
+    animation: moveRightToCenter 3s ease-in-out forwards; /* 마지막 li 애니메이션 */
+  }
+
+  @keyframes moveLeftToCenter {
+    0% {
+      left: -20vw; /* 왼쪽 끝에 배치 */
+    }
+    50% {
+      left: 0%; /* 중앙으로 이동 */
+      transform: translateX(-50%); /* 정확히 중앙 */
+    }
+    100% {
+      left: 35%; /* 중앙에 고정 */
+      transform: translateX(-50%); /* 정확히 중앙 */
+    }
+  }
+
+  @keyframes moveRightToCenter {
+    0% {
+      right: -20vw; /* 오른쪽 끝에 배치 */
+    }
+    50% {
+      right: 0%; /* 중앙으로 이동 */
+      transform: translateX(50%); /* 정확히 중앙 */
+    }
+    100% {
+      right: 35%; /* 중앙에 고정 */
+      transform: translateX(50%); /* 정확히 중앙 */
+    }
+  }
+
+  .con1 ul li div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9vw;
+    font-weight: 500;
+    color: #555;
+    text-align: center;
+    width: 60%;
+  }
+
+  /*con1*/
+  .con1 h2,
+  .con1 p,
+  .con1 ul li:nth-child(3),
+  .con1 ul li:nth-child(1) {
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* con2 */
+  .con2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+      0deg,
+      rgba(253, 255, 233, 0.994) 10%,
+      rgb(255, 255, 255) 90%
+    );
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* 초기 위치 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* 최종 위치 */
+    }
+  }
+
+  .con2 h2 {
+    position: relative;
+    opacity: 0;
+    color: #222;
+    font-size: 2vw;
+    font-weight: 700;
+    letter-spacing: -3px;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* con2 p */
+  .con2 p {
+    margin-bottom: 2vw;
+    font-size: 1vw;
+    font-weight: 500;
+    color: #555;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.5s; /* 1초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* con2 .check */
+  .con2 .check {
+    margin-bottom: 2vw;
+    color: #9ece5f;
+    font-size: 1vw;
+    letter-spacing: -1px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2s; /* 1.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .ani01 {
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .st0 {
+    stroke-dasharray: 458; /*점선*/
+    stroke-dashoffset: 458; /*애니메이션 시작위치*/
+    fill: none;
+    stroke: #000000;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+    animation: ani01 1s ease-in-out forwards;
+    animation-delay: 4s; /* 1.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  @keyframes ani01 {
+    0% {
+      stroke-dashoffset: 458;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* point1 */
+  .point1 {
+    margin-bottom: 1.5vw;
+    font-size: 0.8vw;
+    font-weight: 400;
+    color: #555;
+    letter-spacing: -1px;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.5s; /* 2초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* point2 */
+  .point2 {
+    margin-bottom: 1.5vw;
+    font-size: 0.8vw;
+    font-weight: 400;
+    color: #555;
+    letter-spacing: -1px;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 3s; /* 2.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* point3 */
+  .point3 {
+    font-size: 0.8vw;
+    font-weight: 400;
+    color: #555;
+    letter-spacing: -1px;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 3.5s; /* 3초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .point1 span,
+  .point2 span,
+  .point3 span {
+    margin-right: 1vw;
+    background-color: #9ece5f;
+    color: #fff;
+    padding: 0.5vw 2vw;
+    border-radius: 50%;
+  }
+
+  .con2 i {
+    margin-left: 0.3vw;
+  }
+
+  .animated {
+    position: relative; /* 애니메이션이 적용된 em 태그 */
+    z-index: 1; /* 이 값을 조정하여 위치를 설정 */
+  }
+
+  .con2_model {
+    opacity: 0;
+    width: 80%;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con2 ul {
+    display: flex;
+    justify-content: space-around;
+    gap: 5vw;
+  }
+
+  .con2 ul li:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  /*con3*/
+
+  .con3 {
+    padding: 5vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con3 h5 {
+    opacity: 0;
+    background-color: #222;
+    color: #fff;
+    padding: 0.5vw 2vw;
+    border-radius: 2vw;
+    font-weight: 700;
+    animation: up 1s ease forwards;
+    animation-delay: 0.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con3 h2 {
+    opacity: 0;
+    color: #222;
+    font-size: 2.5vw;
+    letter-spacing: -3px;
+    font-weight: 600;
+    animation: up 1s ease forwards;
+    animation-delay: 1s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* 초기 위치 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* 최종 위치 */
+    }
+  }
+
+  /* define a fixed width for the entire menu */
+  .navigation {
+    width: 100%;
+  }
+
+  /* reset our lists to remove bullet points and padding */
+  .mainmenu,
+  .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mainmenu > li {
+    position: relative;
+    padding: 1vw 2vw;
+    font-size: 1vw;
+    letter-spacing: -1px;
+    font-weight: 700;
+    color: #222;
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  .mainmenu > li i {
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    font-size: 1.5vw;
+    color: #9ece5f;
+    position: absolute;
+  }
+
+  .mainmenu > li:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border-radius: 1vw;
+  }
+
+  .submenu li {
+    font-size: 0.8vw;
+    font-weight: 600;
+    color: #555;
+  }
+
+  .mainmenu > li span {
+    color: #9ece5f;
+    font-size: 1.5vw;
+    font-weight: 700;
+    margin-right: 1vw;
+  }
+
+  /* make ALL links (main and submenu) have padding and background color */
+  .mainmenu a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  /* when hovering over a .mainmenu item,
+    display the submenu inside it.
+    we're changing the submenu's max-height from 0 to 200px;
+  */
+
+  .mainmenu li:hover .submenu {
+    transition: 2.5s;
+    display: block;
+    max-height: 20vw;
+  }
+
+  /* 아이콘에 특별한 효과 추가 */
+  .mainmenu li:hover i {
+    transform: scale(1.2) rotate(360deg); /* 크기 확대 및 회전 */
+
+    transition: all 0.4s ease; /* 모든 속성에 0.4초 애니메이션 효과 */
+  }
+
+  .submenu {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: max-height 0.5s ease-out;
+    transition: max-height 0.5s ease-out;
+  }
+
+  /*con4*/
+
+  .con4 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  .con4_wrap {
+    overflow: hidden;
+    width: 12vw;
+    height: 12vw;
+  }
+
+  .con4 img {
+    transition: 0.5s ease; /* 스무스한 전환 효과 */
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 0.5vw;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .con4 img:hover {
+    transform: scale(1.2); /* 이미지만 확대 */
+    object-position: center; /* 확대된 이미지가 중앙에 오게 설정 */
+  }
+
+  .con4 ul {
+    margin-top: 0.4vw;
+
+    width: 100px;
+    display: flex;
+    gap: 0.8vw;
+    justify-content: center;
+  }
+
+  .number li:nth-child(2):hover {
+    color: #222;
+    border-bottom: 2px solid #222;
+  }
+
+  .number li:nth-child(1) {
+    color: #222;
+    border-bottom: 2px solid #222;
+  }
+
+  .number li:nth-child(3):hover {
+    color: #222;
+    border-bottom: 2px solid #222;
+  }
+
+  .number li:nth-child(4):hover {
+    color: #222;
+    border-bottom: 2px solid #222;
+  }
+
+  .number {
+    padding: 1vw;
+    box-sizing: border-box;
+    gap: 2vw !important;
+    font-size: 0.8vw;
+    font-weight: 700;
+    cursor: pointer;
+    color: #777;
+  }
+
+  .con4 p {
+    margin-top: 0.5vw;
+  }
+
+  /*con5*/
+
+  .con5 {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 수직 및 수평 중앙 정렬 */
+  }
+
+  .con5 h2 {
+    word-spacing: -2px;
+    text-align: center;
+    font-size: 20vw;
+    font-weight: 700;
+    line-height: 18vw;
+    text-transform: uppercase; /* 대문자 변환 */
+    background: url("../img/text_back.gif") no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: moveBg 90s linear infinite;
+  }
+
+  /*con6*/
+
+  .con6 {
+    padding: 5vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #ffffff 50%,
+      #ffd1e9 100%
+    ); /* 그라데이션 배경 추가 */
+  }
+
+  .con6 h2 {
+    font-size: 2vw;
+    letter-spacing: -3px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 5vw;
+    margin-left: 6.5vw;
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 0.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes pass {
+    0% {
+      opacity: 0;
+      transform: translateX(20px); /* 초기 위치 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* 최종 위치 */
+    }
+  }
+
+  .con6 img {
+    display: block;
+    width: 15vw;
+    height: 15vw;
+    filter: grayscale(100%); /* 처음에 이미지가 흑백으로 보이게 함 */
+    transition: filter 0.3s ease; /* 부드러운 전환 효과 */
+  }
+
+  .first {
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 2s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .last {
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 3s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con6 img:hover {
+    filter: grayscale(0%); /* 호버 시 원래 색상으로 돌아옴 */
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transition: 0.5s;
+  }
+
+  .con6 h4 {
+    letter-spacing: -1px;
+    font-size: 1.3vw;
+    font-weight: 600;
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 1s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con6 p {
+    font-size: 0.8vw;
+    font-weight: 400;
+    color: #aaa;
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 1.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .line {
+    background-color: #ddd;
+    z-index: 999;
+    width: 0.1vw;
+    height: 15vw;
+    position: absolute;
+    left: 50%;
+    bottom: 26%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 2.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con6_ul1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+    align-items: center;
+  }
+
+  .con6_ul2 {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+  }
+
+  .con6_ul3 {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+  }
+
+  /*footer*/
+
+  #footer {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffd1e9, #80a5e0);
+  }
+
+  #footer h2 {
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    font-size: 13.5vw;
+    color: #fff;
+    opacity: 0.3;
+  }
+
+  .fot_logo {
+    width: 10%;
+    filter: grayscale(100%) brightness(1000%);
+  }
+
+  #footer ul li:nth-child(1),
+  #footer ul li:nth-child(2),
+  #footer ul li:nth-child(3),
+  #footer ul li:nth-child(4),
+  #footer ul li:nth-child(5),
+  #footer ul li:nth-child(6) {
+    text-decoration: underline;
+  }
+
+  #footer ul {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    font-size: 15px;
+
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+  }
+
+  #footer ul li {
+    cursor: pointer;
+  }
+
+  #footer span {
+    font-weight: 800;
+  }
+
+  .fot_bottom {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .reserved {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 1200px) {
+  body {
+    overflow: hidden;
+    font-family: "Noto Sans KR", sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  html {
+    font-family: "Noto Sans KR", sans-serif !important;
+  }
+
+  body {
+    overflow: hidden;
+    font-family: "Noto Sans KR", sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /*header*/
+
+  #header {
+    position: absolute;
+    z-index: 999;
+    padding: 0vw 1.5vw;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .menu {
+    width: 100%;
+    margin-left: -5vw;
+    align-items: center;
+    display: flex;
+    gap: 5vw;
+    justify-content: center;
+  }
+
+  #header ul li {
+    cursor: pointer;
+    font-size: 1.5vw;
+    cursor: pointer;
+  }
+
+  .header_logo {
+    padding-left: -10vw;
+    width: 15vw;
+    padding-bottom: 1vw;
+    box-sizing: border-box;
+  }
+
+  #nav-icon2 {
+    margin-top: 0.2vw;
+    width: 4vw;
+    height: 1vw;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  #nav-icon2 span {
+    z-index: 999;
+    top: 0;
+    right: 0;
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 50%;
+    background: #402c64;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+
+  #nav-icon2 span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+  }
+
+  #nav-icon2 span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+  }
+
+  #nav-icon2 span:nth-child(1),
+  #nav-icon2 span:nth-child(2) {
+    top: 0px;
+  }
+
+  #nav-icon2 span:nth-child(3),
+  #nav-icon2 span:nth-child(4) {
+    top: 11px;
+  }
+
+  #nav-icon2 span:nth-child(5),
+  #nav-icon2 span:nth-child(6) {
+    top: 22px;
+  }
+
+  #nav-icon2.open span:nth-child(1),
+  #nav-icon2.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  #nav-icon2.open span:nth-child(2),
+  #nav-icon2.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  #nav-icon2.open span:nth-child(1) {
+    left: 5px;
+    top: 7px;
+  }
+
+  #nav-icon2.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 7px;
+  }
+
+  #nav-icon2.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+  }
+
+  #nav-icon2.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+  }
+
+  #nav-icon2.open span:nth-child(5) {
+    left: 5px;
+    top: 18px;
+  }
+
+  #nav-icon2.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 18px;
+  }
+
+  /* 메뉴 버튼 */
+  .menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 1000;
+    color: #fff;
+  }
+
+  .menu-button:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+
+  /* 사이드 메뉴 */
+  .side-menu {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: -300px; /* 숨김 상태 */
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(to bottom, #ffd1e9, #80a5e0);
+    color: #fff;
+    overflow-y: auto;
+    transition: transform 0.4s ease-in-out; /* 부드러운 애니메이션 */
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+    z-index: 999;
+    padding-top: 50px; /* 메뉴와 상단 여백 */
+    border-right: 2px solid #444; /* 오른쪽 경계선 */
+  }
+
+  .slide_logo {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    width: 50%;
+  }
+
+  .side-menu.open {
+    transform: translateX(300px); /* 메뉴가 오른쪽으로 밀려 나오게 */
+  }
+
+  /* 메뉴 리스트 스타일 */
+  .side-menu ul {
+    flex-direction: column;
+    list-style: none;
+    padding: 1vw;
+    box-sizing: border-box;
+    margin-top: 50px;
+  }
+
+  #header i {
+    position: absolute;
+    right: -2vw;
+    width: 10vw;
+    font-size: 3vw;
+    color: #ee88bd;
+  }
+
+  .side-menu ul li {
+    border-bottom: 2px solid #fff;
+    padding: 3vw;
+    box-sizing: border-box;
+    font-size: 2vw;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 배경 색과 트랜지션 효과 */
+  }
+
+  .side-menu ul li:hover {
+    transform: scale(1.1); /* 메뉴 아이템 크기 살짝 확대 */
+  }
+
+  .side-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-weight: 500; /* 글자 두께 */
+  }
+
+  .social {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .social img:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    transform: scale(1.1);
+  }
+
+  .social a img {
+    width: 5vw;
+  }
+
+  /* 어두운 오버레이 */
+  .overlay2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 998;
+  }
+
+  .overlay2.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* 사이드 메뉴 애니메이션 */
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-300px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-300px);
+    }
+  }
+  /*visual*/
+
+  #visual {
+    overflow: hidden;
+    z-index: -1;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    background-image: url(../img/main.jpg);
+
+    width: 100%;
+    height: 100vh;
+  }
+
+  .go-top {
+    z-index: 9999 !important;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(34, 34, 34, 0.5); /* 투명도를 적용한 배경색 */
+    font-size: 2vw;
+    width: 4vw;
+    height: 4vw;
+    line-height: 4.1vw;
+    text-align: center;
+    border-radius: 50px; /* 버튼을 둥글게 */
+    display: none; /* 초기에는 숨김 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+  }
+
+  .go-top:hover {
+    background-color: #222; /* 호버 시 더 진한 색상 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강조 */
+    transform: translateY(-5px); /* 호버 시 살짝 위로 올라가는 애니메이션 */
+  }
+
+  #visual h2 {
+    font-size: 8vw;
+    margin-top: 65px;
+    box-sizing: border-box;
+    font-weight: 100;
+    letter-spacing: -1px;
+    font-family: "Black Han Sans", sans-serif;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 20vw;
+    text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0s;
+  }
+
+  .model,
+  .insta_line,
+  .num,
+  .bubble {
+    position: absolute;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+
+  .model {
+    width: 50%;
+    max-width: 400px;
+    left: 15%;
+    bottom: 0%;
+    transform: translate(-50%, -50%);
+    animation-delay: 1s; /* 1초 뒤에 애니메이션 시작 */
+  }
+
+  .insta_line {
+    width: 30vw;
+    max-width: 250px;
+    left: 30%;
+    bottom: 30%;
+    transform: translate(-50%, -50%);
+    animation-delay: 2s; /* 2초 뒤에 애니메이션 시작 */
+  }
+
+  .num {
+    width: 25%;
+    right: 20%;
+    bottom: 5%;
+    transform: translate(-50%, -50%);
+    animation-delay: 3s; /* 3초 뒤에 애니메이션 시작 */
+  }
+
+  .bubble {
+    width: 18%;
+    right: 23%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    animation-delay: 4s; /* 4초 뒤에 애니메이션 시작 */
+  }
+
+  /* 페이드 인 애니메이션 */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* 시작 위치를 아래로 설정 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* 최종 위치 */
+    }
+  }
+
+  /*container*/
+
+  #container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /*con1*/
+
+  .con1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con1 h2 {
+    color: #222;
+    font-weight: 700;
+    font-size: 5vw;
+    margin-bottom: 2.5vw;
+    letter-spacing: -0.1vw;
+    text-align: center;
+    opacity: 0;
+    animation: slideUp 1s forwards;
+    animation-delay: 0.5s; /* 0.5초 딜레이 */
+  }
+
+  .con1 p {
+    margin: auto;
+    width: 80%;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    margin-bottom: 5vw;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    opacity: 0;
+    animation: slideUp 1s forwards;
+    animation-delay: 1s; /* 1초 딜레이 */
+  }
+
+  /* 아래에서 위로 올라오는 애니메이션 */
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* 시작 시 아래로 살짝 위치 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* 애니메이션 종료 시 원래 위치 */
+    }
+  }
+
+  .con1 span {
+    background-color: transparent; /* 배경은 투명 */
+    padding: 0.5vw;
+    font-weight: bolder;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* 글자는 위에 보이게 설정 */
+  }
+
+  .con1 span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%; /* 배경을 처음에 숨기기 */
+    height: 100%;
+    background-color: lightgoldenrodyellow;
+    transition: width 5s ease-in-out; /* width가 0%에서 100%로 확장 */
+    z-index: -1; /* 배경은 글자 뒤에 오게 설정 */
+  }
+
+  .con1 span.show-background::before {
+    width: 100%; /* show-background 클래스를 추가할 때 배경이 확장됨 */
+  }
+
+  .con1 ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* 부모 요소에 relative 위치 설정 */
+  }
+
+  .con1 ul li {
+    position: absolute; /* 절대 위치 설정 */
+    transition: transform 1s ease-in-out; /* 부드러운 애니메이션 효과 */
+  }
+
+  .con1 ul li:nth-child(1) {
+    background-color: rgba(173, 216, 230, 0.5);
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    left: -10vw; /* 처음 왼쪽 끝에 위치 */
+    animation: moveLeftToCenter 3s ease-in-out forwards; /* 첫 번째 li 애니메이션 */
+  }
+
+  .con1_wrap {
+    margin-bottom: 20vw;
+  }
+
+  .con1 ul {
+    margin-bottom: 10vw;
+  }
+
+  .con1 ul li:nth-child(2) {
+    background-color: rgba(173, 230, 206, 0.5);
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    left: 50%; /* 중앙에 고정 */
+    transform: translate(-50%); /* 정확히 가운데 */
+  }
+
+  .con1 ul li:nth-child(3) {
+    background-color: rgba(173, 216, 230, 0.5);
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    right: -10vw; /* 처음 오른쪽 끝에 위치 */
+    animation: moveRightToCenter 3s ease-in-out forwards; /* 마지막 li 애니메이션 */
+  }
+
+  @keyframes moveLeftToCenter {
+    0% {
+      left: -30vw; /* 왼쪽 끝에 배치 */
+    }
+    50% {
+      left: 0%; /* 중앙으로 이동 */
+      transform: translateX(-50%); /* 정확히 중앙 */
+    }
+    100% {
+      left: 20%; /* 중앙에 고정 */
+      transform: translateX(-50%); /* 정확히 중앙 */
+    }
+  }
+
+  @keyframes moveRightToCenter {
+    0% {
+      right: -30vw; /* 오른쪽 끝에 배치 */
+    }
+    50% {
+      right: 0%; /* 중앙으로 이동 */
+      transform: translateX(50%); /* 정확히 중앙 */
+    }
+    100% {
+      right: 20%; /* 중앙에 고정 */
+      transform: translateX(50%); /* 정확히 중앙 */
+    }
+  }
+
+  .con1 ul li div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2vw;
+    font-weight: 500;
+    color: #555;
+    text-align: center;
+    width: 70%;
+  }
+
+  /*con1*/
+  .con1 h2,
+  .con1 p,
+  .con1 ul li:nth-child(3),
+  .con1 ul li:nth-child(1) {
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* con2 */
+  .con2 {
+    padding: 5vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+      0deg,
+      rgba(253, 255, 233, 0.994) 10%,
+      rgb(255, 255, 255) 90%
+    );
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* 초기 위치 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* 최종 위치 */
+    }
+  }
+
+  .con2 h2 {
+    position: relative;
+    opacity: 0;
+    color: #222;
+    font-size: 4vw;
+    font-weight: 700;
+    letter-spacing: -3px;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* con2 p */
+  .con2 p {
+    letter-spacing: -1px;
+    margin-bottom: 2vw;
+    font-size: 2vw;
+    font-weight: 500;
+    color: #555;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.5s; /* 1초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* con2 .check */
+  .con2 .check {
+    margin-bottom: 4vw;
+    color: #9ece5f;
+    font-size: 1.5vw;
+    letter-spacing: -1px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2s; /* 1.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .ani01 {
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .st0 {
+    stroke-dasharray: 458; /*점선*/
+    stroke-dashoffset: 458; /*애니메이션 시작위치*/
+    fill: none;
+    stroke: #000000;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+    animation: ani01 1s ease-in-out forwards;
+    animation-delay: 4s; /* 1.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  @keyframes ani01 {
+    0% {
+      stroke-dashoffset: 458;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* point1 */
+  .point1 {
+    margin-bottom: 4vw;
+    font-size: 1.2vw;
+
+    font-weight: 400;
+    color: #555;
+    letter-spacing: -1px;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.5s; /* 2초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* point2 */
+  .point2 {
+    margin-bottom: 4vw;
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: #555;
+    letter-spacing: -1px;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 3s; /* 2.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* point3 */
+  .point3 {
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: #555;
+    letter-spacing: -1px;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 3.5s; /* 3초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .point1 span,
+  .point2 span,
+  .point3 span {
+    margin-right: 1vw;
+    line-height: 1.5vw;
+    font-size: 1.5vw;
+    background-color: #9ece5f;
+    color: #fff;
+    padding: 0.5vw 2vw;
+    border-radius: 50%;
+  }
+
+  .con2 i {
+    margin-left: 0.3vw;
+  }
+
+  .animated {
+    position: relative; /* 애니메이션이 적용된 em 태그 */
+    z-index: 1; /* 이 값을 조정하여 위치를 설정 */
+  }
+
+  .con2_model {
+    opacity: 0;
+    width: 100%;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con2 ul {
+    gap: 5vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .con2 ul li:nth-child(1) {
+    width: 55%;
+    text-align: center;
+  }
+
+  .con2 ul li:nth-child(2) {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  /*con3*/
+
+  .con3 {
+    padding: 5vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con3 h5 {
+    font-size: 1.5vw;
+    opacity: 0;
+    background-color: #222;
+    color: #fff;
+    padding: 0.5vw 2vw;
+    border-radius: 2vw;
+    font-weight: 700;
+    animation: up 1s ease forwards;
+    animation-delay: 0.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con3 h2 {
+    opacity: 0;
+    color: #222;
+    font-size: 3vw;
+    letter-spacing: -3px;
+    font-weight: 600;
+    animation: up 1s ease forwards;
+    animation-delay: 1s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* 초기 위치 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* 최종 위치 */
+    }
+  }
+
+  /* define a fixed width for the entire menu */
+  .navigation {
+    width: 100%;
+  }
+
+  /* reset our lists to remove bullet points and padding */
+  .mainmenu,
+  .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mainmenu > li {
+    position: relative;
+    padding: 1vw 2vw;
+    font-size: 2vw;
+    letter-spacing: -1px;
+    font-weight: 700;
+    color: #222;
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  .mainmenu > li i {
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    font-size: 2.5vw;
+    color: #9ece5f;
+    position: absolute;
+  }
+
+  .mainmenu > li:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border-radius: 1vw;
+  }
+
+  .submenu li {
+    width: 90%;
+    font-size: 1.3vw;
+    font-weight: 600;
+    color: #555;
+  }
+
+  .mainmenu > li span {
+    color: #9ece5f;
+    font-size: 2vw;
+    font-weight: 700;
+    margin-right: 1vw;
+  }
+
+  /* make ALL links (main and submenu) have padding and background color */
+  .mainmenu a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  /* when hovering over a .mainmenu item,
+    display the submenu inside it.
+    we're changing the submenu's max-height from 0 to 200px;
+  */
+
+  .mainmenu li:hover .submenu {
+    transition: 2.5s;
+    display: block;
+    max-height: 20vw;
+  }
+
+  /* 아이콘에 특별한 효과 추가 */
+  .mainmenu li:hover i {
+    transform: scale(1.2) rotate(360deg); /* 크기 확대 및 회전 */
+
+    transition: all 0.4s ease; /* 모든 속성에 0.4초 애니메이션 효과 */
+  }
+
+  .submenu {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: max-height 0.5s ease-out;
+    transition: max-height 0.5s ease-out;
+  }
+
+  /*con4*/
+
+  .con4 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  .con4_wrap {
+    overflow: hidden;
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .con4 img {
+    transition: 0.5s ease; /* 스무스한 전환 효과 */
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 0.5vw;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .con4 img:hover {
+    transform: scale(1.2); /* 이미지만 확대 */
+    object-position: center; /* 확대된 이미지가 중앙에 오게 설정 */
+  }
+
+  .con4 ul {
+    margin-top: 0.4vw;
+
+    width: 100px;
+    display: flex;
+    gap: 0.8vw;
+    justify-content: center;
+  }
+
+  .number li:nth-child(2):hover {
+    color: #222;
+    border-bottom: 2px solid #222;
+  }
+
+  .number li:nth-child(1) {
+    color: #222;
+    border-bottom: 2px solid #222;
+  }
+
+  .number li:nth-child(3):hover {
+    color: #222;
+    border-bottom: 2px solid #222;
+  }
+
+  .number li:nth-child(4):hover {
+    color: #222;
+    border-bottom: 2px solid #222;
+  }
+
+  .number {
+    padding: 1vw;
+    box-sizing: border-box;
+    gap: 2vw !important;
+    font-size: 2vw;
+    font-weight: 700;
+    cursor: pointer;
+    color: #777;
+  }
+
+  .con4 p {
+    margin-top: 0.5vw;
+  }
+
+  /*con5*/
+
+  .con5 {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 수직 및 수평 중앙 정렬 */
+  }
+
+  .con5 h2 {
+    word-spacing: -2px;
+    text-align: center;
+    font-size: 20vw;
+    font-weight: 700;
+    line-height: 18vw;
+    text-transform: uppercase; /* 대문자 변환 */
+    background: url("../img/text_back.gif") no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: moveBg 90s linear infinite;
+  }
+
+  /*con6*/
+
+  .con6 {
+    padding: 5vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #ffffff 50%,
+      #ffd1e9 100%
+    ); /* 그라데이션 배경 추가 */
+  }
+
+  .con6 h2 {
+    font-size: 3vw;
+    letter-spacing: -3px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 5vw;
+    margin-left: 0vw;
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 0.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes pass {
+    0% {
+      opacity: 0;
+      transform: translateX(20px); /* 초기 위치 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* 최종 위치 */
+    }
+  }
+
+  .con6 img {
+    display: block;
+    width: 15vw;
+    height: 15vw;
+    filter: grayscale(100%); /* 처음에 이미지가 흑백으로 보이게 함 */
+    transition: filter 0.3s ease; /* 부드러운 전환 효과 */
+  }
+
+  .first {
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 2s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .last {
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 3s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con6 img:hover {
+    filter: grayscale(0%); /* 호버 시 원래 색상으로 돌아옴 */
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transition: 0.5s;
+  }
+
+  .con6 h4 {
+    letter-spacing: -1px;
+    font-size: 2vw;
+    font-weight: 600;
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 1s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con6 p {
+    font-size: 1.3vw;
+    font-weight: 400;
+    color: #aaa;
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 1.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .line {
+    background-color: #ddd;
+    z-index: 999;
+    width: 0.1vw;
+    height: 15vw;
+    position: absolute;
+    left: 50%;
+    bottom: 260px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 2.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con6_ul1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+    align-items: center;
+  }
+
+  .con6_ul2 {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+  }
+
+  .con6_ul3 {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+  }
+  /*footer*/
+
+  #footer {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffd1e9, #80a5e0);
+  }
+
+  #footer h2 {
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    font-size: 13.5vw;
+    color: #fff;
+    opacity: 0.3;
+  }
+
+  .fot_logo {
+    width: 10%;
+    filter: grayscale(100%) brightness(1000%);
+  }
+
+  #footer ul li:nth-child(1),
+  #footer ul li:nth-child(2),
+  #footer ul li:nth-child(3),
+  #footer ul li:nth-child(4),
+  #footer ul li:nth-child(5),
+  #footer ul li:nth-child(6) {
+    text-decoration: underline;
+  }
+
+  #footer ul {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    font-size: 15px;
+
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+  }
+
+  #footer ul li {
+    cursor: pointer;
+  }
+
+  #footer span {
+    font-weight: 800;
+  }
+
+  .fot_bottom {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .reserved {
+    position: absolute;
+    bottom: 5%;
+    font-size: 1vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    overflow: hidden;
+    font-family: "Noto Sans KR", sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /*header*/
+
+  #header {
+    line-height: 0 !important;
+    position: absolute;
+    z-index: 999;
+    padding: 1vw 1.5vw;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  #header i {
+    font-size: 4vw;
+    color: #402c64;
+  }
+
+  #header ul li {
+    font-size: 2vw;
+    cursor: pointer;
+  }
+
+  .menu li:nth-child(2),
+  .menu li:nth-child(3),
+  .menu li:nth-child(4),
+  .menu li:nth-child(5),
+  .menu li:nth-child(6) {
+    display: none;
+  }
+
+  .menu {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: left;
+  }
+
+  #header ul li {
+    cursor: pointer;
+    font-size: 2vw;
+    cursor: pointer;
+  }
+
+  .header_logo {
+    margin-left: 8vw;
+    width: 25vw;
+
+    box-sizing: border-box;
+  }
+
+  #nav-icon2 {
+    width: 6vw;
+    height: 0.5vw;
+    top: -1vw;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  #nav-icon2 span {
+    z-index: 999;
+    top: 0;
+    right: 0;
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 50%;
+    background: #402c64;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+
+  #nav-icon2 span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+  }
+
+  #nav-icon2 span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+  }
+
+  #nav-icon2 span:nth-child(1),
+  #nav-icon2 span:nth-child(2) {
+    top: 0px;
+  }
+
+  #nav-icon2 span:nth-child(3),
+  #nav-icon2 span:nth-child(4) {
+    top: 8px;
+  }
+
+  #nav-icon2 span:nth-child(5),
+  #nav-icon2 span:nth-child(6) {
+    top: 16px;
+  }
+
+  #nav-icon2.open span:nth-child(1),
+  #nav-icon2.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  #nav-icon2.open span:nth-child(2),
+  #nav-icon2.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  #nav-icon2.open span:nth-child(1) {
+    left: 3px;
+    top: 7px;
+  }
+
+  #nav-icon2.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 7px;
+  }
+
+  #nav-icon2.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+  }
+
+  #nav-icon2.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+  }
+
+  #nav-icon2.open span:nth-child(5) {
+    left: 3px;
+    top: 15px;
+  }
+
+  #nav-icon2.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 15px;
+  }
+
+  /* 메뉴 버튼 */
+  .menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 1000;
+    color: #fff;
+  }
+
+  .menu-button:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+
+  /* 사이드 메뉴 */
+  .side-menu {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: -300px; /* 숨김 상태 */
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(to bottom, #ffd1e9, #80a5e0);
+    color: #fff;
+    overflow-y: auto;
+    transition: transform 0.4s ease-in-out; /* 부드러운 애니메이션 */
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+    z-index: 999;
+    padding-top: 50px; /* 메뉴와 상단 여백 */
+    border-right: 2px solid #444; /* 오른쪽 경계선 */
+  }
+
+  .slide_logo {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    width: 50%;
+  }
+
+  .side-menu.open {
+    transform: translateX(300px); /* 메뉴가 오른쪽으로 밀려 나오게 */
+  }
+
+  /* 메뉴 리스트 스타일 */
+  .side-menu ul {
+    flex-direction: column;
+    list-style: none;
+    padding: 1vw;
+    box-sizing: border-box;
+    margin-top: 50px;
+  }
+
+  #header i {
+    position: absolute;
+    right: -1vw;
+
+    width: 10vw;
+    font-size: 3vw;
+    color: #ee88bd;
+  }
+
+  .side-menu ul li {
+    border-bottom: 2px solid #fff;
+    padding: 5vw;
+    box-sizing: border-box;
+    font-size: 2vw;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 배경 색과 트랜지션 효과 */
+  }
+
+  .side-menu ul li:hover {
+    transform: scale(1.1); /* 메뉴 아이템 크기 살짝 확대 */
+  }
+
+  .side-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-weight: 500; /* 글자 두께 */
+  }
+
+  .social {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .social img:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    transform: scale(1.1);
+  }
+
+  .social a img {
+    width: 7vw;
+  }
+
+  /* 어두운 오버레이 */
+  .overlay2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 998;
+  }
+
+  .overlay2.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* 사이드 메뉴 애니메이션 */
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-300px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-300px);
+    }
+  }
+
+  /*visual*/
+
+  #visual {
+    overflow: hidden;
+    z-index: -1;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    background-image: url(../img/main.jpg);
+    width: 100%;
+    height: 100vh;
+  }
+
+  .go-top {
+    z-index: 1000;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(34, 34, 34, 0.5); /* 투명도를 적용한 배경색 */
+    font-size: 3vw;
+    width: 7vw;
+    height: 7vw;
+    line-height: 7vw;
+    text-align: center;
+    border-radius: 50px; /* 버튼을 둥글게 */
+    display: none; /* 초기에는 숨김 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+  }
+
+  .go-top:hover {
+    background-color: #222; /* 호버 시 더 진한 색상 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강조 */
+    transform: translateY(-5px); /* 호버 시 살짝 위로 올라가는 애니메이션 */
+  }
+
+  #visual h2 {
+    font-size: 8vw;
+    margin-top: 65px;
+    box-sizing: border-box;
+    font-weight: 100;
+    letter-spacing: -1px;
+    font-family: "Black Han Sans", sans-serif;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 20vw;
+    text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0s;
+  }
+
+  .model,
+  .insta_line,
+  .num,
+  .bubble {
+    position: absolute;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+
+  .model {
+    width: 50%;
+    max-width: 400px;
+    left: 15%;
+    bottom: 0%;
+    transform: translate(-50%, -50%);
+    animation-delay: 1s; /* 1초 뒤에 애니메이션 시작 */
+  }
+
+  .insta_line {
+    width: 30vw;
+    max-width: 250px;
+    left: 30%;
+    bottom: 30%;
+    transform: translate(-50%, -50%);
+    animation-delay: 2s; /* 2초 뒤에 애니메이션 시작 */
+  }
+
+  .num {
+    width: 25%;
+    right: 20%;
+    bottom: 5%;
+    transform: translate(-50%, -50%);
+    animation-delay: 3s; /* 3초 뒤에 애니메이션 시작 */
+  }
+
+  .bubble {
+    width: 18%;
+    right: 23%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    animation-delay: 4s; /* 4초 뒤에 애니메이션 시작 */
+  }
+
+  /* 페이드 인 애니메이션 */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* 시작 위치를 아래로 설정 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* 최종 위치 */
+    }
+  }
+
+  /*container*/
+
+  #container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /*con1*/
+
+  .con1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con1 h2 {
+    color: #222;
+    font-weight: 700;
+    font-size: 5vw;
+    margin-bottom: 2.5vw;
+    letter-spacing: -0.1vw;
+    text-align: center;
+    opacity: 0;
+    animation: slideUp 1s forwards;
+    animation-delay: 0.5s; /* 0.5초 딜레이 */
+  }
+
+  .con1 p {
+    margin: auto;
+    width: 80%;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    margin-bottom: 5vw;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    opacity: 0;
+    animation: slideUp 1s forwards;
+    animation-delay: 1s; /* 1초 딜레이 */
+  }
+
+  /* 아래에서 위로 올라오는 애니메이션 */
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* 시작 시 아래로 살짝 위치 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* 애니메이션 종료 시 원래 위치 */
+    }
+  }
+
+  .con1 span {
+    background-color: transparent; /* 배경은 투명 */
+    padding: 0.5vw;
+    font-weight: bolder;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* 글자는 위에 보이게 설정 */
+  }
+
+  .con1 span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%; /* 배경을 처음에 숨기기 */
+    height: 100%;
+    background-color: lightgoldenrodyellow;
+    transition: width 5s ease-in-out; /* width가 0%에서 100%로 확장 */
+    z-index: -1; /* 배경은 글자 뒤에 오게 설정 */
+  }
+
+  .con1 span.show-background::before {
+    width: 100%; /* show-background 클래스를 추가할 때 배경이 확장됨 */
+  }
+
+  .con1 ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* 부모 요소에 relative 위치 설정 */
+  }
+
+  .con1 ul li {
+    position: absolute; /* 절대 위치 설정 */
+    transition: transform 1s ease-in-out; /* 부드러운 애니메이션 효과 */
+  }
+
+  .con1 ul li:nth-child(1) {
+    background-color: rgba(173, 216, 230, 0.5);
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    left: -10vw; /* 처음 왼쪽 끝에 위치 */
+    animation: moveLeftToCenter 3s ease-in-out forwards; /* 첫 번째 li 애니메이션 */
+  }
+
+  .con1_wrap {
+    margin-bottom: 20vw;
+  }
+
+  .con1 ul {
+    margin-bottom: 10vw;
+  }
+
+  .con1 ul li:nth-child(2) {
+    background-color: rgba(173, 230, 206, 0.5);
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    left: 50%; /* 중앙에 고정 */
+    transform: translate(-50%); /* 정확히 가운데 */
+  }
+
+  .con1 ul li:nth-child(3) {
+    background-color: rgba(173, 216, 230, 0.5);
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    right: -10vw; /* 처음 오른쪽 끝에 위치 */
+    animation: moveRightToCenter 3s ease-in-out forwards; /* 마지막 li 애니메이션 */
+  }
+
+  @keyframes moveLeftToCenter {
+    0% {
+      left: -30vw; /* 왼쪽 끝에 배치 */
+    }
+    50% {
+      left: 0%; /* 중앙으로 이동 */
+      transform: translateX(-50%); /* 정확히 중앙 */
+    }
+    100% {
+      left: 20%; /* 중앙에 고정 */
+      transform: translateX(-50%); /* 정확히 중앙 */
+    }
+  }
+
+  @keyframes moveRightToCenter {
+    0% {
+      right: -30vw; /* 오른쪽 끝에 배치 */
+    }
+    50% {
+      right: 0%; /* 중앙으로 이동 */
+      transform: translateX(50%); /* 정확히 중앙 */
+    }
+    100% {
+      right: 20%; /* 중앙에 고정 */
+      transform: translateX(50%); /* 정확히 중앙 */
+    }
+  }
+
+  .con1 ul li div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2vw;
+    font-weight: 500;
+    color: #555;
+    text-align: center;
+    width: 70%;
+  }
+
+  /*con1*/
+  .con1 h2,
+  .con1 p,
+  .con1 ul li:nth-child(3),
+  .con1 ul li:nth-child(1) {
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* con2 */
+  .con2 {
+    padding: 5vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+      0deg,
+      rgba(253, 255, 233, 0.994) 10%,
+      rgb(255, 255, 255) 90%
+    );
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* 초기 위치 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* 최종 위치 */
+    }
+  }
+
+  .con2 h2 {
+    position: relative;
+    opacity: 0;
+    color: #222;
+    font-size: 4vw;
+    font-weight: 700;
+    letter-spacing: -3px;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* con2 p */
+  .con2 p {
+    letter-spacing: -1px;
+    margin-bottom: 2vw;
+    font-size: 2vw;
+    font-weight: 500;
+    color: #555;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.5s; /* 1초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* con2 .check */
+  .con2 .check {
+    margin-bottom: 4vw;
+    color: #9ece5f;
+    font-size: 1.5vw;
+    letter-spacing: -1px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2s; /* 1.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .ani01 {
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .st0 {
+    stroke-dasharray: 458; /*점선*/
+    stroke-dashoffset: 458; /*애니메이션 시작위치*/
+    fill: none;
+    stroke: #000000;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+    animation: ani01 1s ease-in-out forwards;
+    animation-delay: 4s; /* 1.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  @keyframes ani01 {
+    0% {
+      stroke-dashoffset: 458;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* point1 */
+  .point1 {
+    margin-bottom: 4vw;
+    font-size: 1.2vw;
+
+    font-weight: 400;
+    color: #555;
+    letter-spacing: -1px;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.5s; /* 2초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* point2 */
+  .point2 {
+    margin-bottom: 4vw;
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: #555;
+    letter-spacing: -1px;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 3s; /* 2.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* point3 */
+  .point3 {
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: #555;
+    letter-spacing: -1px;
+    opacity: 0;
+    transform: translateY(20px); /* 초기 위치 설정 */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 3.5s; /* 3초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .point1 span,
+  .point2 span,
+  .point3 span {
+    margin-right: 1vw;
+    line-height: 1.5vw;
+    font-size: 1.5vw;
+    background-color: #9ece5f;
+    color: #fff;
+    padding: 0.5vw 2vw;
+    border-radius: 50%;
+  }
+
+  .con2 i {
+    margin-left: 0.3vw;
+  }
+
+  .animated {
+    position: relative; /* 애니메이션이 적용된 em 태그 */
+    z-index: 1; /* 이 값을 조정하여 위치를 설정 */
+  }
+
+  .con2_model {
+    opacity: 0;
+    width: 100%;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con2 ul {
+    gap: 5vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .con2 ul li:nth-child(1) {
+    width: 55%;
+    text-align: center;
+  }
+
+  .con2 ul li:nth-child(2) {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  /*con3*/
+
+  .con3 {
+    padding: 5vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .con3 h5 {
+    font-size: 1.5vw;
+    opacity: 0;
+    background-color: #222;
+    color: #fff;
+    padding: 0.5vw 2vw;
+    border-radius: 2vw;
+    font-weight: 700;
+    animation: up 1s ease forwards;
+    animation-delay: 0.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con3 h2 {
+    opacity: 0;
+    color: #222;
+    font-size: 3vw;
+    letter-spacing: -3px;
+    font-weight: 600;
+    animation: up 1s ease forwards;
+    animation-delay: 1s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* 초기 위치 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* 최종 위치 */
+    }
+  }
+
+  /* define a fixed width for the entire menu */
+  .navigation {
+    width: 100%;
+  }
+
+  /* reset our lists to remove bullet points and padding */
+  .mainmenu,
+  .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mainmenu > li {
+    position: relative;
+    padding: 1vw 2vw;
+    font-size: 2vw;
+    letter-spacing: -1px;
+    font-weight: 700;
+    color: #222;
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  .mainmenu > li i {
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    font-size: 2.5vw;
+    color: #9ece5f;
+    position: absolute;
+  }
+
+  .mainmenu > li:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border-radius: 1vw;
+  }
+
+  .submenu li {
+    width: 90%;
+    font-size: 1.3vw;
+    font-weight: 600;
+    color: #555;
+  }
+
+  .mainmenu > li span {
+    color: #9ece5f;
+    font-size: 2vw;
+    font-weight: 700;
+    margin-right: 1vw;
+  }
+
+  /* make ALL links (main and submenu) have padding and background color */
+  .mainmenu a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  /* when hovering over a .mainmenu item,
+    display the submenu inside it.
+    we're changing the submenu's max-height from 0 to 200px;
+  */
+
+  .mainmenu li:hover .submenu {
+    transition: 2.5s;
+    display: block;
+    max-height: 20vw;
+  }
+
+  /* 아이콘에 특별한 효과 추가 */
+  .mainmenu li:hover i {
+    transform: scale(1.2) rotate(360deg); /* 크기 확대 및 회전 */
+
+    transition: all 0.4s ease; /* 모든 속성에 0.4초 애니메이션 효과 */
+  }
+
+  .submenu {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: max-height 0.5s ease-out;
+    transition: max-height 0.5s ease-out;
+  }
+
+  /*con4*/
+
+  .con4 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  .con4_wrap {
+    overflow: hidden;
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .con4 img {
+    transition: 0.5s ease; /* 스무스한 전환 효과 */
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 0.5vw;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .con4 img:hover {
+    transform: scale(1.2); /* 이미지만 확대 */
+    object-position: center; /* 확대된 이미지가 중앙에 오게 설정 */
+  }
+
+  .con4 ul {
+    margin-top: 0.4vw;
+
+    width: 100px;
+    display: flex;
+    gap: 0.8vw;
+    justify-content: center;
+  }
+
+  .number li:nth-child(2):hover {
+    color: #222;
+    border-bottom: 2px solid #222;
+  }
+
+  .number li:nth-child(1) {
+    color: #222;
+    border-bottom: 2px solid #222;
+  }
+
+  .number li:nth-child(3):hover {
+    color: #222;
+    border-bottom: 2px solid #222;
+  }
+
+  .number li:nth-child(4):hover {
+    color: #222;
+    border-bottom: 2px solid #222;
+  }
+
+  .number {
+    padding: 1vw;
+    box-sizing: border-box;
+    gap: 2vw !important;
+    font-size: 2vw;
+    font-weight: 700;
+    cursor: pointer;
+    color: #777;
+  }
+
+  .con4 p {
+    margin-top: 0.5vw;
+  }
+
+  /*con5*/
+
+  .con5 {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 수직 및 수평 중앙 정렬 */
+  }
+
+  .con5 h2 {
+    word-spacing: -2px;
+    text-align: center;
+    font-size: 20vw;
+    font-weight: 700;
+    line-height: 18vw;
+    text-transform: uppercase; /* 대문자 변환 */
+    background: url("../img/text_back.gif") no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: moveBg 90s linear infinite;
+  }
+
+  /*con6*/
+
+  .con6 {
+    padding: 5vw;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #ffffff 50%,
+      #ffd1e9 100%
+    ); /* 그라데이션 배경 추가 */
+  }
+
+  .con6 h2 {
+    font-size: 3vw;
+    letter-spacing: -3px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 5vw;
+    margin-left: 0vw;
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 0.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes pass {
+    0% {
+      opacity: 0;
+      transform: translateX(20px); /* 초기 위치 */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* 최종 위치 */
+    }
+  }
+
+  .con6 img {
+    display: block;
+    width: 15vw;
+    height: 15vw;
+    filter: grayscale(100%); /* 처음에 이미지가 흑백으로 보이게 함 */
+    transition: filter 0.3s ease; /* 부드러운 전환 효과 */
+  }
+
+  .first {
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 2s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .last {
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 3s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con6 img:hover {
+    filter: grayscale(0%); /* 호버 시 원래 색상으로 돌아옴 */
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transition: 0.5s;
+  }
+
+  .con6 h4 {
+    letter-spacing: -1px;
+    font-size: 2vw;
+    font-weight: 600;
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 1s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con6 p {
+    font-size: 1.3vw;
+    font-weight: 400;
+    color: #aaa;
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 1.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .line {
+    background-color: #ddd;
+    z-index: 999;
+    width: 0.1vw;
+    height: 15vw;
+    position: absolute;
+    left: 50%;
+    bottom: 260px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: pass 1s ease forwards;
+    animation-delay: 2.5s; /* 0.5초 뒤에 시작 */
+    animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
+  }
+
+  .con6_ul1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+    align-items: center;
+  }
+
+  .con6_ul2 {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+  }
+
+  .con6_ul3 {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+  }
+
+  /*footer*/
+
+  #footer {
+    height: 25rem;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    background: linear-gradient(to bottom, #ffd1e9, #80a5e0);
+  }
+
+  #footer h2 {
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    font-size: 13.5vw;
+    color: #fff;
+    opacity: 0.3;
+  }
+
+  #footer p {
+    font-size: 1vw;
+  }
+
+  .fot_logo {
+    width: 20%;
+    filter: grayscale(100%) brightness(1000%);
+  }
+
+  #footer ul li:nth-child(1),
+  #footer ul li:nth-child(2),
+  #footer ul li:nth-child(3),
+  #footer ul li:nth-child(4),
+  #footer ul li:nth-child(5),
+  #footer ul li:nth-child(6) {
+    text-decoration: underline;
+  }
+
+  #footer ul {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    font-size: 1.5vw;
+
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+  }
+
+  #footer ul li {
+    cursor: pointer;
+  }
+
+  #footer span {
+    font-weight: 800;
+  }
+
+  .fot_bottom {
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .fot_bottom img {
+    width: 4vw;
+  }
+
+  .fot_img img {
+    margin: auto;
+    width: 3vw;
+  }
+
+  .reserved {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+  }
+
+  .form-item {
+    width: 100%; /* 작은 화면에서는 모든 항목이 세로로 배치되도록 설정 */
+  }
+}

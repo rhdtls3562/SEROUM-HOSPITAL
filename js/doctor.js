@@ -126,6 +126,9 @@ $(document).ready(function () {
     const $con1 = $(".con1"); // .con1 섹션
     const $flipCard = $(".flip-card"); // 뒤집힐 카드
 
+    // 한번만 실행되도록 변수 설정
+    let hasRun = false; // 애니메이션 실행 여부를 추적하는 플래그
+
     // 윈도우 스크롤 이벤트
     $(window).on("scroll", function () {
       const con1Top = $con1.offset().top; // .con1의 상단 위치
@@ -133,17 +136,33 @@ $(document).ready(function () {
       const scrollTop = $(window).scrollTop(); // 현재 스크롤 위치
       const windowHeight = $(window).height(); // 윈도우 높이
 
-      // .con1 섹션이 화면에 보일 때마다
-      if (scrollTop + windowHeight > con1Top && scrollTop < con1Bottom) {
-        // hover 상태 강제 추가
-        $flipCard.addClass("hover"); // 강제로 hover 클래스를 추가
+      // .con1 섹션이 화면에 보일 때마다, 한 번만 실행
+      if (
+        scrollTop + windowHeight > con1Top &&
+        scrollTop < con1Bottom &&
+        !hasRun
+      ) {
+        hasRun = true; // 한 번 실행된 상태로 설정
 
-        // 1.5초 후 hover 상태 해제
+        // 0.5초 후에 애니메이션 시작
         setTimeout(function () {
-          $flipCard.removeClass("hover"); // hover 클래스 제거
-        }, 1000);
+          $flipCard.addClass("hover"); // 강제로 hover 클래스를 추가하여 카드 뒤집기
+          // 1초 후에 hover 클래스 제거
+          setTimeout(function () {
+            $flipCard.removeClass("hover"); // hover 클래스 제거
+          }, 1000);
+        }, 500); // 페이지 들어온 후 0.5초 딜레이
       }
     });
+
+    // 호버 효과가 정상적으로 작동하도록 하기 위한 호버 이벤트 처리
+    $flipCard
+      .on("mouseenter", function () {
+        $(this).addClass("hover"); // 마우스가 올라가면 hover 클래스 추가
+      })
+      .on("mouseleave", function () {
+        $(this).removeClass("hover"); // 마우스가 나가면 hover 클래스 제거
+      });
   });
   $(document).ready(function () {
     // 스크롤 트리거 효과 함수
@@ -167,6 +186,42 @@ $(document).ready(function () {
         }
       });
     }
+    $(document).ready(function () {
+      // .con2 섹션이 화면에 들어왔을 때 애니메이션 실행
+      $(window).on("scroll", function () {
+        var scrollPosition = $(window).scrollTop(); // 현재 스크롤 위치
+        var con2Offset = $(".con2").offset().top; // .con2 섹션의 위치
+
+        // .con2가 화면에 들어오면 애니메이션 시작 (0.5초 딜레이)
+        if (scrollPosition + $(window).height() > con2Offset) {
+          setTimeout(function () {
+            $(".good2 h2, .good2 p, .greeting").addClass("animate");
+          }, 500); // 0.5초 후 실행
+        }
+      });
+    });
+    $(document).ready(function () {
+      const $items = $(".con3_ul1 li, .con3_ul2 li, .con3_ul3 li"); // 모든 li 항목
+
+      // 페이지가 로드된 후 스크롤 이벤트 처리
+      $(window).on("scroll", function () {
+        const windowHeight = $(window).height(); // 윈도우 높이
+        const scrollTop = $(window).scrollTop(); // 현재 스크롤 위치
+
+        $items.each(function () {
+          const itemTop = $(this).offset().top; // 항목의 상단 위치
+          const itemBottom = itemTop + $(this).outerHeight(); // 항목의 하단 위치
+
+          // 항목이 화면에 보일 때 애니메이션 시작
+          if (scrollTop + windowHeight > itemTop && scrollTop < itemBottom) {
+            $(this).addClass("show"); // show 클래스를 추가하여 애니메이션 실행
+          }
+        });
+      });
+
+      // 처음 페이지 로딩 시 스크롤에 의존하지 않고 한번만 애니메이션 실행
+      $(window).trigger("scroll");
+    });
 
     // 스크롤 시 checkScroll 함수 호출
     $(window).on("scroll", checkScroll);

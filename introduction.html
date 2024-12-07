@@ -53,7 +53,7 @@
         </li>
         <li><a href="introduction.html">병원소개</a></li>
         <li><a href="doctor.html">의료진 소개</a></li>
-        <li><a href="#">이벤트</a></li>
+        <li><a href="event.html">이벤트</a></li>
         <li><a href="#">고객후기</a></li>
         <li><a href="#">예약상담</a></li>
         <li class="menu-button">
@@ -83,6 +83,11 @@
           <li>
             <a href="doctor.html"
               >Intro<i class="fa-solid fa-face-smile"></i
+            ></a>
+          </li>
+          <li>
+            <a href="event.html"
+              >Event<i class="fa-solid fa-calendar-check"></i
             ></a>
           </li>
           <li>
@@ -369,10 +374,11 @@
             start: "top top", // 섹션이 상단에 오면 애니메이션 시작
             end: "bottom top", // 섹션이 끝날 때 애니메이션 종료
             scrub: 1, // 스크롤과 애니메이션의 동기화 속도 조절 (1초간 동기화)
-            pin: true, // 섹션을 고정시키기
-            markers: false, // 디버깅을 위한 마커 비활성화
+            pin: true,
+            pinSpacing: true, // 추가 공간 제거
+            markers: false,
           },
-          scale: 1, // 초기 비디오 크기
+
           width: "100%", // 비디오 width
           height: "100vh", // 비디오 height
           ease: "power2.inOut", // 부드러운 애니메이션
@@ -386,7 +392,7 @@
             end: "bottom top", // 섹션이 끝날 때 애니메이션 종료
             scrub: 1, // 스크롤에 맞춰 애니메이션을 진행
           },
-          "word-spacing": "5vw", // 애니메이션 끝날 때의 간격
+          wordSpacing: "5vw", // 애니메이션 끝날 때의 간격
           ease: "power2.inOut", // 부드러운 애니메이션
         });
       });

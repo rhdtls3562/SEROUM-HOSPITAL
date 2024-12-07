@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/event.js"></script>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/event.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header">
+      <ul class="menu">
+        <li>
+          <h1>
+            <a href="index.html">
+              <img class="header_logo" src="img/logo.png" alt="병원 로고" />
+            </a>
+          </h1>
+        </li>
+        <li><a href="introduction.html">병원소개</a></li>
+        <li><a href="doctor.html">의료진 소개</a></li>
+        <li><a href="event.html">이벤트</a></li>
+        <li><a href="#">고객후기</a></li>
+        <li><a href="#">예약상담</a></li>
+        <li class="menu-button">
+          <div id="nav-icon2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </li>
+      </ul>
+
+      <!-- 사이드 메뉴 -->
+      <div class="side-menu">
+        <img class="slide_logo" src="img/logo.png" />
+        <ul>
+          <li>
+            <a href="index.html">Home <i class="fa-solid fa-house"></i></a>
+          </li>
+          <li>
+            <a href="introduction.html"
+              >Priview<i class="fa-solid fa-hospital"></i
+            ></a>
+          </li>
+          <li>
+            <a href="doctor.html"
+              >Intro<i class="fa-solid fa-face-smile"></i
+            ></a>
+          </li>
+          <li>
+            <a href="event.html"
+              >Event<i class="fa-solid fa-calendar-check"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#">Riview<i class="fa-solid fa-ranking-star"></i></a>
+          </li>
+          <li>
+            <a href="#">Reserve<i class="fa-solid fa-book-open-reader"></i></a>
+          </li>
+        </ul>
+        <div class="social">
+          <a
+            href="https://open.kakao.com/o/shy82g3g"
+            target="_blank"
+            class="kakao-button"
+            ><img src="img/kakao.png"
+          /></a>
+          <a
+            href="https://mail.naver.com/write/?to=rhdtls3562@naver.com"
+            target="_blank"
+            class="email-button"
+            ><img src="img/email.png"
+          /></a>
+          <a href="tel:01012345678" class="call-button"
+            ><img src="img/call.png"
+          /></a>
+        </div>
+      </div>
+
+      <!-- 어두운 오버레이 -->
+      <div class="overlay2"></div>
+    </div>
+    <div id="visual">
+      <h2>새로움 필러 무제한</h2>
+      <img class="model" src="img/event_model.png" />
+      <img class="insta_line" src="img/event_insta.png" />
+      <img class="num" src="img/event_call.png" />
+      <img class="bubble" src="img/event_bubble_1.png" />
+    </div>
+    <div id="container">
+      <a href="#" class="go-top"><i class="fa-solid fa-caret-up"></i></a>
+      <section class="con1">
+        <div class="con1_wrap">
+          <h2>1mm 보톡스</h2>
+          <p>
+            보톡스란 보톨리눔 독소를 이용하여 신경전달 물질인 아세틸콜린의
+            분비를 억제해 주름개선이나 근육을 일시적으로 축소시켜
+            <span
+              >사각턱,종아리,승모근 등 근육을 축소하는데 매우 효과적
+              입니다.</span
+            >
+            비교적 안전하고 시술 시간이 짧고 회복이 빠르다는 장점이 있지만
+            영구적인 치료가 아니므로 일정한 주기로 시술 받는것이 좋습니다.
+          </p>
+        </div>
+
+        <ul>
+          <li><div>특정 근육을 일시적으로 축소시켜 주름 완화</div></li>
+          <li><div>시술 시간이 짧고 빠른 회복 가능</div></li>
+          <li><div>다양한 부위에 안전하고 확실한 효과</div></li>
+        </ul>
+      </section>
+      <section class="con2">
+        <ul>
+          <li><img class="con2_model" src="img/event_con2_model.png" /></li>
+          <li>
+            <h2>
+              새로움 만의
+              <em class="animated">
+                시술 원칙
+                <div class="ani01">
+                  <svg
+                    id="Capa_2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 180.41 82.4"
+                  >
+                    <path
+                      class="st0"
+                      d="M113.78,14.88c6.7,1.2,63.09,11.69,64.17,31.47.39,7.07-5.38,12.8-10.07,15.74-37.28,23.32-89.51,19.25-117.51,13.06-12.77-2.82-24.66-7.26-36.02-15.51-7.71-5.6-13.02-15.68-11.72-23.3.92-5.39,6.68-11.38,9.69-13.63C39.96,2.05,78.39,2.75,83.96,2.56c17.9-.59,47.41.69,82.34,13.27"
+                      style="
+                        fill: none;
+                        stroke: #9ece5f;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-width: 4.89px;
+                      "
+                    />
+                  </svg>
+                </div>
+              </em>
+            </h2>
+            <p>숙련된 전문 의료진으로 더욱 안전하게</p>
+            <div class="check">
+              CHECK POINT <i class="fa-regular fa-square-check"></i>
+            </div>
+            <div class="point1">
+              <span>01</span> 만족스러운 결과를 위해, 정품 정령, 유통기한을
+              확인한 후 시술 진행
+            </div>
+            <div class="point2">
+              <span>02</span> 시술 경험이 풍부한 전문 의료진이 1:1 맞춤 시술을
+              진행
+            </div>
+            <div class="point3">
+              <span>03</span> 일회용품 사용 및 멸균 소독으로 감염 예방이 가능해
+              부작용 확률 감소
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="con3">
+        <h5>Q&A</h5>
+        <h2>자주 묻는 질문</h2>
+        <nav class="navigation">
+          <ul class="mainmenu">
+            <li>
+              <a href=""><span>Q</span> 국산과 수입산의 차이가 있나요?</a
+              ><i class="fa-solid fa-computer-mouse"></i>
+              <ul class="submenu">
+                <li>
+                  <a href="#"
+                    >동일한 성분이지만 입자에 따른 다양한 종류가 많아 시술
+                    부위에 따라 다르게 선택할 수 있습니다. 충분한 상담 후
+                    시술하는 것을 권장합니다.</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"><span>Q</span> 보톡스 내성은 왜 생기는 걸까요?</a
+              ><i class="fa-solid fa-computer-mouse"></i>
+              <ul class="submenu">
+                <li>
+                  <a href="#"
+                    >일반적인 보톡스 시술 시 주입 되는 용량으로는 내성이 생기지
+                    않습니다. 내성을 유발하는 것은 한번 시술 시 고용량을
+                    사용하거나 한달 이내의 주기로 자주 투여했을 경우 내성이
+                    발생할 확률이 높습니다.</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"><span>Q</span> 보톡스 주기는 어떻게 되나요?</a
+              ><i class="fa-solid fa-computer-mouse"></i>
+              <ul class="submenu">
+                <li>
+                  <a href="#"
+                    >시술 2~3일부터 서서히 효과가 나타나고 최대 1~2주 내 최대
+                    효과를 확인할 수 있습니다. 제품마다 다르지만 평균 2~3개월 간
+                    유지되므로 지속적인 효과를 원한다면 3~4개월 이내 재 시술을
+                    권장합니다.</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"
+                ><span>Q</span> 주입한 필러가 피부 속에서 흘러 내릴 수
+                있나요?</a
+              ><i class="fa-solid fa-computer-mouse"></i>
+              <ul class="submenu">
+                <li>
+                  <a href="#"
+                    >시술 직후 가벼운 붓기에 의해 필러가 흘러내렸다고 오해하시는
+                    경우가 있습니다. 하지만 필러는 한 번 주입 되고 모양과 위치를
+                    잡으면 흘러내리거나 변하지 않습니다.</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"><span>Q</span> 필러 유지 기간은 어떻게 되나요?</a
+              ><i class="fa-solid fa-computer-mouse"></i>
+              <ul class="submenu">
+                <li>
+                  <a href="#"
+                    >개인, 시술 부위, 제품에 따라 유지 기간이 달라지게 되는데
+                    일반적으로 국산 필러는 6~12개월 이내, 수입 필러는 12~18개월
+                    간 유지됩니다.</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section class="con4">
+        <ul>
+          <li>
+            <div class="con4_wrap">
+              <img src="img/event_img1.jpg" />
+            </div>
+            <p>얼굴 보톡스</p>
+          </li>
+          <li>
+            <div class="con4_wrap">
+              <img src="img/event_img2.jpg" />
+            </div>
+            <p>커스텀 울쎄라</p>
+          </li>
+          <li>
+            <div class="con4_wrap">
+              <img src="img/event_img3.jpg" />
+            </div>
+            <p>자연유착 쌍수</p>
+          </li>
+          <li>
+            <div class="con4_wrap">
+              <img src="img/event_img4.jpg" />
+            </div>
+            <p>쥬배록</p>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <div class="con4_wrap">
+              <img src="img/event_img5.jpg" />
+            </div>
+            <p>첫 자연유착</p>
+          </li>
+          <li>
+            <div class="con4_wrap">
+              <img src="img/event_img6.jpg" />
+            </div>
+            <p>안면윤곽</p>
+          </li>
+          <li>
+            <div class="con4_wrap">
+              <img src="img/event_img7.jpg" />
+            </div>
+            <p>얼굴 지방흡입</p>
+          </li>
+          <li>
+            <div class="con4_wrap">
+              <img src="img/event_img8.jpg" />
+            </div>
+            <p>비절게 코프팅</p>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <div class="con4_wrap">
+              <img src="img/event_img9.jpg" />
+            </div>
+            <p>첫 코수술</p>
+          </li>
+          <li>
+            <div class="con4_wrap">
+              <img src="img/event_img10.jpg" />
+            </div>
+            <p>얼굴 퓨어 지방흡입</p>
+          </li>
+          <li>
+            <div class="con4_wrap">
+              <img src="img/event_img11.jpg" />
+            </div>
+            <p>얼굴 윤곽주사</p>
+          </li>
+          <li>
+            <div class="con4_wrap">
+              <img src="img/event_img12.jpg" />
+            </div>
+            <p>윤곽 3종</p>
+          </li>
+        </ul>
+
+        <ul class="number">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li><i class="fa-solid fa-angles-right"></i></li>
+        </ul>
+      </section>
+      <section class="con5">
+        <h2>EVENT<br />FORYOU</h2>
+      </section>
+      <section class="con6">
+        <h2>더 많은 이벤트 보러가기</h2>
+        <ul class="con6_ul1">
+          <li>
+            <ul class="con6_ul2">
+              <li>
+                <h4>Welcome! 첫 성형 이벤트 특가</h4>
+                <p>2025.01.01 - 2025. 01.30</p>
+              </li>
+              <li><img class="first" src="img/event_con6 img.jpg" /></li>
+            </ul>
+          </li>
+          <li class="line"></li>
+          <li>
+            <ul class="con6_ul3">
+              <li>
+                <h4>2025 첫 리뷰 이벤트</h4>
+                <p>2025.01.01 - 2025. 01.30</p>
+              </li>
+              <li><img class="last" src="img/event_con6 img1.jpg" /></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div id="footer">
+      <h2>Start a new life</h2>
+      <img class="fot_logo" src="img/logo.png" />
+      <ul>
+        <li>개인정보취급방침</li>
+        <li>이용약관</li>
+        <li>환자권리장전</li>
+        <li>서류발급</li>
+        <li>온라인서류발급</li>
+        <li>비급여수기표</li>
+      </ul>
+      <p>
+        서울특별시 강남대로 390 미진프라자 18층(역삼동825 미진프라자 18층) |
+        개인정보보호책임자:박형직 | 대표원장:박형직<br />사업자등록번호:<span
+          >213-91-01210</span
+        >
+        | TEL. <span>1588-3882</span> | FAX. <span>02-3456-7890</span>
+      </p>
+      <ul class="fot_img">
+        <li><img src="img/blog.webp" /></li>
+        <li><img src="img/ft_btn_facebook.webp" /></li>
+        <li><img src="img/ft_btn_insta.webp" /></li>
+        <li><img src="img/ft_btn_tiktok.webp" /></li>
+        <li><img src="img/ft_btn_ytube.webp" /></li>
+        <li><img src="img/ft_btn_post.webp" /></li>
+      </ul>
+      <ul class="fot_bottom">
+        <li><img src="img/ft_btn_kma.webp" /></li>
+        <li><img src="img/ft_btn_kos.webp" /></li>
+        <li><img src="img/ft_btn_kpbpa.webp" /></li>
+        <li><img src="img/ft_btn_sma.webp" /></li>
+      </ul>
+      <p class="reserved">
+        ⓒ 2022 Gangnam seoul rom hospital clinic. all right reserved.
+      </p>
+    </div>
+  </body>
+</html>

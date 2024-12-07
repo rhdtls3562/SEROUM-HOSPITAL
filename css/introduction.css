@@ -445,14 +445,11 @@
   }
 
   .con1 h2 {
-    background: linear-gradient(
-      to right,
-      #ffe3cb,
-      #ff6969
-    ); /* 밝은 살구색 -> 진한 살구색 */
-    -webkit-background-clip: text; /* 배경을 글자로 클리핑 */
+    background: linear-gradient(to right, #ffe3cb, #ff6969);
+    -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent; /* 텍스트를 투명하게 */
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
     text-align: center;
     margin: auto;
     width: 100%;
@@ -486,10 +483,13 @@
     left: 50%;
     width: 30vw;
     height: auto;
-    transform: translate(-50%, -50%) scale(1); /* 기본 크기 */
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-filter: brightness(0.7);
     filter: brightness(0.7);
-    object-fit: cover; /* 비디오 비율을 유지하면서 화면 꽉 채우기 */
-    transition: transform 0.3s ease; /* 부드러운 확대 효과 */
+    object-fit: cover;
+    -webkit-object-fit: cover;
+    transition: transform 0.3s ease;
   }
 
   /*con2*/
