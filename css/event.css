@@ -2732,7 +2732,7 @@
     display: block;
     background-image: url(../img/main.jpg);
     width: 100%;
-    height: 100vh;
+    height: 40rem;
   }
 
   .go-top {
@@ -2765,7 +2765,7 @@
   }
 
   #visual h2 {
-    font-size: 8vw;
+    font-size: 9vw;
     margin-top: 65px;
     box-sizing: border-box;
     font-weight: 100;
@@ -2795,7 +2795,7 @@
   }
 
   .model {
-    width: 50%;
+    width: 60%;
     max-width: 400px;
     left: 15%;
     bottom: 0%;
@@ -2804,15 +2804,16 @@
   }
 
   .insta_line {
-    width: 30vw;
+    width: 35vw;
     max-width: 250px;
-    left: 30%;
-    bottom: 30%;
+    left: 33%;
+    bottom: 25%;
     transform: translate(-50%, -50%);
     animation-delay: 2s; /* 2초 뒤에 애니메이션 시작 */
   }
 
   .num {
+    display: none;
     width: 25%;
     right: 20%;
     bottom: 5%;
@@ -2825,7 +2826,7 @@
     right: 23%;
     top: 30%;
     transform: translate(-50%, -50%);
-    animation-delay: 4s; /* 4초 뒤에 애니메이션 시작 */
+    animation-delay: 3.5s; /* 4초 뒤에 애니메이션 시작 */
   }
 
   /* 페이드 인 애니메이션 */
@@ -2850,20 +2851,20 @@
   /*con1*/
 
   .con1 {
+    padding: 5vw;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 5vw;
     box-sizing: border-box;
     width: 100%;
-    height: 100vh;
+    height: 30rem;
   }
 
   .con1 h2 {
     color: #222;
     font-weight: 700;
-    font-size: 5vw;
+    font-size: 6vw;
     margin-bottom: 2.5vw;
     letter-spacing: -0.1vw;
     text-align: center;
@@ -2873,10 +2874,11 @@
   }
 
   .con1 p {
+    line-height: 3vw;
     margin: auto;
     width: 80%;
-    font-size: 1.5vw;
-    line-height: 2vw;
+    font-size: 2vw;
+
     margin-bottom: 5vw;
     color: #555;
     display: flex;
@@ -3007,7 +3009,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2vw;
+    font-size: 2.5vw;
     font-weight: 500;
     color: #555;
     text-align: center;
@@ -3031,7 +3033,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
+
     background: linear-gradient(
       0deg,
       rgba(253, 255, 233, 0.994) 10%,
@@ -3126,7 +3128,7 @@
   /* point1 */
   .point1 {
     margin-bottom: 4vw;
-    font-size: 1.2vw;
+    font-size: 2vw;
 
     font-weight: 400;
     color: #555;
@@ -3141,7 +3143,7 @@
   /* point2 */
   .point2 {
     margin-bottom: 4vw;
-    font-size: 1.2vw;
+    font-size: 2vw;
     font-weight: 400;
     color: #555;
     letter-spacing: -1px;
@@ -3154,7 +3156,7 @@
 
   /* point3 */
   .point3 {
-    font-size: 1.2vw;
+    font-size: 2vw;
     font-weight: 400;
     color: #555;
     letter-spacing: -1px;
@@ -3188,25 +3190,22 @@
 
   .con2_model {
     opacity: 0;
-    width: 100%;
+    width: 70%;
     animation: fadeIn 1s ease forwards;
     animation-delay: 0.5s; /* 0.5초 뒤에 시작 */
     animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
   }
 
-  .con2 ul {
-    gap: 5vw;
-    display: flex;
-    justify-content: center;
-  }
-
   .con2 ul li:nth-child(1) {
-    width: 55%;
+    width: 100%;
+    padding: 3vw;
+    box-sizing: border-box;
     text-align: center;
   }
 
   .con2 ul li:nth-child(2) {
-    width: 45%;
+    padding: 5vw;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -3222,7 +3221,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
   }
 
   .con3 h5 {
@@ -3301,7 +3299,7 @@
 
   .submenu li {
     width: 90%;
-    font-size: 1.3vw;
+    font-size: 1.5vw;
     font-weight: 600;
     color: #555;
   }
@@ -3348,13 +3346,14 @@
   /*con4*/
 
   .con4 {
+    padding: 5vw;
+    box-sizing: border-box;
     text-align: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
   }
   .con4_wrap {
     overflow: hidden;
@@ -3426,7 +3425,7 @@
   .con5 {
     box-sizing: border-box;
     width: 100%;
-    height: 100vh;
+    height: 20rem;
     display: flex;
     justify-content: center;
     align-items: center; /* 수직 및 수평 중앙 정렬 */
@@ -3452,7 +3451,7 @@
     padding: 5vw;
     box-sizing: border-box;
     width: 100%;
-    height: 100vh;
+    height: 30rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -3541,13 +3540,14 @@
   }
 
   .line {
+    display: none;
     background-color: #ddd;
     z-index: 999;
     width: 0.1vw;
     height: 15vw;
     position: absolute;
     left: 50%;
-    bottom: 260px;
+    bottom: 10vw;
     transform: translate(-50%, -50%);
     opacity: 0;
     animation: pass 1s ease forwards;
@@ -3555,24 +3555,27 @@
     animation-play-state: paused; /* 기본적으로 애니메이션을 멈춤 */
   }
 
-  .con6_ul1 {
+  .con6_ul2 {
     width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 10vw;
-    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 3vw;
+    text-align: right;
   }
 
-  .con6_ul2 {
-    display: flex;
-    justify-content: center;
-    gap: 3vw;
+  .con6_ul2 li:nth-child(1) {
+    width: 50%;
+  }
+
+  .con6_ul3 li:nth-child(1) {
+    width: 50%;
   }
 
   .con6_ul3 {
+    text-align: right;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 3vw;
+    justify-content: space-around;
   }
 
   /*footer*/
