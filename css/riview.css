@@ -359,11 +359,11 @@
   }
 
   .model {
-    top: 65%;
+    top: 70%;
     left: 55%;
     transform: translate(-50%, -50%);
     position: absolute;
-    width: 35%;
+    width: 30%;
   }
 
   .phone {
@@ -371,7 +371,7 @@
     top: 60%;
     left: 55%;
     transform: translate(-50%, -50%);
-    width: 40%;
+    width: 35%;
   }
 
   .bubble1 {
@@ -394,7 +394,7 @@
     position: absolute;
     width: 7%;
     top: 45%;
-    right: 25%;
+    right: 27%;
     transform: translate(-50%, -50%);
   }
 
@@ -424,8 +424,9 @@
   }
 
   .lookbook {
+    font-family: "Noto Sans KR", sans-serif !important;
     width: 100%;
-    height: 250vh;
+    height: 200vh;
     color: #222222;
   }
 
@@ -482,6 +483,7 @@
   .lookbook .title_area .profile_name {
     font-size: 48px;
     line-height: 1;
+    font-weight: 700;
     letter-spacing: -0.045em;
     margin-bottom: 30px;
     color: #222222;
@@ -1069,9 +1071,208 @@
   /*con2*/
 
   .con2 {
+    padding: 5vw;
+    box-sizing: border-box;
     overflow: hidden;
     width: 100%;
     height: 100vh;
+  }
+
+  .con2 p {
+    font-size: 0.8vw;
+  }
+
+  .con2 h2 {
+    font-size: 2vw;
+    width: 30%;
+  }
+
+  .con2_menu {
+    display: flex;
+    justify-content: right;
+    gap: 2vw;
+  }
+
+  .con2_menu li {
+    cursor: pointer;
+    border: 1px solid #555;
+    padding: 0.5vw 1.5vw;
+    border-radius: 3vw;
+  }
+
+  .con2_menu li:hover {
+    transition: 0.5s;
+    background-color: #000;
+    color: #fff;
+  }
+
+  .con2_menu li.active {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #555;
+  }
+
+  .imgwrap {
+    position: relative;
+    display: flex;
+    margin-left: 10vw;
+    justify-content: center;
+  }
+
+  .imgwrap li {
+    margin-top: 2vw;
+  }
+
+  .imgwrap li:nth-child(1) {
+    position: relative;
+  }
+
+  .imgwrap li:nth-child(2) {
+    position: relative;
+  }
+
+  /* 배경 이미지 위에 검정색 반투명 필터 */
+  .imgwrap > li:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 검정색 반투명 필터 */
+    z-index: 1; /* 다른 내용 위에 오도록 설정 */
+  }
+  .img_box {
+    z-index: 999;
+    text-align: center;
+    line-height: 2vw;
+    color: #fff;
+    background-color: #222;
+    width: 5vw;
+    height: 2vw;
+    position: absolute;
+  }
+
+  .con2_prev {
+    cursor: pointer;
+    top: 50%;
+    text-align: center;
+    line-height: 2.5vw;
+    color: #fff;
+    left: -5%;
+    position: absolute;
+    width: 3vw;
+    height: 2.5vw;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .img_direction {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+  }
+
+  .img_box2 {
+    z-index: 999;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3vw;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    width: 20vw;
+    height: 25vw;
+    box-sizing: border-box;
+  }
+
+  .img_wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .imgs {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .img_wrap img {
+    position: absolute;
+  }
+
+  .con2_next {
+    z-index: 999;
+    cursor: pointer;
+    bottom: -19vw;
+    text-align: center;
+    line-height: 2.5vw;
+    color: #fff;
+    right: 14%;
+    position: absolute;
+    width: 3vw;
+    height: 2.5vw;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .img_box2 p:nth-child(1) {
+    font-size: 0.8;
+    margin-bottom: 3vw;
+  }
+
+  .img_box2 p:nth-child(2) {
+    font-weight: 600;
+    font-size: 0.9vw;
+    margin-bottom: 2vw;
+  }
+
+  .log {
+    cursor: pointer;
+    padding: 0.5vw 4vw;
+    border-radius: 3vw;
+    border: 1px solid #fff;
+  }
+
+  .imgwrap span {
+    color: rgb(255, 60, 60);
+  }
+
+  .img_direction {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+  }
+
+  .img_direction li {
+    cursor: pointer;
+    font-size: 0.6vw;
+    border-left: 1px solid #fff;
+    text-align: center;
+    color: #fff;
+    width: 2.5vw;
+    height: 2.5vw;
+    line-height: 2.5vw;
+    background-color: #555;
+  }
+
+  .img_direction li:hover {
+    background-color: lightsalmon;
+  }
+
+  .img_direction li:nth-child(1) {
+    border: none;
   }
 
   /*footer*/

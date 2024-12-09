@@ -40,4 +40,21 @@ function updateTextSize(scale) {
   textElement.css({
     "background-size": 100 + scale * 100 + "%", // 그라데이션 배경 크기 증가
   });
+  $(document).ready(function () {
+    // .con2_menu li 클릭 시 .all의 스타일 변경
+    $(".con2_menu li").click(function () {
+      // 클릭된 li의 인덱스를 기억
+      var index = $(this).index();
+
+      // 다른 li 클릭시 반응
+      $(".con2_menu li").removeClass("selected"); // 모든 li에서 'selected' 클래스 제거
+      $(this).addClass("selected"); // 클릭된 li에 'selected' 클래스 추가
+    });
+  });
+  $(document).ready(function () {
+    $(".img_direction li").click(function () {
+      $(".img_direction li").css({ background: "#555", color: "#fff" }); // 초기화
+      $(this).css({ background: "lightsalmon", color: "#000" }); // 클릭된 항목 스타일 변경
+    });
+  });
 }
