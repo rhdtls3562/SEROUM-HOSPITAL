@@ -70,21 +70,30 @@ $(window).scroll(function () {
       "background-size": 100 + scale * 100 + "%", // 그라데이션 배경 크기 증가
     });
   }
-  $(document).ready(function () {
-    // .con2_menu li 클릭 시 .all의 스타일 변경
-    $(".con2_menu li").click(function () {
-      // 클릭된 li의 인덱스를 기억
-      var index = $(this).index();
+});
+$(document).ready(function () {
+  $(".img_direction li").click(function () {
+    $(".img_direction li").css({ background: "#555", color: "#fff" }); // 초기화
+    $(this).css({ background: "lightsalmon", color: "#000" }); // 클릭된 항목 스타일 변경
+  });
+});
+$(window).on("scroll", function () {
+  var scrollPosition = $(window).scrollTop(); // 현재 스크롤 위치
+  var windowHeight = $(window).height(); // 화면 높이
 
-      // 다른 li 클릭시 반응
-      $(".con2_menu li").removeClass("selected"); // 모든 li에서 'selected' 클래스 제거
-      $(this).addClass("selected"); // 클릭된 li에 'selected' 클래스 추가
-    });
-  });
-  $(document).ready(function () {
-    $(".img_direction li").click(function () {
-      $(".img_direction li").css({ background: "#555", color: "#fff" }); // 초기화
-      $(this).css({ background: "lightsalmon", color: "#000" }); // 클릭된 항목 스타일 변경
-    });
-  });
+  var con1Top = $(".con1").offset().top; // .con1의 top 위치
+  var con2Top = $(".con2").offset().top; // .con2의 top 위치
+
+  // .con1 섹션에 도달했을 때 애니메이션 실행
+  if (scrollPosition + windowHeight > con1Top) {
+    $(".con1").css("animation-play-state", "running");
+  }
+
+  // .con2 섹션에 도달했을 때 애니메이션 실행
+  if (scrollPosition + windowHeight > con2Top) {
+    $(".con2 h2, .con2 p, .con2_menu, .next, .controls").css(
+      "animation-play-state",
+      "running"
+    );
+  }
 });
