@@ -56,4 +56,29 @@ $(window).scroll(function () {
       "background-size": 100 + scale * 50 + "%", // 그라데이션 배경 크기 증가
     });
   }
+  function formatPhoneNumber(input) {
+    let value = input.value.replace(/\D/g, ""); // 숫자만 남기기
+    if (value.length > 3 && value.length <= 6) {
+      value = value.replace(/(\d{3})(\d{1,})/, "($1) $2");
+    } else if (value.length > 6) {
+      value = value.replace(/(\d{3})(\d{3})(\d{1,})/, "($1) $2-$3");
+    } else if (value.length > 3) {
+      value = value.replace(/(\d{3})(\d{1,})/, "($1) $2");
+    }
+    input.value = value;
+  }
+  $(document).ready(function () {
+    // 처음 .one에 강제로 호버 상태 적용
+    $(".one").addClass("hovered");
+
+    // 다른 li 클릭 시 .one의 호버 상태 해제
+    $(".num li").click(function () {
+      if (!$(this).hasClass("one")) {
+        $(".one").removeClass("hovered");
+      } else {
+        // 클릭된 li가 .one이면 호버 상태 유지
+        $(".one").addClass("hovered");
+      }
+    });
+  });
 });
