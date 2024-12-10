@@ -14,6 +14,8 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/ScrollTrigger.min.js"></script>
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/riview.css" />
@@ -27,13 +29,6 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
     <link
       rel="stylesheet"
@@ -58,7 +53,7 @@
         <li><a href="doctor.html">의료진 소개</a></li>
         <li><a href="event.html">이벤트</a></li>
         <li><a href="riview.html">고객후기</a></li>
-        <li><a href="#">예약상담</a></li>
+        <li><a href="reservation.html">예약상담</a></li>
         <li class="menu-button">
           <div id="nav-icon2">
             <span></span>
@@ -99,7 +94,9 @@
             ></a>
           </li>
           <li>
-            <a href="#">Reserve<i class="fa-solid fa-book-open-reader"></i></a>
+            <a href="reservation.html"
+              >Reserve<i class="fa-solid fa-book-open-reader"></i
+            ></a>
           </li>
         </ul>
         <div class="social">
@@ -138,978 +135,996 @@
 
     <div id="container">
       <a href="#" class="go-top"><i class="fa-solid fa-caret-up"></i></a>
-    </div>
-    <section class="con1">
-      <div class="sec_wrap">
-        <section class="lookbook">
-          <div class="top_title_area">
-            <span
-              class="back"
-              onclick="location.href='javascript:history.back()'"
-              ><i class="xi-angle-left"></i
-            ></span>
-            <span class="title"
-              ><span>SEROUM</span><img src="img/riview_insta_check.jpg"
-            /></span>
+      <div class="con1">
+        <div class="sec_wrap">
+          <div class="lookbook">
+            <div class="top_title_area">
+              <span
+                class="back"
+                onclick="location.href='javascript:history.back()'"
+                ><i class="xi-angle-left"></i
+              ></span>
+              <span class="title"
+                ><span>SEROUM</span><img src="img/riview_insta_check.jpg"
+              /></span>
 
-            <div class="heart_area">
-              <label for="checkbox">
-                <div class="label">
-                  <input type="checkbox" id="checkbox" />
-                  <div class="heart">
-                    <svg viewBox="0 0 544.582 544.582">
-                      <path
-                        d="M448.069,57.839c-72.675-23.562-150.781,15.759-175.721,87.898C247.41,73.522,169.303,34.277,96.628,57.839
+              <div class="heart_area">
+                <label for="checkbox">
+                  <div class="label">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="heart">
+                      <svg viewBox="0 0 544.582 544.582">
+                        <path
+                          d="M448.069,57.839c-72.675-23.562-150.781,15.759-175.721,87.898C247.41,73.522,169.303,34.277,96.628,57.839
                         C23.111,81.784-16.975,160.885,6.894,234.708c22.95,70.38,235.773,258.876,263.006,258.876
                                    c27.234,0,244.801-188.267,267.751-258.876C561.595,160.732,521.509,81.631,448.069,57.839z"
-                      ></path>
-                    </svg>
-                    <svg viewBox="0 0 544.582 544.582">
-                      <path
-                        d="M448.069,57.839c-72.675-23.562-150.781,15.759-175.721,87.898C247.41,73.522,169.303,34.277,96.628,57.839
+                        ></path>
+                      </svg>
+                      <svg viewBox="0 0 544.582 544.582">
+                        <path
+                          d="M448.069,57.839c-72.675-23.562-150.781,15.759-175.721,87.898C247.41,73.522,169.303,34.277,96.628,57.839
                         C23.111,81.784-16.975,160.885,6.894,234.708c22.95,70.38,235.773,258.876,263.006,258.876
                                    c27.234,0,244.801-188.267,267.751-258.876C561.595,160.732,521.509,81.631,448.069,57.839z"
-                      ></path>
-                    </svg>
+                        ></path>
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </label>
+                </label>
+              </div>
+
+              <div class="heart_motion">
+                <i class="xi-heart"></i
+                ><span class="counter" data-count="517">517</span>
+              </div>
             </div>
+            <!--top_title_area-->
 
-            <div class="heart_motion">
-              <i class="xi-heart"></i
-              ><span class="counter" data-count="517">517</span>
-            </div>
-          </div>
-          <!--top_title_area-->
-
-          <div class="title_area">
-            <div class="profile_img_area active">
-              <img
-                class="simbol"
-                src="img/logo_simbol.png"
-                class="profile_img"
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width=""
-                height=""
-                viewBox="0 0 100 100"
-                class="circle_motion"
-              >
-                <defs>
-                  <linearGradient
-                    id="gradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="0%"
-                    y2="100%"
-                  >
-                    <stop offset="0%" stop-color="#00bc9b"></stop>
-                    <stop offset="100%" stop-color="#5eaefd"></stop>
-                  </linearGradient>
-                </defs>
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="47"
-                  stroke="url(#gradient)"
-                  stroke-width="6"
-                  fill="none"
-                  transform="rotate(90 50 50)"
-                ></circle>
-              </svg>
-            </div>
-            <div class="profile_info_area">
-              <p class="profile_name">SEROUM LOOKBOOK</p>
-              <p class="profile_title">새로움만의 트렌디함을 확인해 보세요.</p>
-              <p class="profile_hash">
-                #새로움 #리얼모델 #수술후기 #예뻐지는_비밀
-              </p>
-            </div>
-          </div>
-          <!--title_area-->
-
-          <ul class="list_area float_wrap">
-            <style>
-              .lookbook .list_area > li.MINJAE .img_area .comment_box {
-                top: 170px;
-                left: 40px;
-              }
-              @media (max-width: 800px) {
-                .lookbook .list_area > li.MINJAE .img_area .comment_box {
-                  top: 25vw;
-                  left: 7vw;
-                }
-              }
-            </style>
-            <style>
-              .lookbook .list_area > li.SOMI .img_area .comment_box {
-                top: 170px;
-                left: 40px;
-              }
-              @media (max-width: 800px) {
-                .lookbook .list_area > li.SOMI .img_area .comment_box {
-                  top: 25vw;
-                  left: 7vw;
-                }
-              }
-            </style>
-            <style>
-              .lookbook .list_area > li.pabi .img_area .comment_box {
-                top: 170px;
-                left: 40px;
-              }
-              @media (max-width: 800px) {
-                .lookbook .list_area > li.pabi .img_area .comment_box {
-                  top: 25vw;
-                  left: 7vw;
-                }
-              }
-            </style>
-            <style>
-              .lookbook .list_area > li.oreo .img_area .comment_box {
-                top: 150px;
-                left: 200px;
-              }
-              @media (max-width: 800px) {
-                .lookbook .list_area > li.oreo .img_area .comment_box {
-                  top: 21vw;
-                  left: 27vw;
-                }
-              }
-            </style>
-            <style>
-              .lookbook .list_area > li.angel .img_area .comment_box {
-                top: 220px;
-                left: 180px;
-              }
-              @media (max-width: 800px) {
-                .lookbook .list_area > li.angel .img_area .comment_box {
-                  top: 31vw;
-                  left: 25vw;
-                }
-              }
-            </style>
-            <style>
-              .lookbook .list_area > li.choco .img_area .comment_box {
-                top: 215px;
-                left: 177px;
-              }
-              @media (max-width: 800px) {
-                .lookbook .list_area > li.choco .img_area .comment_box {
-                  top: 30vw;
-                  left: 24vw;
-                }
-              }
-            </style>
-            <style>
-              .lookbook .list_area > li.lia .img_area .comment_box {
-                top: 150px;
-                left: 165px;
-              }
-              @media (max-width: 800px) {
-                .lookbook .list_area > li.lia .img_area .comment_box {
-                  top: 20vw;
-                  left: 24vw;
-                }
-              }
-            </style>
-            <style>
-              .lookbook .list_area > li.ann .img_area .comment_box {
-                top: 125px;
-                left: 140px;
-              }
-              @media (max-width: 800px) {
-                .lookbook .list_area > li.ann .img_area .comment_box {
-                  top: 17vw;
-                  left: 19vw;
-                }
-              }
-            </style>
-            <li class="MINJAE">
-              <div class="img_area">
+            <div class="title_area">
+              <div class="profile_img_area active">
                 <img
-                  src="img/8dc2254cf5cd8c70392eb42dcb5f8ec4_water__c0_w285_h329.jpg"
+                  class="simbol"
+                  src="img/logo_simbol.png"
+                  class="profile_img"
                 />
-                <div class="comment_box">코 성형</div>
-              </div>
-              <div class="text_area">
-                <div class="ui_area float_wrap">
-                  <div class="button_area float_wrap">
-                    <div class="likes">
-                      <i class="fa fa-heart"></i>
-                    </div>
-
-                    <div class="comment">
-                      <svg
-                        aria-label="comment"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="15"
-                        viewBox="0 0 48 48"
-                        width="15"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
-                          fill-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </div>
-
-                    <div class="messages">
-                      <svg
-                        aria-label="Direct"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="22"
-                        viewBox="0 0 48 48"
-                        width="22"
-                      >
-                        <path
-                          d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
-                        ></path>
-                        <path d="M14.7 48.4l2.9-.7"></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <!--button_area-->
-
-                  <div class="page_dot_area">
-                    <ul class="float_wrap">
-                      <li class="dot active"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                    </ul>
-                  </div>
-                  <!--page_dot_area-->
-
-                  <div class="book_mark_area">
-                    <i class="fa fa-bookmark"></i>
-                  </div>
-                </div>
-                <!--ui_area-->
-
-                <div class="info_area">
-                  <p class="like">좋아요 <span class="like_num">243</span></p>
-                  <p class="name">
-                    <span class="name_title">민재</span>
-                    <span class="name_comment"> </span>
-                  </p>
-                  <ul class="hash">
-                    <li>#자연스러운코 #작은얼굴</li>
-                    <li>#seroum</li>
-                  </ul>
-                </div>
-                <!--info_area-->
-              </div>
-            </li>
-            <li class="SOMI">
-              <div class="img_area">
-                <img
-                  src="/img/b9433be3b58eab9e0c73eab7da09d994_water__c0_w285_h329.jpg"
-                />
-                <div class="comment_box">코 성형</div>
-              </div>
-              <div class="text_area">
-                <div class="ui_area float_wrap">
-                  <div class="button_area float_wrap">
-                    <div class="likes">
-                      <i class="fa fa-heart"></i>
-                    </div>
-
-                    <div class="comment">
-                      <svg
-                        aria-label="comment"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="15"
-                        viewBox="0 0 48 48"
-                        width="15"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
-                          fill-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </div>
-
-                    <div class="messages">
-                      <svg
-                        aria-label="Direct"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="22"
-                        viewBox="0 0 48 48"
-                        width="22"
-                      >
-                        <path
-                          d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
-                        ></path>
-                        <path d="M14.7 48.4l2.9-.7"></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <!--button_area-->
-
-                  <div class="page_dot_area">
-                    <ul class="float_wrap">
-                      <li class="dot active"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                    </ul>
-                  </div>
-                  <!--page_dot_area-->
-
-                  <div class="book_mark_area">
-                    <i class="fa fa-bookmark"></i>
-                  </div>
-                </div>
-                <!--ui_area-->
-
-                <div class="info_area">
-                  <p class="like">좋아요 <span class="like_num">236</span></p>
-                  <p class="name">
-                    <span class="name_title">SOMI</span>
-                    <span class="name_comment"> </span>
-                  </p>
-                  <ul class="hash">
-                    <li>#예쁜이마 #자연스러운코는_역시</li>
-                    <li>#seroum</li>
-                  </ul>
-                </div>
-                <!--info_area-->
-              </div>
-            </li>
-            <li class="pabi">
-              <div class="img_area">
-                <img
-                  src="/img/c8616983d67e9940a97e513cd343b141_water__c0_w285_h329.jpg"
-                />
-                <div class="comment_box">윤곽</div>
-              </div>
-              <div class="text_area">
-                <div class="ui_area float_wrap">
-                  <div class="button_area float_wrap">
-                    <div class="likes">
-                      <i class="fa fa-heart"></i>
-                    </div>
-
-                    <div class="comment">
-                      <svg
-                        aria-label="comment"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="15"
-                        viewBox="0 0 48 48"
-                        width="15"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
-                          fill-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </div>
-
-                    <div class="messages">
-                      <svg
-                        aria-label="Direct"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="22"
-                        viewBox="0 0 48 48"
-                        width="22"
-                      >
-                        <path
-                          d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
-                        ></path>
-                        <path d="M14.7 48.4l2.9-.7"></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <!--button_area-->
-
-                  <div class="page_dot_area">
-                    <ul class="float_wrap">
-                      <li class="dot active"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                    </ul>
-                  </div>
-                  <!--page_dot_area-->
-
-                  <div class="book_mark_area">
-                    <i class="fa fa-bookmark"></i>
-                  </div>
-                </div>
-                <!--ui_area-->
-
-                <div class="info_area">
-                  <p class="like">좋아요 <span class="like_num">339개</span></p>
-                  <p class="name">
-                    <span class="name_title">파비</span>
-                    <span class="name_comment"> </span>
-                  </p>
-                  <ul class="hash">
-                    <li>#네모_얼굴 #윤곽은_역시</li>
-                    <li>#seroum</li>
-                  </ul>
-                </div>
-                <!--info_area-->
-              </div>
-            </li>
-            <li class="oreo">
-              <div class="img_area">
-                <img
-                  src="/img/8f41a2793330e96ec18c099c12d55bb0_water__c0_w285_h329.jpg"
-                />
-                <div class="comment_box">동안</div>
-              </div>
-              <div class="text_area">
-                <div class="ui_area float_wrap">
-                  <div class="button_area float_wrap">
-                    <div class="likes">
-                      <i class="fa fa-heart"></i>
-                    </div>
-
-                    <div class="comment">
-                      <svg
-                        aria-label="comment"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="15"
-                        viewBox="0 0 48 48"
-                        width="15"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
-                          fill-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </div>
-
-                    <div class="messages">
-                      <svg
-                        aria-label="Direct"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="22"
-                        viewBox="0 0 48 48"
-                        width="22"
-                      >
-                        <path
-                          d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
-                        ></path>
-                        <path d="M14.7 48.4l2.9-.7"></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <!--button_area-->
-
-                  <div class="page_dot_area">
-                    <ul class="float_wrap">
-                      <li class="dot active"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                    </ul>
-                  </div>
-                  <!--page_dot_area-->
-
-                  <div class="book_mark_area">
-                    <i class="fa fa-bookmark"></i>
-                  </div>
-                </div>
-                <!--ui_area-->
-
-                <div class="info_area">
-                  <p class="like">좋아요 <span class="like_num">498개</span></p>
-                  <p class="name">
-                    <span class="name_title">오레오</span>
-                    <span class="name_comment"> </span>
-                  </p>
-                  <ul class="hash">
-                    <li>#역시_동안성형은 #새로움</li>
-                    <li></li>
-                  </ul>
-                </div>
-                <!--info_area-->
-              </div>
-            </li>
-            <li class="angel">
-              <div class="img_area">
-                <img
-                  src="/img/6dd24164728505945b371f7b22836430_water__c0_w285_h329.jpg"
-                />
-                <div class="comment_box">동안</div>
-              </div>
-              <div class="text_area">
-                <div class="ui_area float_wrap">
-                  <div class="button_area float_wrap">
-                    <div class="likes">
-                      <i class="fa fa-heart"></i>
-                    </div>
-
-                    <div class="comment">
-                      <svg
-                        aria-label="comment"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="15"
-                        viewBox="0 0 48 48"
-                        width="15"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
-                          fill-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </div>
-
-                    <div class="messages">
-                      <svg
-                        aria-label="Direct"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="22"
-                        viewBox="0 0 48 48"
-                        width="22"
-                      >
-                        <path
-                          d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
-                        ></path>
-                        <path d="M14.7 48.4l2.9-.7"></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <!--button_area-->
-
-                  <div class="page_dot_area">
-                    <ul class="float_wrap">
-                      <li class="dot active"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                    </ul>
-                  </div>
-                  <!--page_dot_area-->
-
-                  <div class="book_mark_area">
-                    <i class="fa fa-bookmark"></i>
-                  </div>
-                </div>
-                <!--ui_area-->
-
-                <div class="info_area">
-                  <p class="like">좋아요 <span class="like_num">485개</span></p>
-                  <p class="name">
-                    <span class="name_title">천사</span>
-                    <span class="name_comment"
-                      >자연스럽게 예뻐지는 리프팅
-                    </span>
-                  </p>
-                  <ul class="hash">
-                    <li>#젊어지는 #3040리프팅</li>
-                    <li></li>
-                  </ul>
-                </div>
-                <!--info_area-->
-              </div>
-            </li>
-            <li class="choco">
-              <div class="img_area">
-                <img
-                  src="/img/d8ed2509f8145fb0b14c7ca931a37907_water__c0_w285_h329.jpg"
-                />
-                <div class="comment_box">코 성형</div>
-              </div>
-              <div class="text_area">
-                <div class="ui_area float_wrap">
-                  <div class="button_area float_wrap">
-                    <div class="likes">
-                      <i class="fa fa-heart"></i>
-                    </div>
-
-                    <div class="comment">
-                      <svg
-                        aria-label="comment"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="15"
-                        viewBox="0 0 48 48"
-                        width="15"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
-                          fill-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </div>
-
-                    <div class="messages">
-                      <svg
-                        aria-label="Direct"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="22"
-                        viewBox="0 0 48 48"
-                        width="22"
-                      >
-                        <path
-                          d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
-                        ></path>
-                        <path d="M14.7 48.4l2.9-.7"></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <!--button_area-->
-
-                  <div class="page_dot_area">
-                    <ul class="float_wrap">
-                      <li class="dot active"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                    </ul>
-                  </div>
-                  <!--page_dot_area-->
-
-                  <div class="book_mark_area">
-                    <i class="fa fa-bookmark"></i>
-                  </div>
-                </div>
-                <!--ui_area-->
-
-                <div class="info_area">
-                  <p class="like">좋아요 <span class="like_num">889개</span></p>
-                  <p class="name">
-                    <span class="name_title">초코</span>
-                    <span class="name_comment">말문 막히는 코 라인 </span>
-                  </p>
-                  <ul class="hash">
-                    <li>#코성형 #레전드_성형후기</li>
-                    <li></li>
-                  </ul>
-                </div>
-                <!--info_area-->
-              </div>
-            </li>
-            <li class="lia">
-              <div class="img_area">
-                <img
-                  src="/img/8fe26eb18872acf0199fb88f382ca443_water__c0_w285_h329.jpg"
-                />
-                <div class="comment_box">윤곽</div>
-              </div>
-              <div class="text_area">
-                <div class="ui_area float_wrap">
-                  <div class="button_area float_wrap">
-                    <div class="likes">
-                      <i class="fa fa-heart"></i>
-                    </div>
-
-                    <div class="comment">
-                      <svg
-                        aria-label="comment"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="15"
-                        viewBox="0 0 48 48"
-                        width="15"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
-                          fill-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </div>
-
-                    <div class="messages">
-                      <svg
-                        aria-label="Direct"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="22"
-                        viewBox="0 0 48 48"
-                        width="22"
-                      >
-                        <path
-                          d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
-                        ></path>
-                        <path d="M14.7 48.4l2.9-.7"></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <!--button_area-->
-
-                  <div class="page_dot_area">
-                    <ul class="float_wrap">
-                      <li class="dot active"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                    </ul>
-                  </div>
-                  <!--page_dot_area-->
-
-                  <div class="book_mark_area">
-                    <i class="fa fa-bookmark"></i>
-                  </div>
-                </div>
-                <!--ui_area-->
-
-                <div class="info_area">
-                  <p class="like">좋아요 <span class="like_num">512개</span></p>
-                  <p class="name">
-                    <span class="name_title">리아</span>
-                    <span class="name_comment"
-                      >이런 小두는<br />난 본 적이 업떠..ㅎ
-                    </span>
-                  </p>
-                  <ul class="hash">
-                    <li>#윤곽수술 #보정이_필요없네</li>
-                    <li></li>
-                  </ul>
-                </div>
-                <!--info_area-->
-              </div>
-            </li>
-            <li class="ann">
-              <div class="img_area">
-                <img
-                  src="/img/a08753c9e9323d416ddd42a25b1a052b_water__c0_w285_h329.jpg"
-                />
-                <div class="comment_box">윤곽</div>
-              </div>
-              <div class="text_area">
-                <div class="ui_area float_wrap">
-                  <div class="button_area float_wrap">
-                    <div class="likes">
-                      <i class="fa fa-heart"></i>
-                    </div>
-
-                    <div class="comment">
-                      <svg
-                        aria-label="comment"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="15"
-                        viewBox="0 0 48 48"
-                        width="15"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
-                          fill-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </div>
-
-                    <div class="messages">
-                      <svg
-                        aria-label="Direct"
-                        class="_8-yf5"
-                        fill="#262626"
-                        height="22"
-                        viewBox="0 0 48 48"
-                        width="22"
-                      >
-                        <path
-                          d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
-                        ></path>
-                        <path d="M14.7 48.4l2.9-.7"></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <!--button_area-->
-
-                  <div class="page_dot_area">
-                    <ul class="float_wrap">
-                      <li class="dot active"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                      <li class="dot"></li>
-                    </ul>
-                  </div>
-                  <!--page_dot_area-->
-
-                  <div class="book_mark_area">
-                    <i class="fa fa-bookmark"></i>
-                  </div>
-                </div>
-                <!--ui_area-->
-
-                <div class="info_area">
-                  <p class="like">좋아요 <span class="like_num">381개</span></p>
-                  <p class="name">
-                    <span class="name_title">앤</span>
-                    <span class="name_comment">코+윤곽으로 미모 완성! </span>
-                  </p>
-                  <ul class="hash">
-                    <li>#나만_알고_싶은 #윤곽맛집</li>
-                    <li>#새로움</li>
-                  </ul>
-                </div>
-                <!--info_area-->
-              </div>
-            </li>
-          </ul>
-          <!--list_area-->
-
-          <div class="pagination">
-            <ul class="pagination__list">
-              <div class="ui-pagenate">
-                <strong>1</strong
-                ><a
-                  href="javascript:fn_load_mb_page_lookbook('/shop_contents/myboard_list.htm?page=2&amp;myboard_code=lookbook')"
-                  target="_self"
-                  >2</a
-                ><a
-                  href="javascript:fn_load_mb_page_lookbook('/shop_contents/myboard_list.htm?page=3&amp;myboard_code=lookbook')"
-                  target="_self"
-                  >3</a
-                ><a
-                  href="javascript:fn_load_mb_page_lookbook('/shop_contents/myboard_list.htm?page=2&amp;myboard_code=lookbook')"
-                  class="dir next1"
-                  target="_self"
-                  ><span></span>다음</a
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width=""
+                  height=""
+                  viewBox="0 0 100 100"
+                  class="circle_motion"
                 >
+                  <defs>
+                    <linearGradient
+                      id="gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="0%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stop-color="#00bc9b"></stop>
+                      <stop offset="100%" stop-color="#5eaefd"></stop>
+                    </linearGradient>
+                  </defs>
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="47"
+                    stroke="url(#gradient)"
+                    stroke-width="6"
+                    fill="none"
+                    transform="rotate(90 50 50)"
+                  ></circle>
+                </svg>
               </div>
+              <div class="profile_info_area">
+                <p class="profile_name">SEROUM LOOKBOOK</p>
+                <p class="profile_title">
+                  새로움만의 트렌디함을 확인해 보세요.
+                </p>
+                <p class="profile_hash">
+                  #새로움 #리얼모델 #수술후기 #예뻐지는_비밀
+                </p>
+              </div>
+            </div>
+            <!--title_area-->
+
+            <ul class="list_area float_wrap">
+              <style>
+                .lookbook .list_area > li.MINJAE .img_area .comment_box {
+                  top: 170px;
+                  left: 40px;
+                }
+                @media (max-width: 800px) {
+                  .lookbook .list_area > li.MINJAE .img_area .comment_box {
+                    top: 25vw;
+                    left: 7vw;
+                  }
+                }
+              </style>
+              <style>
+                .lookbook .list_area > li.SOMI .img_area .comment_box {
+                  top: 170px;
+                  left: 40px;
+                }
+                @media (max-width: 800px) {
+                  .lookbook .list_area > li.SOMI .img_area .comment_box {
+                    top: 25vw;
+                    left: 7vw;
+                  }
+                }
+              </style>
+              <style>
+                .lookbook .list_area > li.pabi .img_area .comment_box {
+                  top: 170px;
+                  left: 40px;
+                }
+                @media (max-width: 800px) {
+                  .lookbook .list_area > li.pabi .img_area .comment_box {
+                    top: 25vw;
+                    left: 7vw;
+                  }
+                }
+              </style>
+              <style>
+                .lookbook .list_area > li.oreo .img_area .comment_box {
+                  top: 150px;
+                  left: 200px;
+                }
+                @media (max-width: 800px) {
+                  .lookbook .list_area > li.oreo .img_area .comment_box {
+                    top: 21vw;
+                    left: 27vw;
+                  }
+                }
+              </style>
+              <style>
+                .lookbook .list_area > li.angel .img_area .comment_box {
+                  top: 220px;
+                  left: 180px;
+                }
+                @media (max-width: 800px) {
+                  .lookbook .list_area > li.angel .img_area .comment_box {
+                    top: 31vw;
+                    left: 25vw;
+                  }
+                }
+              </style>
+              <style>
+                .lookbook .list_area > li.choco .img_area .comment_box {
+                  top: 215px;
+                  left: 177px;
+                }
+                @media (max-width: 800px) {
+                  .lookbook .list_area > li.choco .img_area .comment_box {
+                    top: 30vw;
+                    left: 24vw;
+                  }
+                }
+              </style>
+              <style>
+                .lookbook .list_area > li.lia .img_area .comment_box {
+                  top: 150px;
+                  left: 165px;
+                }
+                @media (max-width: 800px) {
+                  .lookbook .list_area > li.lia .img_area .comment_box {
+                    top: 20vw;
+                    left: 24vw;
+                  }
+                }
+              </style>
+              <style>
+                .lookbook .list_area > li.ann .img_area .comment_box {
+                  top: 125px;
+                  left: 140px;
+                }
+                @media (max-width: 800px) {
+                  .lookbook .list_area > li.ann .img_area .comment_box {
+                    top: 17vw;
+                    left: 19vw;
+                  }
+                }
+              </style>
+              <li class="MINJAE">
+                <div class="img_area">
+                  <img
+                    src="img/8dc2254cf5cd8c70392eb42dcb5f8ec4_water__c0_w285_h329.jpg"
+                  />
+                  <div class="comment_box">코 성형</div>
+                </div>
+                <div class="text_area">
+                  <div class="ui_area float_wrap">
+                    <div class="button_area float_wrap">
+                      <div class="likes">
+                        <i class="fa fa-heart"></i>
+                      </div>
+
+                      <div class="comment">
+                        <svg
+                          aria-label="comment"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="15"
+                          viewBox="0 0 48 48"
+                          width="15"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                            fill-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+
+                      <div class="messages">
+                        <svg
+                          aria-label="Direct"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="22"
+                          viewBox="0 0 48 48"
+                          width="22"
+                        >
+                          <path
+                            d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
+                          ></path>
+                          <path d="M14.7 48.4l2.9-.7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <!--button_area-->
+
+                    <div class="page_dot_area">
+                      <ul class="float_wrap">
+                        <li class="dot active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                      </ul>
+                    </div>
+                    <!--page_dot_area-->
+
+                    <div class="book_mark_area">
+                      <i class="fa fa-bookmark"></i>
+                    </div>
+                  </div>
+                  <!--ui_area-->
+
+                  <div class="info_area">
+                    <p class="like">좋아요 <span class="like_num">243</span></p>
+                    <p class="name">
+                      <span class="name_title">민재</span>
+                      <span class="name_comment"> </span>
+                    </p>
+                    <ul class="hash">
+                      <li>#자연스러운코 #작은얼굴</li>
+                      <li>#seroum</li>
+                    </ul>
+                  </div>
+                  <!--info_area-->
+                </div>
+              </li>
+              <li class="SOMI">
+                <div class="img_area">
+                  <img
+                    src="img/b9433be3b58eab9e0c73eab7da09d994_water__c0_w285_h329.jpg"
+                  />
+                  <div class="comment_box">코 성형</div>
+                </div>
+                <div class="text_area">
+                  <div class="ui_area float_wrap">
+                    <div class="button_area float_wrap">
+                      <div class="likes">
+                        <i class="fa fa-heart"></i>
+                      </div>
+
+                      <div class="comment">
+                        <svg
+                          aria-label="comment"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="15"
+                          viewBox="0 0 48 48"
+                          width="15"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                            fill-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+
+                      <div class="messages">
+                        <svg
+                          aria-label="Direct"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="22"
+                          viewBox="0 0 48 48"
+                          width="22"
+                        >
+                          <path
+                            d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
+                          ></path>
+                          <path d="M14.7 48.4l2.9-.7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <!--button_area-->
+
+                    <div class="page_dot_area">
+                      <ul class="float_wrap">
+                        <li class="dot active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                      </ul>
+                    </div>
+                    <!--page_dot_area-->
+
+                    <div class="book_mark_area">
+                      <i class="fa fa-bookmark"></i>
+                    </div>
+                  </div>
+                  <!--ui_area-->
+
+                  <div class="info_area">
+                    <p class="like">좋아요 <span class="like_num">236</span></p>
+                    <p class="name">
+                      <span class="name_title">SOMI</span>
+                      <span class="name_comment"> </span>
+                    </p>
+                    <ul class="hash">
+                      <li>#예쁜이마 #자연스러운코는_역시</li>
+                      <li>#seroum</li>
+                    </ul>
+                  </div>
+                  <!--info_area-->
+                </div>
+              </li>
+              <li class="pabi">
+                <div class="img_area">
+                  <img
+                    src="img/c8616983d67e9940a97e513cd343b141_water__c0_w285_h329.jpg"
+                  />
+                  <div class="comment_box">윤곽</div>
+                </div>
+                <div class="text_area">
+                  <div class="ui_area float_wrap">
+                    <div class="button_area float_wrap">
+                      <div class="likes">
+                        <i class="fa fa-heart"></i>
+                      </div>
+
+                      <div class="comment">
+                        <svg
+                          aria-label="comment"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="15"
+                          viewBox="0 0 48 48"
+                          width="15"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                            fill-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+
+                      <div class="messages">
+                        <svg
+                          aria-label="Direct"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="22"
+                          viewBox="0 0 48 48"
+                          width="22"
+                        >
+                          <path
+                            d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
+                          ></path>
+                          <path d="M14.7 48.4l2.9-.7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <!--button_area-->
+
+                    <div class="page_dot_area">
+                      <ul class="float_wrap">
+                        <li class="dot active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                      </ul>
+                    </div>
+                    <!--page_dot_area-->
+
+                    <div class="book_mark_area">
+                      <i class="fa fa-bookmark"></i>
+                    </div>
+                  </div>
+                  <!--ui_area-->
+
+                  <div class="info_area">
+                    <p class="like">
+                      좋아요 <span class="like_num">339개</span>
+                    </p>
+                    <p class="name">
+                      <span class="name_title">파비</span>
+                      <span class="name_comment"> </span>
+                    </p>
+                    <ul class="hash">
+                      <li>#네모_얼굴 #윤곽은_역시</li>
+                      <li>#seroum</li>
+                    </ul>
+                  </div>
+                  <!--info_area-->
+                </div>
+              </li>
+              <li class="oreo">
+                <div class="img_area">
+                  <img
+                    src="img/8f41a2793330e96ec18c099c12d55bb0_water__c0_w285_h329.jpg"
+                  />
+                  <div class="comment_box">동안</div>
+                </div>
+                <div class="text_area">
+                  <div class="ui_area float_wrap">
+                    <div class="button_area float_wrap">
+                      <div class="likes">
+                        <i class="fa fa-heart"></i>
+                      </div>
+
+                      <div class="comment">
+                        <svg
+                          aria-label="comment"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="15"
+                          viewBox="0 0 48 48"
+                          width="15"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                            fill-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+
+                      <div class="messages">
+                        <svg
+                          aria-label="Direct"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="22"
+                          viewBox="0 0 48 48"
+                          width="22"
+                        >
+                          <path
+                            d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
+                          ></path>
+                          <path d="M14.7 48.4l2.9-.7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <!--button_area-->
+
+                    <div class="page_dot_area">
+                      <ul class="float_wrap">
+                        <li class="dot active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                      </ul>
+                    </div>
+                    <!--page_dot_area-->
+
+                    <div class="book_mark_area">
+                      <i class="fa fa-bookmark"></i>
+                    </div>
+                  </div>
+                  <!--ui_area-->
+
+                  <div class="info_area">
+                    <p class="like">
+                      좋아요 <span class="like_num">498개</span>
+                    </p>
+                    <p class="name">
+                      <span class="name_title">오레오</span>
+                      <span class="name_comment"> </span>
+                    </p>
+                    <ul class="hash">
+                      <li>
+                        #역시_동안성형은_역시<br />
+                        #SEROUM
+                      </li>
+                      <li></li>
+                    </ul>
+                  </div>
+                  <!--info_area-->
+                </div>
+              </li>
+              <li class="angel">
+                <div class="img_area">
+                  <img
+                    src="img/6dd24164728505945b371f7b22836430_water__c0_w285_h329.jpg"
+                  />
+                  <div class="comment_box">동안</div>
+                </div>
+                <div class="text_area">
+                  <div class="ui_area float_wrap">
+                    <div class="button_area float_wrap">
+                      <div class="likes">
+                        <i class="fa fa-heart"></i>
+                      </div>
+
+                      <div class="comment">
+                        <svg
+                          aria-label="comment"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="15"
+                          viewBox="0 0 48 48"
+                          width="15"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                            fill-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+
+                      <div class="messages">
+                        <svg
+                          aria-label="Direct"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="22"
+                          viewBox="0 0 48 48"
+                          width="22"
+                        >
+                          <path
+                            d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
+                          ></path>
+                          <path d="M14.7 48.4l2.9-.7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <!--button_area-->
+
+                    <div class="page_dot_area">
+                      <ul class="float_wrap">
+                        <li class="dot active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                      </ul>
+                    </div>
+                    <!--page_dot_area-->
+
+                    <div class="book_mark_area">
+                      <i class="fa fa-bookmark"></i>
+                    </div>
+                  </div>
+                  <!--ui_area-->
+
+                  <div class="info_area">
+                    <p class="like">
+                      좋아요 <span class="like_num">485개</span>
+                    </p>
+                    <p class="name">
+                      <span class="name_title">천사</span>
+                      <span class="name_comment"
+                        >자연스럽게 예뻐지는 리프팅
+                      </span>
+                    </p>
+                    <ul class="hash">
+                      <li>#젊어지는 #3040리프팅</li>
+                      <li></li>
+                    </ul>
+                  </div>
+                  <!--info_area-->
+                </div>
+              </li>
+              <li class="choco">
+                <div class="img_area">
+                  <img
+                    src="/img/d8ed2509f8145fb0b14c7ca931a37907_water__c0_w285_h329.jpg"
+                  />
+                  <div class="comment_box">코 성형</div>
+                </div>
+                <div class="text_area">
+                  <div class="ui_area float_wrap">
+                    <div class="button_area float_wrap">
+                      <div class="likes">
+                        <i class="fa fa-heart"></i>
+                      </div>
+
+                      <div class="comment">
+                        <svg
+                          aria-label="comment"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="15"
+                          viewBox="0 0 48 48"
+                          width="15"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                            fill-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+
+                      <div class="messages">
+                        <svg
+                          aria-label="Direct"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="22"
+                          viewBox="0 0 48 48"
+                          width="22"
+                        >
+                          <path
+                            d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
+                          ></path>
+                          <path d="M14.7 48.4l2.9-.7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <!--button_area-->
+
+                    <div class="page_dot_area">
+                      <ul class="float_wrap">
+                        <li class="dot active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                      </ul>
+                    </div>
+                    <!--page_dot_area-->
+
+                    <div class="book_mark_area">
+                      <i class="fa fa-bookmark"></i>
+                    </div>
+                  </div>
+                  <!--ui_area-->
+
+                  <div class="info_area">
+                    <p class="like">
+                      좋아요 <span class="like_num">889개</span>
+                    </p>
+                    <p class="name">
+                      <span class="name_title">초코</span>
+                      <span class="name_comment">말문 막히는 코 라인 </span>
+                    </p>
+                    <ul class="hash">
+                      <li>#코성형 #레전드_성형후기</li>
+                      <li></li>
+                    </ul>
+                  </div>
+                  <!--info_area-->
+                </div>
+              </li>
+              <li class="lia">
+                <div class="img_area">
+                  <img
+                    src="img/8fe26eb18872acf0199fb88f382ca443_water__c0_w285_h329.jpg"
+                  />
+                  <div class="comment_box">윤곽</div>
+                </div>
+                <div class="text_area">
+                  <div class="ui_area float_wrap">
+                    <div class="button_area float_wrap">
+                      <div class="likes">
+                        <i class="fa fa-heart"></i>
+                      </div>
+
+                      <div class="comment">
+                        <svg
+                          aria-label="comment"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="15"
+                          viewBox="0 0 48 48"
+                          width="15"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                            fill-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+
+                      <div class="messages">
+                        <svg
+                          aria-label="Direct"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="22"
+                          viewBox="0 0 48 48"
+                          width="22"
+                        >
+                          <path
+                            d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
+                          ></path>
+                          <path d="M14.7 48.4l2.9-.7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <!--button_area-->
+
+                    <div class="page_dot_area">
+                      <ul class="float_wrap">
+                        <li class="dot active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                      </ul>
+                    </div>
+                    <!--page_dot_area-->
+
+                    <div class="book_mark_area">
+                      <i class="fa fa-bookmark"></i>
+                    </div>
+                  </div>
+                  <!--ui_area-->
+
+                  <div class="info_area">
+                    <p class="like">
+                      좋아요 <span class="like_num">512개</span>
+                    </p>
+                    <p class="name">
+                      <span class="name_title">리아</span>
+                      <span class="name_comment"
+                        >이런 小두는<br />난 본 적이 업떠..ㅎ
+                      </span>
+                    </p>
+                    <ul class="hash">
+                      <li>#윤곽수술 #보정이_필요없네</li>
+                      <li></li>
+                    </ul>
+                  </div>
+                  <!--info_area-->
+                </div>
+              </li>
+              <li class="ann">
+                <div class="img_area">
+                  <img
+                    src="img/a08753c9e9323d416ddd42a25b1a052b_water__c0_w285_h329.jpg"
+                  />
+                  <div class="comment_box">윤곽</div>
+                </div>
+                <div class="text_area">
+                  <div class="ui_area float_wrap">
+                    <div class="button_area float_wrap">
+                      <div class="likes">
+                        <i class="fa fa-heart"></i>
+                      </div>
+
+                      <div class="comment">
+                        <svg
+                          aria-label="comment"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="15"
+                          viewBox="0 0 48 48"
+                          width="15"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                            fill-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+
+                      <div class="messages">
+                        <svg
+                          aria-label="Direct"
+                          class="_8-yf5"
+                          fill="#262626"
+                          height="22"
+                          viewBox="0 0 48 48"
+                          width="22"
+                        >
+                          <path
+                            d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"
+                          ></path>
+                          <path d="M14.7 48.4l2.9-.7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <!--button_area-->
+
+                    <div class="page_dot_area">
+                      <ul class="float_wrap">
+                        <li class="dot active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                      </ul>
+                    </div>
+                    <!--page_dot_area-->
+
+                    <div class="book_mark_area">
+                      <i class="fa fa-bookmark"></i>
+                    </div>
+                  </div>
+                  <!--ui_area-->
+
+                  <div class="info_area">
+                    <p class="like">
+                      좋아요 <span class="like_num">381개</span>
+                    </p>
+                    <p class="name">
+                      <span class="name_title">앤</span>
+                      <span class="name_comment">코+윤곽으로 미모 완성! </span>
+                    </p>
+                    <ul class="hash">
+                      <li>#나만_알고_싶은 #윤곽맛집</li>
+                      <li>#새로움</li>
+                    </ul>
+                  </div>
+                  <!--info_area-->
+                </div>
+              </li>
             </ul>
+            <!--list_area-->
+
+            <div class="pagination">
+              <ul class="pagination__list">
+                <div class="ui-pagenate">
+                  <strong>1</strong
+                  ><a
+                    href="javascript:fn_load_mb_page_lookbook('/shop_contents/myboard_list.htm?page=2&amp;myboard_code=lookbook')"
+                    target="_self"
+                    >2</a
+                  ><a
+                    href="javascript:fn_load_mb_page_lookbook('/shop_contents/myboard_list.htm?page=3&amp;myboard_code=lookbook')"
+                    target="_self"
+                    >3</a
+                  ><a
+                    href="javascript:fn_load_mb_page_lookbook('/shop_contents/myboard_list.htm?page=2&amp;myboard_code=lookbook')"
+                    class="dir next1"
+                    target="_self"
+                    ><span></span>다음</a
+                  >
+                </div>
+              </ul>
+            </div>
           </div>
-        </section>
-        <section class="con2">
-          <p>새로움 성형외과에 다녀가신 분들의 후기입니다.</p>
-          <h2>Good Image Clicic Review</h2>
-          <ul class="con2_menu">
-            <li class="all">ALL</li>
-            <li>여자 BEST</li>
-            <li>남자 BEST</li>
-            <li>가슴 BEST</li>
-          </ul>
-          <ul class="con2_wrap">
-            <li>
-              <ul class="controls">
-                <li class="to-start">정면</li>
-                <li class="to-middle">정면&측면</li>
-                <li class="to-end">측면</li>
-              </ul>
-
-              <div id="before-after">
-                <div class="prev">←</div>
-
-                <div class="view view-before">
-                  <img src="img/riview_before.jpg" />
-                </div>
-                <div class="next">→</div>
-                <div class="view view-after">
-                  <img src="img/riview_before_side.jpg" />
-                </div>
-                <div id="dragme"></div>
-              </div>
-            </li>
-            <li>
-              <ul class="controls2">
-                <li class="to-start2">정면</li>
-                <li class="to-middle2">정면&측면</li>
-                <li class="to-end2">측면</li>
-              </ul>
-
-              <div id="before-after2">
-                <div class="prev2">←</div>
-
-                <div class="view2 view-before2">
-                  <img src="img/riview_before1.jpg" />
-                </div>
-                <div class="next2">→</div>
-                <div class="view view-after2">
-                  <img src="img/riview_before2.jpg" />
-                </div>
-                <div id="dragme2"></div>
-              </div>
-            </li>
-          </ul>
-        </section>
+        </div>
       </div>
-    </section>
-    <section class="con3">
-      <h2>BEAUTY<br />FORYOU</h2>
-    </section>
-    <section class="con4">
-      <h2>더 많은 후기 보기</h2>
-      <ul>
-        <li>
-          <h3>
-            안*<span
-              >평가 5.0 <i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-            ></span>
-          </h3>
-          <p>
-            너무 밝고 친절하시고 엄마처럼 진심으로 돌봐주셨어요!! 하루짜리 짧은
-            일정인데도 책임감 가지고 해주셨어요. 따뜻하게...
-          </p>
-        </li>
-        <li>
-          <h3>
-            김*길<span
-              >평가 5.0 <i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-            ></span>
-          </h3>
-          <p>
-            별 다섯개도 모자랍니다. 진심으로 감사드려요. 성형이 전문적으로
-            친절하게 정말 잘 해주셨습니다.
-          </p>
-        </li>
-        <li>
-          <h3>
-            김*분<span
-              >평가 5.0 <i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-            ></span>
-          </h3>
-          <p>
-            정말 본인얼굴처럼 잘 해주셔서 감사합니다. 차분하게 요구사항 다
-            들어주시고 주변에서 성형이 엄청 잘됬...
-          </p>
-        </li>
-        <li>
-          <h3>
-            강*진<span
-              >평가 5.0 <i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-            ></span>
-          </h3>
-          <p>
-            처음이라 모든것이 생소했는데 친절히 답변해 주시고 급하게 요청한 시간
-            변경도 저희한테 맞추어 주셔서 너무 감사했습니다. 성형...
-          </p>
-        </li>
-      </ul>
-    </section>
+      <section class="con2">
+        <p>새로움 성형외과에 다녀가신 분들의 후기입니다.</p>
+        <h2>Good Image Clicic Review</h2>
+        <ul class="con2_menu">
+          <li class="all">ALL</li>
+          <li>여자 BEST</li>
+          <li>남자 BEST</li>
+          <li>가슴 BEST</li>
+        </ul>
+        <ul class="con2_wrap">
+          <li>
+            <ul class="controls">
+              <li class="to-start">정면</li>
+              <li class="to-middle">정면&측면</li>
+              <li class="to-end">측면</li>
+            </ul>
+
+            <div id="before-after">
+              <div class="prev">←</div>
+
+              <div class="view view-before">
+                <img src="img/riview_before.jpg" />
+              </div>
+              <div class="next">→</div>
+              <div class="view view-after">
+                <img src="img/riview_before_side.jpg" />
+              </div>
+              <div id="dragme"></div>
+            </div>
+          </li>
+          <li>
+            <ul class="controls2">
+              <li class="to-start2">정면</li>
+              <li class="to-middle2">정면&측면</li>
+              <li class="to-end2">측면</li>
+            </ul>
+
+            <div id="before-after2">
+              <div class="prev2">←</div>
+
+              <div class="view2 view-before2">
+                <img src="img/riview_before1.jpg" />
+              </div>
+              <div class="next2">→</div>
+              <div class="view view-after2">
+                <img src="img/riview_before2.jpg" />
+              </div>
+              <div id="dragme2"></div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="con3">
+        <h2>BEAUTY<br />FORYOU</h2>
+      </section>
+      <section class="con4">
+        <h2>더 많은 후기 보기</h2>
+        <ul>
+          <li>
+            <h3>
+              안*<span
+                >평가 5.0 <i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ></span>
+            </h3>
+            <p>
+              너무 밝고 친절하시고 엄마처럼 진심으로 돌봐주셨어요!! 하루짜리
+              짧은 일정인데도 책임감 가지고 해주셨어요. 따뜻하게...
+            </p>
+          </li>
+          <li>
+            <h3>
+              김*길<span
+                >평가 5.0 <i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ></span>
+            </h3>
+            <p>
+              별 다섯개도 모자랍니다. 진심으로 감사드려요. 성형이 전문적으로
+              친절하게 정말 잘 해주셨습니다.
+            </p>
+          </li>
+          <li>
+            <h3>
+              김*분<span
+                >평가 5.0 <i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ></span>
+            </h3>
+            <p>
+              정말 본인얼굴처럼 잘 해주셔서 감사합니다. 차분하게 요구사항 다
+              들어주시고 주변에서 성형이 엄청 잘됬...
+            </p>
+          </li>
+          <li>
+            <h3>
+              강*진<span
+                >평가 5.0 <i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ></span>
+            </h3>
+            <p>
+              처음이라 모든것이 생소했는데 친절히 답변해 주시고 급하게 요청한
+              시간 변경도 저희한테 맞추어 주셔서 너무 감사했습니다. 성형...
+            </p>
+          </li>
+        </ul>
+      </section>
+    </div>
     <div id="footer">
       <h2>Start a new life</h2>
       <img class="fot_logo" src="img/logo.png" />
@@ -1148,8 +1163,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/ScrollTrigger.min.js"></script>
+
     <script>
       $(function () {
         /*
