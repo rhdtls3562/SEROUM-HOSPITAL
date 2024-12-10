@@ -32,6 +32,9 @@ $(document).ready(function () {
   });
 });
 // 5. con5 섹션 글자 크기와 배경 크기 스크롤에 맞춰 변화
+const con5 = $(".con3");
+const textElement = $(".con3 h2");
+
 function updateTextSize(scale) {
   textElement.css({
     "font-size": 20 + scale * 10 + "vw", // 글자 크기 증가
@@ -40,6 +43,33 @@ function updateTextSize(scale) {
   textElement.css({
     "background-size": 100 + scale * 100 + "%", // 그라데이션 배경 크기 증가
   });
+}
+
+$(window).scroll(function () {
+  const con5 = $(".con3"); // .con5 참조
+  const textElement = $(".con3 h2"); // .con5 h2 참조
+  const scrollPosition = $(document).scrollTop();
+  const con5Offset = con5.offset().top;
+
+  if (
+    scrollPosition + $(window).height() > con5Offset &&
+    scrollPosition < con5Offset + con5.height()
+  ) {
+    let scale = (scrollPosition - con5Offset) / con5.height();
+    if (scale > 0.67) scale = 0.67; // 2/3 지점 이후 커지지 않도록 제한
+    updateTextSize(scale);
+  }
+
+  // 5. con5 섹션 글자 크기와 배경 크기 스크롤에 맞춰 변화
+  function updateTextSize(scale) {
+    textElement.css({
+      "font-size": 20 + scale * 10 + "vw", // 글자 크기 증가
+      "line-height": 18 + scale * 10 + "vw", // line-height 증가
+    });
+    textElement.css({
+      "background-size": 100 + scale * 100 + "%", // 그라데이션 배경 크기 증가
+    });
+  }
   $(document).ready(function () {
     // .con2_menu li 클릭 시 .all의 스타일 변경
     $(".con2_menu li").click(function () {
@@ -57,4 +87,4 @@ function updateTextSize(scale) {
       $(this).css({ background: "lightsalmon", color: "#000" }); // 클릭된 항목 스타일 변경
     });
   });
-}
+});

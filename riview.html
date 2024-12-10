@@ -6,6 +6,14 @@
     <title>고객후기</title>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/riview.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js"
+    ></script>
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/riview.css" />
@@ -997,44 +1005,240 @@
             <li>남자 BEST</li>
             <li>가슴 BEST</li>
           </ul>
-          <ul class="imgwrap">
+          <ul class="con2_wrap">
             <li>
-              <div class="img_box">BEFORE</div>
-              <div class="con2_prev">←</div>
-              <img src="img/riview_before.jpg" />
-              <div class="img_box2">
-                <p>새로움성형외과는 의료법을 준수합니다.</p>
-                <p>
-                  <span>로그인을 하시면</span>다양한 전후사진을<br />확인하실 수
-                  있습니다
-                </p>
-                <div class="log">LOGIN</div>
-              </div>
-            </li>
-            <li class="img_wrap">
-              <div class="imgs">
-                <div class="img_box">AFTER</div>
-                <div class="con2_next">→</div>
-                <img class="model_front" src="img/riview_before.jpg" />
-                <img class="model_left" src="img/riview_before_left.jpg" />
-                <img class="model_side" src="img/riview_before_side.jpg" />
-              </div>
-            </li>
-            <li>
-              <ul class="img_direction">
-                <li class="front">정면</li>
-                <li class="left">반측면</li>
-                <li class="side">측면</li>
+              <ul class="controls">
+                <li class="to-start">정면</li>
+                <li class="to-middle">정면&측면</li>
+                <li class="to-end">측면</li>
               </ul>
+
+              <div id="before-after">
+                <div class="prev">←</div>
+
+                <div class="view view-before">
+                  <img src="img/riview_before.jpg" />
+                </div>
+                <div class="next">→</div>
+                <div class="view view-after">
+                  <img src="img/riview_before_side.jpg" />
+                </div>
+                <div id="dragme"></div>
+              </div>
+            </li>
+            <li>
+              <ul class="controls2">
+                <li class="to-start2">정면</li>
+                <li class="to-middle2">정면&측면</li>
+                <li class="to-end2">측면</li>
+              </ul>
+
+              <div id="before-after2">
+                <div class="prev2">←</div>
+
+                <div class="view2 view-before2">
+                  <img src="img/riview_before1.jpg" />
+                </div>
+                <div class="next2">→</div>
+                <div class="view view-after2">
+                  <img src="img/riview_before2.jpg" />
+                </div>
+                <div id="dragme2"></div>
+              </div>
             </li>
           </ul>
         </section>
       </div>
     </section>
-    <div id="footer"></div>
+    <section class="con3">
+      <h2>BEAUTY<br />FORYOU</h2>
+    </section>
+    <section class="con4">
+      <h2>더 많은 후기 보기</h2>
+      <ul>
+        <li>
+          <h3>
+            안*<span
+              >평가 5.0 <i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ></span>
+          </h3>
+          <p>
+            너무 밝고 친절하시고 엄마처럼 진심으로 돌봐주셨어요!! 하루짜리 짧은
+            일정인데도 책임감 가지고 해주셨어요. 따뜻하게...
+          </p>
+        </li>
+        <li>
+          <h3>
+            김*길<span
+              >평가 5.0 <i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ></span>
+          </h3>
+          <p>
+            별 다섯개도 모자랍니다. 진심으로 감사드려요. 성형이 전문적으로
+            친절하게 정말 잘 해주셨습니다.
+          </p>
+        </li>
+        <li>
+          <h3>
+            김*분<span
+              >평가 5.0 <i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ></span>
+          </h3>
+          <p>
+            정말 본인얼굴처럼 잘 해주셔서 감사합니다. 차분하게 요구사항 다
+            들어주시고 주변에서 성형이 엄청 잘됬...
+          </p>
+        </li>
+        <li>
+          <h3>
+            강*진<span
+              >평가 5.0 <i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ></span>
+          </h3>
+          <p>
+            처음이라 모든것이 생소했는데 친절히 답변해 주시고 급하게 요청한 시간
+            변경도 저희한테 맞추어 주셔서 너무 감사했습니다. 성형...
+          </p>
+        </li>
+      </ul>
+    </section>
+    <div id="footer">
+      <h2>Start a new life</h2>
+      <img class="fot_logo" src="img/logo.png" />
+      <ul>
+        <li>개인정보취급방침</li>
+        <li>이용약관</li>
+        <li>환자권리장전</li>
+        <li>서류발급</li>
+        <li>온라인서류발급</li>
+        <li>비급여수기표</li>
+      </ul>
+      <p>
+        서울특별시 강남대로 390 미진프라자 18층(역삼동825 미진프라자 18층) |
+        개인정보보호책임자:박형직 | 대표원장:박형직<br />사업자등록번호:<span
+          >213-91-01210</span
+        >
+        | TEL. <span>1588-3882</span> | FAX. <span>02-3456-7890</span>
+      </p>
+      <ul class="fot_img">
+        <li><img src="img/blog.webp" /></li>
+        <li><img src="img/ft_btn_facebook.webp" /></li>
+        <li><img src="img/ft_btn_insta.webp" /></li>
+        <li><img src="img/ft_btn_tiktok.webp" /></li>
+        <li><img src="img/ft_btn_ytube.webp" /></li>
+        <li><img src="img/ft_btn_post.webp" /></li>
+      </ul>
+      <ul class="fot_bottom">
+        <li><img src="img/ft_btn_kma.webp" /></li>
+        <li><img src="img/ft_btn_kos.webp" /></li>
+        <li><img src="img/ft_btn_kpbpa.webp" /></li>
+        <li><img src="img/ft_btn_sma.webp" /></li>
+      </ul>
+      <p class="reserved">
+        ⓒ 2022 Gangnam seoul rom hospital clinic. all right reserved.
+      </p>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/ScrollTrigger.min.js"></script>
+    <script>
+      $(function () {
+        /*
+          Dependencies : TweenMax and Draggable
+          Images by Ivaylo Yovchev ( http://www.ivayloyovchev.com/ )
+          
+          Test on touch device @ http://cloud.bassta.bg/before-after.html
+        */
+
+        var $dragMe = $("#dragme");
+        var $beforeAfter = $("#before-after");
+        var $viewAfter = $(".view-after");
+
+        Draggable.create($dragMe, {
+          type: "left",
+          bounds: $beforeAfter,
+          onDrag: updateImages,
+        });
+
+        function updateImages() {
+          TweenLite.set($viewAfter, { width: $dragMe.css("left") }); //or this.x if only dragging
+        }
+
+        //Intro Animation
+        animateTo(350);
+
+        //Externall nav
+        $(".to-start").on("click", function () {
+          animateTo(0);
+        });
+
+        $(".to-middle").on("click", function () {
+          animateTo(298);
+        });
+
+        $(".to-end").on("click", function () {
+          animateTo(598);
+        });
+
+        function animateTo(_left) {
+          TweenLite.to($dragMe, 1, { left: _left, onUpdate: updateImages });
+        }
+
+        //V2 Click added
+        $beforeAfter.on("click", function (event) {
+          var eventLeft = event.clientX - $beforeAfter.offset().left;
+          animateTo(eventLeft);
+        });
+      }); //end jQuery wrapper
+
+      var $dragMe = $("#dragme2");
+      var $beforeAfter = $("#before-after2");
+      var $viewAfter = $(".view-after2");
+
+      Draggable.create($dragMe, {
+        type: "left",
+        bounds: $beforeAfter,
+        onDrag: updateImages,
+      });
+
+      function updateImages() {
+        TweenLite.set($viewAfter, { width: $dragMe.css("left") }); //or this.x if only dragging
+      }
+
+      //Intro Animation
+      animateTo(350);
+
+      //Externall nav
+      $(".to-start2").on("click", function () {
+        animateTo(0);
+      });
+
+      $(".to-middle2").on("click", function () {
+        animateTo(298);
+      });
+
+      $(".to-end2").on("click", function () {
+        animateTo(598);
+      });
+
+      function animateTo(_left) {
+        TweenLite.to($dragMe, 1, { left: _left, onUpdate: updateImages });
+      }
+
+      //V2 Click added
+      $beforeAfter.on("click", function (event) {
+        var eventLeft = event.clientX - $beforeAfter.offset().left;
+        animateTo(eventLeft);
+      });
+    </script>
   </body>
 </html>
