@@ -2801,7 +2801,7 @@
   .model {
     width: 25rem;
     max-width: 400px;
-    left: 1rem;
+    right: 1rem;
     bottom: 0%;
     transform: translate(-50%, -50%);
     animation-delay: 1s; /* 1초 뒤에 애니메이션 시작 */
@@ -2810,7 +2810,7 @@
   .insta_line {
     width: 20rem;
     max-width: 250px;
-    left: 8rem;
+    right: 3rem;
     bottom: 25%;
     transform: translate(-50%, -50%);
     animation-delay: 2s; /* 2초 뒤에 애니메이션 시작 */
@@ -2827,8 +2827,8 @@
 
   .bubble {
     width: 12rem;
-    right: 1rem;
-    top: 13rem;
+    left: 2rem;
+    top: 15rem;
     transform: translate(-50%, -50%);
     animation-delay: 3.5s; /* 4초 뒤에 애니메이션 시작 */
   }
