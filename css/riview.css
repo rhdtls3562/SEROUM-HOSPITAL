@@ -3371,7 +3371,7 @@
   }
 
   #visual h2 {
-    padding-top: 8rem;
+    padding-top: 6rem;
     box-sizing: border-box;
     font-weight: 100;
     font-size: 11vw;
@@ -3393,17 +3393,17 @@
   }
 
   .model {
-    top: 75%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    width: 80%;
+    width: 85%;
     max-width: 500px;
   }
 
   .phone {
     position: absolute;
-    top: 75%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -3428,9 +3428,9 @@
 
   .heart {
     position: absolute;
-    width: 10%;
+    width: 15%;
     bottom: 25%;
-    right: 10%;
+    right: 5%;
     transform: translate(-50%, -50%);
   }
 
