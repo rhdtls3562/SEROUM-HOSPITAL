@@ -2765,12 +2765,12 @@
   }
 
   #visual h2 {
-    font-size: 13vw;
-    width: 60%;
+    font-size: 4rem;
+    width: 20rem;
     line-height: 13vw;
     text-align: center;
     margin: auto;
-    margin-top: 10rem;
+    margin-top: 7rem;
     box-sizing: border-box;
     font-weight: 100;
     letter-spacing: -1px;
@@ -2799,7 +2799,7 @@
   }
 
   .model {
-    width: 70%;
+    width: 25rem;
     max-width: 400px;
     left: 5%;
     bottom: 0%;
@@ -2808,7 +2808,7 @@
   }
 
   .insta_line {
-    width: 35vw;
+    width: 20rem;
     max-width: 250px;
     left: 30%;
     bottom: 25%;
@@ -2826,9 +2826,9 @@
   }
 
   .bubble {
-    width: 35%;
+    width: 13rem;
     right: 4%;
-    top: 30%;
+    top: 13rem;
     transform: translate(-50%, -50%);
     animation-delay: 3.5s; /* 4초 뒤에 애니메이션 시작 */
   }

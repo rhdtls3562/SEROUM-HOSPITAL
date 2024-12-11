@@ -2291,7 +2291,7 @@
   /* 모델 애니메이션 */
   .model {
     position: absolute;
-    width: 80%;
+    width: 25rem;
     left: 50%;
     bottom: 0%;
     transform: translate(-50%, -0%);
@@ -2331,10 +2331,10 @@
     left: 50%;
     line-height: 13.5vw;
     top: 13%;
-    width: 70%;
+    width: 20rem;
     font-weight: 100;
     color: #fff;
-    font-size: 13vw;
+    font-size: 4rem;
     text-align: center;
     text-shadow: 0 0 5px rgba(255, 147, 170, 0.7),
       0 0 10px rgba(247, 169, 199, 0.6), 0 0 15px rgba(247, 169, 202, 0.5),
