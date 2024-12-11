@@ -42,7 +42,7 @@ $(window).scroll(function () {
     scrollPosition < con5Offset + con5.height()
   ) {
     let scale = (scrollPosition - con5Offset) / con5.height();
-    if (scale > 0) scale = 0.5; // 2/3 지점 이후 커지지 않도록 제한
+    if (scale > 0) scale = 0.1; // 2/3 지점 이후 커지지 않도록 제한
     updateTextSize(scale);
   }
 
@@ -79,6 +79,48 @@ $(window).scroll(function () {
         // 클릭된 li가 .one이면 호버 상태 유지
         $(".one").addClass("hovered");
       }
+    });
+    $(document).ready(function () {
+      // 스크롤 이벤트
+      $(window).scroll(function () {
+        // 각 섹션에 대해
+        $(".con1, .con2, .con4").each(function () {
+          var section = $(this);
+          var sectionTop = section.offset().top; // 섹션의 상단 위치
+          var sectionHeight = section.outerHeight(); // 섹션의 높이
+          var windowScroll = $(window).scrollTop(); // 현재 스크롤 위치
+          var windowHeight = $(window).height(); // 창의 높이
+
+          // 섹션이 화면에 보일 때만 애니메이션 실행
+          if (
+            windowScroll + windowHeight >= sectionTop &&
+            windowScroll <= sectionTop + sectionHeight
+          ) {
+            // 해당 섹션 내의 자식 요소들에 대해 순차적으로 나타나게 설정
+            section.find("*").each(function (index) {
+              var element = $(this);
+
+              // 이미 visible 클래스가 있으면 실행되지 않도록 방지
+              if (
+                !element.hasClass("visible") &&
+                !element.hasClass("visible2") &&
+                !element.hasClass("visible3")
+              ) {
+                var className =
+                  "visible" +
+                  (section.hasClass("con1")
+                    ? ""
+                    : section.hasClass("con2")
+                    ? "2"
+                    : "3");
+                setTimeout(function () {
+                  element.addClass(className);
+                }, index * 150); // 150ms 간격으로 나타나도록 설정
+              }
+            });
+          }
+        });
+      });
     });
   });
 });

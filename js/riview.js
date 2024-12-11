@@ -43,7 +43,7 @@ $(window).scroll(function () {
     scrollPosition < con5Offset + con5.height()
   ) {
     let scale = (scrollPosition - con5Offset) / con5.height();
-    if (scale > 0.) scale = 0.5; // 2/3 지점 이후 커지지 않도록 제한
+    if (scale > 0) scale = 0.5; // 2/3 지점 이후 커지지 않도록 제한
     updateTextSize(scale);
   }
 
