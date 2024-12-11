@@ -2291,7 +2291,7 @@
   /* 모델 애니메이션 */
   .model {
     position: absolute;
-    width: 25rem;
+    width: 23rem;
     left: 50%;
     bottom: 0%;
     transform: translate(-50%, -0%);
@@ -2329,7 +2329,7 @@
   #visual h2 {
     position: absolute;
     left: 50%;
-    line-height: 13.5vw;
+    line-height: 4.5rem;
     top: 13%;
     width: 20rem;
     font-weight: 100;
