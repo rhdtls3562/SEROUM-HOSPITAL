@@ -123,8 +123,8 @@ $(document).ready(function () {
     // 5. con5 섹션 글자 크기와 배경 크기 스크롤에 맞춰 변화
     function updateTextSize(scale) {
       textElement.css({
-        "font-size": 20 + scale * 5 + "vw", // 글자 크기 증가
-        "line-height": 18 + scale * 10 + "vw", // line-height 증가
+        "font-size": 18 + scale * 5 + "vw", // 글자 크기 증가
+        "line-height": 16 + scale * 5 + "vw", // line-height 증가
       });
       textElement.css({
         "background-size": 100 + scale * 50 + "%", // 그라데이션 배경 크기 증가

@@ -1946,6 +1946,7 @@
   /*header*/
 
   #header {
+    padding: 0.5vw;
     line-height: 0 !important;
     position: absolute;
     z-index: 999;
@@ -1999,7 +2000,7 @@
   #nav-icon2 {
     width: 6vw;
     height: 0.5vw;
-    top: -1vw;
+    top: -0.5rem;
     position: relative;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -2247,7 +2248,7 @@
   /*visual*/
 
   #visual {
-    height: 50rem;
+    height: 45rem;
     overflow: hidden;
     z-index: -1;
     position: relative;
@@ -2328,7 +2329,8 @@
   #visual h2 {
     position: absolute;
     left: 50%;
-    top: 15%;
+    line-height: 13.5vw;
+    top: 13%;
     width: 70%;
     font-weight: 100;
     color: #fff;
@@ -2778,26 +2780,16 @@
     font-weight: 600;
   }
 
-  .con4 ul {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .con4 li {
-    width: 50%;
-    height: 41vw;
-  }
-
   .con4 ul li:nth-child(1) {
     position: relative;
   }
 
   .map {
     border: none;
+    display: block;
     background-color: none;
-    width: 100%;
-    height: 100%;
+    width: 100vw !important;
+    height: 40vw;
   }
 
   .mapping {

@@ -3028,6 +3028,7 @@
   /*header*/
 
   #header {
+    padding: 0.5vw;
     line-height: 0 !important;
     position: absolute;
     z-index: 999;
@@ -3081,7 +3082,7 @@
   #nav-icon2 {
     width: 6vw;
     height: 0.5vw;
-    top: -1vw;
+    top: -0.5rem;
     position: relative;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -3329,7 +3330,7 @@
   /*visual*/
 
   #visual {
-    height: 50rem;
+    height: 45rem;
     overflow: hidden;
     z-index: -1;
     position: relative;
@@ -3370,10 +3371,10 @@
   }
 
   #visual h2 {
-    padding-top: 10rem;
+    padding-top: 8rem;
     box-sizing: border-box;
     font-weight: 100;
-    font-size: 10vw;
+    font-size: 11vw;
     color: #fff;
     text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-family: "Black Han Sans", sans-serif;
@@ -3413,7 +3414,7 @@
     position: absolute;
     width: 25%;
     top: 55%;
-    left: 30%;
+    left: 25%;
     transform: translate(-50%, -50%);
   }
 
@@ -3428,7 +3429,7 @@
   .heart {
     position: absolute;
     width: 10%;
-    top: 100vw;
+    bottom: 25%;
     right: 10%;
     transform: translate(-50%, -50%);
   }
@@ -4409,7 +4410,7 @@
   .con4 span {
     color: #555;
     font-size: 1.5vw;
-    margin-left: 40vw;
+    margin-left: 35vw;
   }
 
   .con4 h3 {
@@ -4434,7 +4435,7 @@
     width: calc(100% / 1 - 100px);
     background-color: #fff;
     padding: 3vw;
-    border-radius: 1vw;
+    border-radius: 2vw;
     border: 2px solid orange;
   }
 
