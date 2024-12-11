@@ -32,6 +32,19 @@ $(document).ready(function () {
   });
 });
 
+// 4. 배경 이동 애니메이션 (top, bottom)
+let x = 0;
+setInterval(() => {
+  x -= 1;
+  $(".top").css("background-position", x + "px 0");
+}, 20);
+
+let y = 0;
+setInterval(() => {
+  y += 1;
+  $(".bottom").css("background-position", y + "px 0");
+}, 20);
+
 $(window).scroll(function () {
   const con5 = $(".con3"); // .con5 참조
   const textElement = $(".con3 h2"); // .con5 h2 참조
@@ -43,14 +56,14 @@ $(window).scroll(function () {
     scrollPosition < con5Offset + con5.height()
   ) {
     let scale = (scrollPosition - con5Offset) / con5.height();
-    if (scale > 0) scale = 0.5; // 2/3 지점 이후 커지지 않도록 제한
+    if (scale > 0) scale = 0.3; // 2/3 지점 이후 커지지 않도록 제한
     updateTextSize(scale);
   }
 
   // 5. con5 섹션 글자 크기와 배경 크기 스크롤에 맞춰 변화
   function updateTextSize(scale) {
     textElement.css({
-      "font-size": 20 + scale * 10 + "vw", // 글자 크기 증가
+      "font-size": 20 + scale * 5 + "vw", // 글자 크기 증가
       "line-height": 18 + scale * 10 + "vw", // line-height 증가
     });
     textElement.css({

@@ -16,7 +16,7 @@ $(document).ready(function () {
       scrollToSection(prevSection);
     }
 
-    // 스크롤이 끝난 후 1초 뒤에 다시 스크롤 가능
+    // 스크롤이 끝난 후 0.5초 뒤에 다시 스크롤 가능
     setTimeout(() => {
       isScrolling = false;
     }, 500);
@@ -57,6 +57,7 @@ $(document).ready(function () {
       behavior: "smooth",
     });
   }
+
   // 요소가 화면에 보이는지 확인하는 함수
   function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
@@ -68,41 +69,51 @@ $(document).ready(function () {
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
-  $(document).ready(function () {
-    // Show or hide the sticky footer button
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > 200) {
-        $(".go-top").fadeIn(200);
-      } else {
-        $(".go-top").fadeOut(200);
-      }
-    });
 
-    // Animate the scroll to top
-    $(".go-top").click(function (event) {
-      event.preventDefault();
-
-      $("html, body").animate({ scrollTop: 0 }, 300);
-    });
-  });
-  $(document).ready(function () {
-    $(".menu-button").click(function () {
-      $(".side-menu").toggleClass("open"); // 사이드 메뉴 열기/닫기
-      $(".overlay2").toggleClass("open"); // 오버레이 열기/닫기
-    });
-
-    $(".overlay2").click(function () {
-      $(".side-menu").removeClass("open"); // 메뉴 닫기
-      $(".overlay2").removeClass("open"); // 오버레이 닫기
-    });
-  });
-  $(document).ready(function () {
-    $("#nav-icon2").click(function () {
-      $(this).toggleClass("open");
-    });
+  // 스크롤 버튼 애니메이션
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 200) {
+      $(".go-top").fadeIn(200);
+    } else {
+      $(".go-top").fadeOut(200);
+    }
   });
 
-  // 5. con5 섹션 글자 크기와 배경 크기 스크롤에 맞춰 변화
+  $(".go-top").click(function (event) {
+    event.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, 300);
+  });
+
+  // 메뉴 버튼 클릭
+  $(".menu-button").click(function () {
+    $(".side-menu").toggleClass("open");
+    $(".overlay2").toggleClass("open");
+  });
+
+  $(".overlay2").click(function () {
+    $(".side-menu").removeClass("open");
+    $(".overlay2").removeClass("open");
+  });
+
+  // 아이콘 클릭 애니메이션
+  $("#nav-icon2").click(function () {
+    $(this).toggleClass("open");
+  });
+
+  // 배경 이동 애니메이션 (top, bottom)
+  let x = 0;
+  setInterval(() => {
+    x -= 1;
+    $(".top").css("background-position", x + "px 0");
+  }, 20);
+
+  let y = 0;
+  setInterval(() => {
+    y += 1;
+    $(".bottom").css("background-position", y + "px 0");
+  }, 20);
+
+  // con5 섹션 글자 크기와 배경 크기 스크롤에 맞춰 변화
   const con5 = $(".con5");
   const textElement = $(".con5 h2");
 
@@ -110,15 +121,11 @@ $(document).ready(function () {
     textElement.css({
       "font-size": 20 + scale * 10 + "vw", // 글자 크기 증가
       "line-height": 18 + scale * 10 + "vw", // line-height 증가
-    });
-    textElement.css({
-      "background-size": 100 + scale * 100 + "%", // 그라데이션 배경 크기 증가
+      "background-size": 100 + scale * 100 + "%", // 배경 크기 증가
     });
   }
 
   $(window).scroll(function () {
-    const con5 = $(".con5"); // .con5 참조
-    const textElement = $(".con5 h2"); // .con5 h2 참조
     const scrollPosition = $(document).scrollTop();
     const con5Offset = con5.offset().top;
 
@@ -127,59 +134,40 @@ $(document).ready(function () {
       scrollPosition < con5Offset + con5.height()
     ) {
       let scale = (scrollPosition - con5Offset) / con5.height();
-      if (scale > 0.67) scale = 0.67; // 2/3 지점 이후 커지지 않도록 제한
+      scale = Math.min(scale, 0.67); // 2/3 지점 이후 커지지 않도록 제한
       updateTextSize(scale);
     }
-
-    // 5. con5 섹션 글자 크기와 배경 크기 스크롤에 맞춰 변화
-    function updateTextSize(scale) {
-      textElement.css({
-        "font-size": 20 + scale * 10 + "vw", // 글자 크기 증가
-        "line-height": 18 + scale * 10 + "vw", // line-height 증가
-      });
-      textElement.css({
-        "background-size": 100 + scale * 100 + "%", // 그라데이션 배경 크기 증가
-      });
-    }
-    $(document).ready(function () {
-      // 다른 애니메이션들이 끝난 후 2초 뒤에 배경 애니메이션을 시작하도록 설정
-      setTimeout(function () {
-        $(".con1 span").addClass("show-background");
-      }, 500); // 2초 후에 배경 애니메이션 시작
-    });
-    $(document).ready(function () {
-      // 스크롤 이벤트
-      $(window).on("scroll", function () {
-        var scrollPosition = $(window).scrollTop(); // 현재 스크롤 위치
-        var windowHeight = $(window).height(); // 화면 높이
-
-        // .con1 섹션에 도달했을 때 애니메이션 실행
-        var con1Top = $(".con1").offset().top; // .con1의 top 위치
-        if (scrollPosition + windowHeight > con1Top) {
-          $(".con1 h2").css("animation-play-state", "running"); // h2 애니메이션 시작
-          $(".con1 p").css("animation-play-state", "running"); // p 애니메이션 시작
-          $(".con1 ul li:nth-child(3)").css("animation-play-state", "running"); // li 애니메이션 시작
-          $(".con1 ul li:nth-child(1)").css("animation-play-state", "running"); // li 애니메이션 시작
-        }
-
-        var con1Top = $(".con2").offset().top; // .con1의 top 위치
-        if (scrollPosition + windowHeight > con1Top) {
-          $(
-            ".con2 h2, .con2 p, .con2 .check, .con2_model, .point1, .point2, .point3, .st0 "
-          ).css("animation-play-state", "running");
-        }
-        var con1Top = $(".con3").offset().top; // .con1의 top 위치
-        if (scrollPosition + windowHeight > con1Top) {
-          $(".con3 h2, .con3 h5").css("animation-play-state", "running");
-        }
-        var con1Top = $(".con6").offset().top; // .con1의 top 위치
-        if (scrollPosition + windowHeight > con1Top) {
-          $(".con6 h2, .con6 h4, .con6 p, .line, .first, .last").css(
-            "animation-play-state",
-            "running"
-          );
-        }
-      });
-    });
   });
+
+  // con1~con6 애니메이션 실행
+  $(window).on("scroll", function () {
+    const scrollPosition = $(window).scrollTop();
+    const windowHeight = $(window).height();
+
+    function triggerAnimation(section, elements) {
+      const sectionTop = $(section).offset().top;
+      if (scrollPosition + windowHeight > sectionTop) {
+        $(elements).css("animation-play-state", "running");
+      }
+    }
+
+    triggerAnimation(
+      ".con1",
+      ".con1 h2, .con1 p, .con1 ul li:nth-child(3), .con1 ul li:nth-child(1)"
+    );
+    triggerAnimation(
+      ".con2",
+      ".con2 h2, .con2 p, .con2 .check, .con2_model, .point1, .point2, .point3, .st0"
+    );
+    triggerAnimation(".con3", ".con3 h2, .con3 h5");
+    triggerAnimation(
+      ".con6",
+      ".con6 h2, .con6 h4, .con6 p, .line, .first, .last"
+    );
+  });
+
+  // 초기 애니메이션 실행
+  setTimeout(function () {
+    $(".con1 span").addClass("show-background");
+  }, 500);
 });

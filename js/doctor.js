@@ -52,14 +52,10 @@ $(document).ready(function () {
 
   // 부드럽게 스크롤
   function scrollToSection(section) {
-    // #visual, .con1, .con2 섹션이 아닐 경우에만 스크롤을 적용
-    if (
-      section.id === "visual" ||
-      section.classList.contains("con1") ||
-      section.classList.contains("con2")
-    ) {
-      return; // #visual, .con1, .con2는 스크롤하지 않음
-    }
+    window.scrollTo({
+      top: section.offsetTop,
+      behavior: "smooth",
+    });
   }
 
   $(document).ready(function () {
