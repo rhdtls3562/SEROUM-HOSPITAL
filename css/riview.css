@@ -1254,7 +1254,7 @@
     position: absolute;
     width: 4px;
     height: 100%;
-    top: -1.5vw;
+    top: -1.05vw;
     left: 0px;
     background-color: black;
     cursor: pointer;
@@ -1343,8 +1343,7 @@
     position: absolute;
     width: 4px;
     height: 100%;
-    top: 0px;
-    top: -1.5vw;
+    top: -1.05vw;
     background-color: black;
     cursor: pointer;
     z-index: 300;
